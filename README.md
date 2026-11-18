@@ -1,27 +1,25 @@
-# Island
+# SALTWAKE — The Keeper
 
-A realistic open-world tropical island in the browser, built in three.js with WebGPU. You wake on a beach at
-sunrise, and everything you can see is reachable on foot: a dense rainforest, a 20 m waterfall with a pool you can
-swim in, a fishing village of stilt huts with jetties and outrigger canoes, 50-85 m basalt sea cliffs, and a
-lighthouse on the 214 m summit with a gallery that looks out over the whole island. There is nothing to win. The day
-runs on its own over 30 minutes, from a slow sunrise through a long twilight to a moonlit night, rain squalls roll in
-and clear, and the sound follows where you are: surf, wind, birds, rain, the falls, and footsteps that change with
-the ground.
+A realistic open-world island horror game in the browser, built in Three.js with WebGPU and a WebGL 2 fallback. You
+wake on the beach at sunrise. The whole island stays open to explore on foot: rainforest trails, a waterfall and
+swimmable pool, a fishing village, basalt cliffs, and a lighthouse on the highest peak. The day and weather move on
+their own. Read the tide-worn pages left around the island, then keep walking. Something watches from the edge of the
+trees and leaves when you look back. There is no combat and no required route; the island remains yours to explore.
 
 ![The fishing village at sunset, seen from the end of the jetty, under the game's title](docs/social-preview.jpg)
 
-**Play it: https://starknightt.github.io/island/**
+**Play it: https://gauravdey-sot-25.github.io/open_world_horror_island_game/**
 
 It wants a desktop GPU, a keyboard and a mouse (a gamepad works too); Chrome or Edge with WebGPU gives the full
-picture. Browsers without WebGPU fall back to WebGL 2, with a still sea. It was built in Chrome on Windows and
-measured on an RTX 4060 at 1920x1080. A first visit takes about 8 to 10 seconds behind the loading screen, and a
-return visit about 7.
+picture. Browsers without WebGPU fall back to WebGL 2, with a still sea. The existing island renderer was measured
+on an RTX 4060 at 1920x1080. The MacBook Air M2 60 fps target still needs a local frame-time pass after the horror
+changes. A first visit takes about 8 to 10 seconds behind the loading screen, and a return visit about 7.
 
 ## Running it locally
 
 ```
-git clone https://github.com/StarKnightt/island.git
-cd island
+git clone https://github.com/GauravDey-SOT-25/open_world_horror_island_game.git
+cd open_world_horror_island_game
 pnpm install
 pnpm dev        # http://127.0.0.1:5230/
 pnpm build      # type-check, then a production build into dist/
@@ -30,11 +28,11 @@ pnpm preview    # serve dist/ on http://127.0.0.1:5231/ (what viewers get)
 
 The only runtime dependency is `three` (r186.1); the game is TypeScript built with Vite, and `package.json` pins
 pnpm 10. Both ports are fixed: if one is taken the server stops with an error instead of picking another. Every push
-to `master` builds the site and deploys it to GitHub Pages through `.github/workflows/deploy.yml`.
+to `main` builds the site and deploys it to GitHub Pages through `.github/workflows/deploy.yml`.
 
 ## Controls
 
-Click the scene once to capture the mouse.
+Click the scene once to capture the mouse. You can release it with Escape.
 
 | Input | Keyboard and mouse | Gamepad |
 |---|---|---|
@@ -42,6 +40,7 @@ Click the scene once to capture the mouse.
 | Move | W A S D | Left stick |
 | Sprint / walk | Shift / Ctrl | B or L3 |
 | Jump | Space | A |
+| Examine a note nearby | E | |
 | Photo mode | P or F: the HUD hides, W A S D and Q E fly the camera, Shift faster, `[` `]` change the lens, P exits | |
 | Mute | M | |
 | Debug overlay | F3 | |
@@ -60,7 +59,9 @@ Walk into water and he wades, then treads and swims once it is deep enough.
 | `fps=0` | Removes the frame cap; a number sets a fixed rate |
 | `webgl=1` | Forces the WebGL 2 backend |
 
-The full list, the `window.__island` debug API and the test harness are in [TESTING.md](TESTING.md).
+The full list, the `window.__island` debug API and the test harness are in [TESTING.md](TESTING.md). For deterministic
+horror captures, `__island.presence()` places the Keeper at a shoulder sightline and `__island.clearPresence()` clears
+it; `__island.horror()` reports its state. These calls are for QA and filming, not needed to play.
 
 ## Five camera spots for recording
 
@@ -103,6 +104,11 @@ defines the shots, and [TESTING.md](TESTING.md) explains the flags.
 - **Day and weather.** A 30-minute day with the sun and moon placed for a tropical latitude, a gradual twilight, stars
   and a rising moon. Squalls bring rain, wet ground and puddles, splashes, and lightning with thunder delayed by its
   distance.
+- **The Keeper.** A distant, gaze-aware presence uses the existing character rig and appears more often in darkness,
+  rain and jungle. It does not chase or attack; it holds the far edge of a sightline, then slips away when approached
+  or watched. Birds dim and a quiet low tone gathers around a sighting.
+- **A story in the landscape.** Six weathered pages sit on driftwood stands at the beach, jungle, falls, village, cliffs
+  and lighthouse. Read them in any order with E; they suggest what happened without quest markers or locked areas.
 - **Sound.** Layered ambience by place, time and weather: waves by distance to the shore, surf, wind by height and
   exposure, birds by day, insects and frogs at night, rain, the falls and the stream as positional sources. Footsteps
   follow the surface underfoot (sand, wet sand, grass, leaves, rock, wood, the metal stair, shallow water), and the
@@ -155,6 +161,11 @@ Uncapped (`?fps=0`), the same views ran between 67.3 and 96.8 fps.
 A first visit is playable in about 8 to 10 seconds, most of it building and compiling the shaders behind the loading
 screen; a return visit takes about 7.
 
+These figures are from the RTX 4060 capture machine. The M2 MacBook Air target has not been measured. In Chrome on
+the Mac, open the game with `?debug=1` (or press F3 after it loads) to see the active GPU, frame rate, frame-time
+percentiles, and current quality preset while walking around the island. Use the displayed frame p95/p99 as the
+practical check for sustained 60 fps; the debug overlay works in both WebGPU and the WebGL 2 fallback.
+
 ## Project structure
 
 ```
@@ -165,6 +176,7 @@ src/
   sky/        atmosphere, sky, clouds, stars and moon, time of day, weather
   veg/        procedural palms, trees, bushes and grass, the vegetation layers, the far canopy
   player/     input, the character and its controller, the camera rig
+  horror/     The Keeper, its sighting logic and the diegetic field notes
   audio/      Web Audio ambience, positional sources, footsteps, thunder
   ui/         loading screen, HUD, debug overlay
   debug/      the window.__island test API
@@ -177,7 +189,7 @@ public/assets/ textures (KTX2), models (meshopt glTF) and sounds (Ogg)
 `pnpm shots` takes screenshots at the named spots and times, `pnpm perf` records frame-time statistics, `pnpm clip`
 records motion clips and `pnpm record` the trailer. [TESTING.md](TESTING.md) covers each one.
 
-## Limitations
+## Current risks and limits
 
 - **Browsers and hardware.** Built and measured in Chrome on Windows with an RTX 4060. Other browsers, GPUs and
   phones were not measured.
@@ -192,12 +204,14 @@ records motion clips and `pnpm record` the trailer. [TESTING.md](TESTING.md) cov
 - **The lighthouse view.** The nearest tree crowns under the gallery are still clumps of leaves; the authored shots
   keep them out of frame.
 - **Rain** keeps the same brightness through a downpour.
+- **The Keeper** is a first playable pass: procedural shoulder positions can clip into vegetation or land against a
+  less readable backdrop. There is no pursuit or combat loop by design.
+- **Performance** on an M2 MacBook Air and the WebGL 2 fallback still needs a measured second-screen playtest.
 
 ## How it was built
 
-It was built in Cursor by AI agents working in rounds: a builder implemented each round, a critic compared rendered
-frames from fixed camera spots against reference photos, and the findings went into the next round. The user
-steered it throughout.
+It is being iterated in sequential builder and critic rounds. Each critic compares captures from the six authored
+locations across the day, weather and lighting states, then the next builder addresses the largest visible gaps.
 
 ## Prompt
 

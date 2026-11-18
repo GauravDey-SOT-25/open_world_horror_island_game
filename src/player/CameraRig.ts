@@ -94,9 +94,10 @@ export class CameraRig {
   }
 
   /** snap the follow camera behind a heading (no smoothing on the next frame) */
-  snapBehind(yaw: number) {
+  snapBehind(yaw: number, distance?: number, pitch = 0.1) {
     this.yaw = yaw;
-    this.pitch = 0.1;
+    this.pitch = pitch;
+    if (distance !== undefined) this.dist = this.curDist = distance;
     this.first = true;
     this.blend = 1;
     this.inside = false;

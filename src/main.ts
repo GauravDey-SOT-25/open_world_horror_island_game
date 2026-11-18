@@ -33,6 +33,7 @@ import { RockKit, planRocks } from './world/RockKit';
 import { Birds } from './world/Birds';
 import { Weather } from './sky/Weather';
 import { AudioSystem } from './audio/Audio';
+import { Haunting } from './horror/Haunting';
 import { mark, timeline } from './core/timeline';
 
 /** diagnostics: ?skip=terrain,ocean,oceansim,river,village,lighthouse,veg,canopy leaves those systems out */
@@ -194,7 +195,7 @@ async function boot() {
   await playerLoad;
   mark('character');
   player.place(spot.player[0], spot.player[1], spot.yaw, spot.player[2] ?? 1e9);
-  rig.snapBehind(spot.yaw);
+  rig.snapBehind(spot.yaw, spot.name === 'lighthouse' ? 5.4 : 3.8, spot.name === 'lighthouse' ? 0.025 : 0.1);
 
   // ---- camera override from the URL: cam=orbit | free | x,y,z,tx,ty,tz
   if (params.cam) {
@@ -202,6 +203,11 @@ async function boot() {
     if (parts.length === 6 && parts.every(Number.isFinite)) rig.set({ pos: parts.slice(0, 3), target: parts.slice(3) });
     else rig.set(params.cam);
   }
+
+  // The Keeper and the physical clue trail join before shader priming, so their few materials compile behind the
+  // loading screen rather than on the first sighting or interaction.
+  const haunting = new Haunting(scene, hf, colliders, player, audio);
+  await haunting.load();
 
   engine.setupPost();
   const hud = new Hud(params.hud);
@@ -219,6 +225,7 @@ async function boot() {
     }),
   }, params.debug);
   let photo = false;
+  let booting = true;
   const setPhoto = (on: boolean) => {
     photo = on;
     hud.photo(on);
@@ -278,7 +285,8 @@ async function boot() {
     // (under the canopy the eye also opens up in the gloom of a rain, and by day a camera in the jungle exposes for
     // the shade, about a stop over open ground: the sun flecks burn and the gaps to the sky blow out, as in photos)
     const shadeDay = (1 - tod.night) * (1 - tod.overcast);
-    grade.exposure.value = tod.exposure * (1 + weather.flash * 2.5) * (1 + canopyK * (1.3 * shadeDay + 5.0 * tod.night + 1.4 * tod.overcast)) * (1 - 0.6 * glareK) * ctx.exposureBias;
+    const dread = haunting.update(dt, camera, { night: tod.night, rain: weather.rain }, input.hit('KeyE'), input.hit('Escape'), photo || booting);
+    grade.exposure.value = tod.exposure * (1 + weather.flash * 2.5) * (1 + canopyK * (1.3 * shadeDay + 5.0 * tod.night + 1.4 * tod.overcast)) * (1 - 0.6 * glareK) * (1 - dread * 0.055) * ctx.exposureBias;
     audio.update(dt, camera, { night: tod.night, hour: tod.hour, rain: weather.rain, wind: weather.wind, underwater: camera.position.y < player.waterLevel - 0.05 });
     camera.updateMatrixWorld();
     terrain.update(camera, Q.shadowFar);
@@ -381,10 +389,10 @@ async function boot() {
     viewers().forEach((c, i) => (c.layers.mask = viewMasks[i] ?? 1));
     for (const o of unculled) o.frustumCulled = true;
   };
-  let booting = true;
+  haunting.preparePriming();
   engine.start();
   Object.assign(ctx, {
-    hf, terrain, sky, csm, ocean, spray, player, playerObj: player, cameraRig: rig, input, colliders, veg, kit, village, lighthouse, weather, audio, hud, dbg,
+    hf, terrain, sky, csm, ocean, spray, player, playerObj: player, cameraRig: rig, input, colliders, veg, kit, village, lighthouse, weather, audio, hud, dbg, haunting,
     rts: { transmittance: transmittanceRT, skyView: skyViewRT, cloud: cloudRT },
     dayMinutes: params.dayMinutes,
     isBusy: () => booting || streaming > 0 || assetProgress.pending > assetProgress.done || engine.pipelinesPending > 0,
@@ -442,7 +450,7 @@ async function boot() {
     toSpot: (n: string) => {
       const r = player.toSpot(n);
       const s = SPOTS.find((p) => p.name === n);
-      if (s) rig.snapBehind(s.yaw);
+      if (s) rig.snapBehind(s.yaw, s.name === 'lighthouse' ? 5.4 : 3.8, s.name === 'lighthouse' ? 0.025 : 0.1);
       return r;
     },
     act: (a: string, s: number, yaw?: number) => player.act(input, a, s, yaw, rig.yaw),
@@ -454,6 +462,7 @@ async function boot() {
   // the island so far compiles while the plants and the rock kit are still streaming in
   // (the bar keeps following the downloads meanwhile)
   await prime('Catching the light', undefined, undefined, Number(new URLSearchParams(location.search).get('primeb')) || 14);
+  haunting.finishPriming();
   mark('island primed');
   loading.status('Growing the jungle');
   await Promise.all([plantsReady, kitReady]);

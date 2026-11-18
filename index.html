@@ -3,20 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Island</title>
+    <title>SALTWAKE — The Keeper</title>
     <link rel="icon" href="data:," />
-    <meta name="description" content="An open-world tropical island in the browser: beach, jungle, waterfall, fishing village and a lighthouse on the peak." />
-    <meta property="og:title" content="Island" />
-    <meta property="og:description" content="An open-world tropical island in the browser: beach, jungle, waterfall, fishing village and a lighthouse on the peak." />
-    <meta property="og:url" content="https://starknightt.github.io/island/" />
+    <meta name="description" content="SALTWAKE is a realistic open-world island horror game. Explore a tropical island, follow the keeper's notes, and find what answers from the dark water." />
+    <meta property="og:title" content="SALTWAKE — The Keeper" />
+    <meta property="og:description" content="A realistic open-world island horror game. The island is open. The lighthouse is watching." />
+    <meta property="og:url" content="https://gauravdey-sot-25.github.io/open_world_horror_island_game/" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://starknightt.github.io/island/og/og.jpg" />
+    <meta property="og:image" content="https://gauravdey-sot-25.github.io/open_world_horror_island_game/docs/social-preview.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://starknightt.github.io/island/og/og.jpg" />
-    <link rel="preload" href="/loader/sunrise.avif" as="image" type="image/avif" fetchpriority="high" />
-    <link rel="preload" href="/loader/island-title.woff2" as="font" type="font/woff2" crossorigin />
+    <meta name="twitter:image" content="https://gauravdey-sot-25.github.io/open_world_horror_island_game/docs/social-preview.jpg" />
+    <link rel="preload" href="./loader/sunrise.avif" as="image" type="image/avif" fetchpriority="high" />
+    <link rel="preload" href="./loader/island-title.woff2" as="font" type="font/woff2" crossorigin />
     <style>
-      @font-face { font-family: "Island Title"; src: url("/loader/island-title.woff2") format("woff2"); font-display: swap; }
+      @font-face { font-family: "Island Title"; src: url("./loader/island-title.woff2") format("woff2"); font-display: swap; }
       html, body { margin: 0; height: 100%; background: #0d0a08; overflow: hidden; }
       canvas { display: block; }
       #loading {
@@ -113,18 +113,18 @@
   </head>
   <body>
     <div id="loading">
-      <div class="frame"><img class="still" src="/loader/sunrise.avif" alt="" width="1920" height="1080" fetchpriority="high" /></div>
+      <div class="frame"><img class="still" src="./loader/sunrise.avif" alt="" width="1920" height="1080" fetchpriority="high" /></div>
       <div class="shade"></div>
       <div class="grain"></div>
       <div class="card">
-        <h1>Island</h1>
-        <p class="line">From the reef to the lighthouse, on foot.</p>
+        <h1>Saltwake</h1>
+        <p class="line">The island is open. The lighthouse is watching.</p>
         <div class="progress" id="load-bar" role="progressbar" aria-label="Loading the island" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="fill" id="load-fill"></div></div>
         <div class="status" id="load-status">Setting out</div>
       </div>
       <div class="gpu" id="load-gpu"></div>
     </div>
     <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="./src/main.ts"></script>
   </body>
 </html>

@@ -17,7 +17,7 @@ import * as TSLTyped from 'three/tsl';
 import {
   Fn, abs, cameraPosition, clamp, dot, exp, float, floor, fract, hash, length, log2, max, mix, mx_noise_float,
   normalize, positionView, positionWorld, pow, screenUV, select, smoothstep, sqrt, transformNormalToView,
-  uniform, vec2, vec3, vec4, viewportSharedTexture, attribute, normalView, positionViewDirection, type N,
+  uniform, vec2, vec3, vec4, viewportSharedTexture, attribute, normalView, positionViewDirection, sin, cos, type N,
 } from '../core/tsl';
 import { OceanSim, OCEAN } from './oceanSim';
 import type { Heightfield } from '../world/Heightfield';
@@ -157,6 +157,22 @@ export class Ocean {
       return lagoon.mul(mix(float(1), float(0.55), inReef)).mul(smoothstep(0.0, 5.0, depth)).mul(float(1).add(oceanU.storm.mul(0.4))).mul(float(1).sub(c.shelter.mul(0.85)));
     };
 
+    // A few low, differently directed swells break up the long parallel crests of the spectral mesh. They are small
+    // enough to preserve the FFT sea's scale, and are shared by vertex height and the shading normal.
+    const broadWaves = (xz: N) => {
+      const a = xz.x.mul(0.029).add(xz.y.mul(0.017)).add(oceanU.time.mul(0.31));
+      const b = xz.x.mul(-0.014).add(xz.y.mul(0.034)).sub(oceanU.time.mul(0.23)).add(1.7);
+      const c = xz.x.mul(0.052).add(xz.y.mul(-0.041)).add(oceanU.time.mul(0.61)).add(4.1);
+      const wa = 0.13, wb = 0.075, wc = 0.032;
+      return {
+        eta: sin(a).mul(wa).add(sin(b).mul(wb)).add(sin(c).mul(wc)),
+        slope: vec2(
+          cos(a).mul(wa * 0.029).add(cos(b).mul(wb * -0.014)).add(cos(c).mul(wc * 0.052)),
+          cos(a).mul(wa * 0.017).add(cos(b).mul(wb * 0.034)).add(cos(c).mul(wc * -0.041)),
+        ),
+      };
+    };
+
     /** displacement of the open-sea cascades at xz, faded by pixel footprint */
     const seaDisp = (xz: N, camDist: N) => {
       const camH = max(abs(cameraPosition.y), 1.5);
@@ -178,10 +194,12 @@ export class Ocean {
       const w = waves(c);
       const sw = swash(c, w);
       const seaY = d.y.add(w.eta);
+      const broad = broadWaves(xz);
+      const openWater = smoothstep(8, 34, c.d).mul(float(1).sub(c.shelter.mul(0.55)));
       // up a beach face the sheet takes over from the sea (never below the sea surface); only on low, gentle shores,
       // never up a rock face
       const faceW = smoothstep(-2.5, 0.5, c.s).mul(smoothstep(1.6, 0.9, ground)).mul(smoothstep(0.05, 0.3, c.wb.add(c.wr.mul(0.45)).mul(float(1).sub(c.wc))));
-      const y = max(seaY, mix(seaY, ground.add(sw.sheet), faceW));
+      const y = max(seaY.add(broad.eta.mul(openWater)), mix(seaY, ground.add(sw.sheet), faceW));
       return vec3(xz.x.add(d.x), y, xz.y.add(d.z));
     })();
 
@@ -196,6 +214,8 @@ export class Ocean {
       const column = max(p.y.sub(ground), 0);
       const c = coastAt(hf, xz);
       const damp = damping(c, max(ground.negate(), 0));
+      const broad = broadWaves(xz);
+      const openWater = smoothstep(8, 34, c.d).mul(float(1).sub(c.shelter.mul(0.55)));
       // normal from the cascades' slope maps (fold-aware), footprint faded; the faded slopes go into roughness
       const camH = max(abs(cameraPosition.y), 1.5);
       const foot = camDist.mul(camDist).mul(PIXEL_ANGLE).div(camH);
@@ -215,6 +235,7 @@ export class Ocean {
         lost = lost.add(float(1).sub(keep[i]).mul(sim.slope2[i] * amp2));
       }
       slope = slope.mul(damp).div(float(1).add(jac.mul(damp)).max(0.2));
+      slope = slope.add(broad.slope.mul(openWater));
       lost = lost.mul(damp.mul(damp));
       // the surf: the near-shore wave's slope toward land; up the beach face, the sheet lies on the sand
       const w = waves(c);
@@ -258,7 +279,7 @@ export class Ocean {
       const reefFoam = laceMask(reefAmt.clamp(0, 1), xz, w.n, c.nrm, w.age.mul(0.9));
       // (the island data ends at the world tile's edge and clamps there: no shore surf out in the open ocean beyond it)
       const inTile = smoothstep(1010, 960, max(abs(xz.x), abs(xz.y)));
-      const foam = max(max(max(surfFoam, lip), max(sheetFoam, reefFoam)).mul(inTile), caps).clamp(0, 1);
+      const foam = max(max(max(surfFoam, lip), max(sheetFoam, reefFoam)).mul(inTile), caps.mul(inTile)).clamp(0, 1);
 
       // ---- refraction: the sea bed along the refracted rays, absorbed over the in-water path
       const cosT = sqrt(float(1).sub(float(1).sub(NdotV.mul(NdotV)).div(1.777)));
@@ -281,7 +302,9 @@ export class Ocean {
       // in suspension scatters blue-green (turquoise); past the reef drop-off clear ocean water is navy; bubbles pale
       const lagoon = smoothstep(14, 4, max(ground.negate(), 0));
       // (a squall stirs the sea to slate grey-green)
-      const deep = mix(mix(vec3(0.0026, 0.0145, 0.032), vec3(0.008, 0.075, 0.085), lagoon), vec3(0.011, 0.017, 0.014), oceanU.storm.mul(0.85));
+      const reefColorNoise = mx_noise_float(vec3(xz.mul(0.035), 7.7)).mul(0.2).add(mx_noise_float(vec3(xz.mul(0.091).add(4.2), 2.8)).mul(0.08));
+      const shallow = vec3(0.008, 0.075, 0.085).mul(vec3(float(1).add(reefColorNoise.mul(0.8)), float(1).add(reefColorNoise.mul(1.4)), float(1).add(reefColorNoise.mul(1.8))));
+      const deep = mix(mix(vec3(0.0026, 0.0145, 0.032), shallow, lagoon), vec3(0.011, 0.017, 0.014), oceanU.storm.mul(0.85));
       const inscat = deep.mul(float(1).sub(exp(path.mul(mix(float(-0.12), float(-0.3), lagoon)))));
       const body = mix(inscat, vec3(0.22, 0.33, 0.32), aer.mul(0.55));
 
@@ -321,7 +344,11 @@ export class Ocean {
     m.glint.contrast = shade.contrast;
     m.glint.cover = shade.cover;
     const foamCol = vec3(0.86, 0.88, 0.88);
-    m.colorNode = vec4(mix(shade.body, foamCol, shade.foam), 1);
+    const tileEdge = smoothstep(1010, 960, max(abs(positionWorld.x), abs(positionWorld.z)));
+    const outsideSea = vec3(0.0018, 0.006, 0.014);
+    const waterBody = mix(outsideSea, shade.body, tileEdge);
+    const waterBed = mix(outsideSea, shade.bed, tileEdge);
+    m.colorNode = vec4(mix(waterBody, foamCol, shade.foam), 1);
     m.roughnessNode = shade.rough;
     m.metalnessNode = float(0);
     m.normalNode = transformNormalToView(shade.Nr);
@@ -329,7 +356,12 @@ export class Ocean {
     // bed, lit by the moon or a lamp through the water, stays dim: dark water, not shallows glowing cyan)
     const F = float(0.02).add(float(0.98).mul(pow(float(1).sub(shade.NdotV), 5)));
     const byDay = mix(float(0.22), float(1), smoothstep(-0.08, 0.1, atmo.sunDir.y));
-    m.emissiveNode = select(oceanU.debug.greaterThan(0.5), shade.dbg.mul(oceanU.debug.mul(0.5)), shade.bed.mul(float(1).sub(F)).mul(float(1).sub(shade.foam)).mul(byDay));
+    const dayBed = waterBed.mul(float(1).sub(F)).mul(float(1).sub(shade.foam)).mul(byDay);
+    // Moonless open water stays dark, but a little blue-green body and grazing sheen preserve the near shore and
+    // break the flat black horizon at night.
+    const nightWater = vec3(0.0008, 0.003, 0.009).add(shade.body.mul(0.12)).mul(atmo.night).mul(float(1).sub(shade.foam));
+    const nightSheen = vec3(0.0012, 0.0024, 0.006).mul(atmo.night).mul(F);
+    m.emissiveNode = select(oceanU.debug.greaterThan(0.5), shade.dbg.mul(oceanU.debug.mul(0.5)), dayBed.add(nightWater).add(nightSheen));
     m.opacityNode = float(1);
     return m;
   }

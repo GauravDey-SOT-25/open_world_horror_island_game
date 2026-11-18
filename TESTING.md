@@ -18,7 +18,7 @@ Ports are fixed (`--strictPort`): 5230 dev, 5231 preview. Port 5201 belongs to a
 The harness commands below start the server they need (preview by default, `--dev` for the dev server) if nothing
 answers on its port, and stop it again afterwards; a server you started yourself is reused and left running.
 
-Controls: click to look (pointer lock), WASD move, Shift sprint, Ctrl walk, Space jump, P (or F) photo mode, M mute,
+Controls: click to look (pointer lock), WASD move, Shift sprint, Ctrl walk, Space jump, E examine a nearby note, P (or F) photo mode, M mute,
 F3 debug overlay. Photo mode: the HUD hides, WASD/QE fly the camera, Shift faster, `[` `]` change the lens, P exits.
 Gamepad: left stick move, right stick look, A jump, B or L3 sprint.
 
@@ -91,6 +91,8 @@ Every call is synchronous unless marked async and returns plain JSON-able values
 | `__island.adapter()` | the GPU: `{ name, vendor, architecture, description, backend }` |
 | `__island.timeline()` | load milestones `[{ name, ms }]` in ms since navigation start: `boot`, `heightfield`, `vegetation built`, `character`, `scene ready`, `terrain layers`, `foliage textures`, `rocks`, `first frame` (the loading screen lifts), `ready` |
 | `__island.audio()` | `{ running, muted, layers: { name: { gain, loaded } }, footstepSurface, steps, buffers }`: the AudioContext state, every ambience layer with its current gain (`waves`, `surf`, `wind`, `birds`, `jungle`, `night`, `rain`, `rain_heavy`, `waterfall`, `stream`, `village`, `chickens`, `creak`, `gulls`), the surface of the last footstep and the step count |
+| `__island.presence()` / `__island.clearPresence()` | deterministically place or clear The Keeper for a screenshot or playtest |
+| `__island.horror()` | `{ phase, activeTime, pressure, presenceCount, seenTime, noteCount, nearestNote }` |
 | `__island.player()` | `{ pos, heading, state, speed, surface, waterDepth, weights }`: state is `ground`, `air`, `swim`; `weights` are the active animation clips |
 | `__island.act(action, seconds = 3, yaw?)` | drive the character: `walk`, `run`, `sprint`, `jump`, `swim`, `idle`, for `seconds`, heading `yaw` (radians; forward is `(sin yaw, -cos yaw)` in x/z) |
 | `__island.manual(on)` / `__island.step(n = 1, dt = 1/30)` | deterministic stepping for motion clips: with `manual(true)` the loop stops and `step` advances and renders `n` fixed frames |
@@ -104,6 +106,14 @@ Example, an uncurated angle from anywhere:
 ```js
 await __island.stage({ tod: 'sunset', weather: 'clear', camera: { pos: [600, 6, 120], target: [700, 2, 0], fov: 60 } });
 ```
+
+### MacBook Air performance spot-check
+
+The in-game debug overlay is the user-visible, cross-platform check: append `?debug=1` to the game URL or press F3,
+then walk through open beach, dense jungle, village, and the waterfall for at least 30 seconds each. Check the reported
+adapter/backend and frame p95/p99 alongside FPS. A 60 fps target corresponds to a 16.7 ms frame budget; this overlay
+reports what the current Chrome/M2 session achieves and does not imply that the M2 target has already been measured.
+GPU timing may show `n/a` if Chrome does not expose timestamp queries, while frame and CPU timings remain available.
 
 ## Harness commands
 

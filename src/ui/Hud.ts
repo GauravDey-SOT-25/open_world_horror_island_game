@@ -41,7 +41,7 @@ export class Hud {
     this.clock.className = 'clock';
     this.hint = document.createElement('div');
     this.hint.className = 'hint';
-    this.hint.textContent = 'Click to look around · WASD move · Shift sprint · Ctrl walk · Space jump · P photo mode · M mute';
+    this.hint.textContent = 'Click to look around · WASD move · Shift sprint · Ctrl walk · Space jump · E examine · P photo mode · M mute';
     this.badge = document.createElement('div');
     this.badge.className = 'badge';
     this.badge.textContent = 'PHOTO MODE · WASD/QE fly · Shift fast · [ ] lens · P exit';

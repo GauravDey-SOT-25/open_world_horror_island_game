@@ -122,6 +122,16 @@ export function installHarness(ctx: Ctx) {
     audio() {
       return ctx.audio?.state() ?? null;
     },
+    /** deterministic horror QA: spawn The Keeper at the current player's shoulder or clear the encounter */
+    presence() {
+      return ctx.haunting?.forceSighting() ?? false;
+    },
+    clearPresence() {
+      return ctx.haunting?.clear() ?? false;
+    },
+    horror() {
+      return ctx.haunting?.state() ?? null;
+    },
     /** trigger a character action: walk, sprint, jump, swim, idle (with optional duration in s and heading) */
     act(action: string, seconds = 3, yaw?: number) {
       return ctx.player?.act(action, seconds, yaw) ?? null;

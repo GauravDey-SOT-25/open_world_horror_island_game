@@ -5,7 +5,9 @@
 The island world, character, terrain and water systems, authored scenes, and licensed asset pipeline are based on
 [Island by Prasenjit / StarKnightt](https://github.com/StarKnightt/island), used and adapted under its MIT license
 (`LICENSE`). This repository preserves the original asset credits below. New horror systems and changes authored for
-this project are credited to Gaurav Dey.
+this project are credited to Gaurav Dey. The Keeper reuses the credited Rocketbox character mesh with original
+materials and authored animation timing; the driftwood note stands, paper textures, interaction presentation, sighting
+logic and synthesized horror tones are original project work and introduce no additional third-party assets.
 
 Every third-party asset in this repository, with its author, source and license. All of them allow public use and
 redistribution in a public repository: CC0 1.0 (public domain dedication), MIT, or the SIL Open Font License 1.1

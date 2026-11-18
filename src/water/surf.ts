@@ -177,11 +177,16 @@ function setFactor(n: N) {
   return sin(n.mul(TAU / 6.3).add(0.7)).mul(0.25).add(0.72).add(hash(n.add(5000)).sub(0.5).mul(0.22));
 }
 
+/** Multi-scale crest timing variation: prevents the shoreline wash from resolving into evenly spaced ribbons. */
+function crestWobble(along: N) {
+  return mx_noise_float(vec3(along.div(71), surfU.time.div(53), 3.1)).mul(0.27)
+    .add(mx_noise_float(vec3(along.div(27), surfU.time.div(91), 6.2)).mul(0.12));
+}
+
 /** at the waterline: the latest wave's index and the seconds since its front reached it */
 export function waterlinePhase(c: Coast) {
   const P = surfU.period;
-  const wob = mx_noise_float(vec3(c.along.div(90), surfU.time.div(60), 3.1)).mul(0.35);
-  const phi0 = warpedTime().div(P).add(wob);
+  const phi0 = warpedTime().div(P).add(crestWobble(c.along));
   return { n0: floor(phi0), tau0: fract(phi0).mul(P) };
 }
 
@@ -202,8 +207,7 @@ export function waves(c: Coast): Waves {
   const P = surfU.period;
   const tw = warpedTime();
   const T = travel(c.d, 0.27, 0.021, 170, 9).mul(c.wb).add(travel(c.d, 0.55, 0.11, 107, 11).mul(c.wr)).add(travel(c.d, 5.15, 0.26, 27, 11).mul(c.wc));
-  const wob = mx_noise_float(vec3(c.along.div(90), surfU.time.div(60), 3.1)).mul(0.35);
-  const phi = tw.add(T).div(P).add(wob);
+  const phi = tw.add(T).div(P).add(crestWobble(c.along));
   const n = floor(phi);
   const f = fract(phi);
   const age = f.mul(P);

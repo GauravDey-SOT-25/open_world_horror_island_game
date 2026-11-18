@@ -229,14 +229,14 @@ export class Lighthouse {
     this.lamp.position.copy(this.lampPos);
     this.group.add(this.lamp);
     const lampMat = new THREE.MeshBasicNodeMaterial();
-    lampMat.colorNode = vec3(1.0, 0.84, 0.58).mul(lighthouseU.on.mul(220).add(0.6));
+    lampMat.colorNode = vec3(1.0, 0.84, 0.58).mul(lighthouseU.on.mul(52).add(0.6));
     const bulb = new THREE.Mesh(new THREE.SphereGeometry(0.2, 16, 10), lampMat);
     bulb.position.copy(this.lampPos);
     bulb.castShadow = false;
     this.group.add(bulb);
     // two beams: long cones, additive, fading along their length and at the edges, seen only in haze
-    const coneLen = 900;
-    const cone = new THREE.ConeGeometry(60, coneLen, 24, 1, true);
+    const coneLen = 820;
+    const cone = new THREE.ConeGeometry(38, coneLen, 24, 1, true);
     cone.translate(0, -coneLen / 2, 0);
     cone.rotateZ(Math.PI / 2);
     const bm = new THREE.MeshBasicNodeMaterial();
@@ -258,17 +258,18 @@ export class Lighthouse {
     const sRay = max(b.mul(e).sub(dd).div(den), 0);
     const tAx = e.add(b.mul(sRay)).max(0);
     const sep = length(cameraPosition.add(ray.mul(sRay)).sub(lamp.add(axis.mul(tAx))));
-    const r = max(tAx.mul(0.035), 0.6);
+    // a narrow shaft: the previous broad bound let the haze shader fill a large additive wedge at night
+    const r = max(tAx.mul(0.019), 0.45);
     const camT = e, camR = length(w0.sub(axis.mul(e)));
     const camInside = camT.greaterThan(0).and(camR.lessThan(camT.mul(60 / coneLen)));
     const side = select(frontFacing, float(1), select(camInside, float(1), float(0)));
     const profile = exp(sep.mul(sep).div(r.mul(r)).mul(-4));
     const sinV = sqrt(den).max(0.2);
-    const phase = float(1).add(pow(max(b.negate(), 0), 12).mul(4));
+    const phase = float(1).add(pow(max(b.negate(), 0), 10).mul(2.2));
     const fade = exp(tAx.div(-380)).mul(smoothstep(0, 6, tAx));
-    const k = profile.div(r.mul(sinV)).mul(phase).mul(fade).mul(side).min(2);
-    // (tropical night air is humid: the beams read even on a clear night, more in haze and rain)
-    bm.colorNode = vec4(vec3(1.0, 0.86, 0.62).mul(k).mul(0.55).mul(lighthouseU.on).mul(float(0.9).add(min(atmo.mist.mul(14000), 8))), 1);
+    const k = profile.div(r.mul(sinV)).mul(phase).mul(fade).mul(side).min(0.9);
+    // A visible but restrained shaft in the humid air; haze adds at most a small lift instead of a clipped white fan.
+    bm.colorNode = vec4(vec3(1.0, 0.86, 0.62).mul(k).mul(0.24).mul(lighthouseU.on).mul(float(0.52).add(min(atmo.mist.mul(1100), 0.75))), 1);
     this.beam = new THREE.Mesh(cone, bm);
     const beam2 = new THREE.Mesh(cone, bm);
     beam2.rotation.y = Math.PI;
@@ -664,6 +665,6 @@ function lensMaterial() {
   m.roughnessNode = float(0.08);
   m.metalnessNode = float(0.6);
   // (the lit optic is a hard point far brighter than anything else at night: it blooms)
-  m.emissiveNode = vec3(1.0, 0.8, 0.5).mul(lighthouseU.on.mul(60));
+  m.emissiveNode = vec3(1.0, 0.8, 0.5).mul(lighthouseU.on.mul(28));
   return m;
 }

@@ -39,6 +39,8 @@ export class AudioSystem {
   lastStepAt = 0;
   private steps = 0;
   private started = false;
+  private presenceLevel = 0;
+  private presenceGain: GainNode | null = null;
   readonly fallsPos = new THREE.Vector3();
 
   constructor(private hf: Heightfield) {}
@@ -56,6 +58,29 @@ export class AudioSystem {
     comp.ratio.value = 3;
     this.bus = this.ctx.createGain();
     this.bus.connect(comp).connect(this.master).connect(this.ctx.destination);
+    // A nearly sub-audible low pressure tone sits under a sighting. It is synthesized locally, needs no asset fetch,
+    // and follows the same master mute and compressor as every other sound.
+    const pressure = this.ctx.createGain();
+    pressure.gain.value = 0;
+    const lowpass = this.ctx.createBiquadFilter();
+    lowpass.type = 'lowpass';
+    lowpass.frequency.value = 190;
+    lowpass.Q.value = 0.6;
+    const low = this.ctx.createOscillator();
+    low.type = 'sine';
+    low.frequency.value = 41;
+    const upper = this.ctx.createOscillator();
+    upper.type = 'triangle';
+    upper.frequency.value = 58.2;
+    const upperLevel = this.ctx.createGain();
+    upperLevel.gain.value = 0.19;
+    low.connect(lowpass);
+    upper.connect(upperLevel).connect(lowpass);
+    lowpass.connect(pressure).connect(this.bus);
+    low.start();
+    upper.start();
+    this.presenceGain = pressure;
+    pressure.gain.setTargetAtTime(this.presenceLevel * 0.055, this.ctx.currentTime, 0.8);
     const L = (name: string, files: string[], max: number, pos?: THREE.Vector3) => {
       const gain = this.ctx!.createGain();
       gain.gain.value = 0;
@@ -165,8 +190,8 @@ export class AudioSystem {
     set('wind', 0.25 + 0.5 * THREE.MathUtils.smoothstep(height, 10, 180) + 0.45 * w.wind - forest * 0.25);
     // the dawn chorus: the birds wake before the light does and are loudest around sunrise; a smaller one at dusk
     const chorus = Math.exp(-(((w.hour - 6.0) / 0.7) ** 2)) + 0.35 * Math.exp(-(((w.hour - 18.1) / 0.5) ** 2));
-    set('birds', Math.min(1, day + chorus) * (0.35 + 0.65 * forest) * (1 - w.rain * 0.8) * (1 - THREE.MathUtils.smoothstep(height, 150, 230) * 0.7));
-    set('jungle', day * forest * (1 - w.rain * 0.6));
+    set('birds', Math.min(1, day + chorus) * (0.35 + 0.65 * forest) * (1 - w.rain * 0.8) * (1 - THREE.MathUtils.smoothstep(height, 150, 230) * 0.7) * (1 - this.presenceLevel * 0.62));
+    set('jungle', day * forest * (1 - w.rain * 0.6) * (1 - this.presenceLevel * 0.16));
     set('night', w.night * (0.4 + 0.6 * Math.max(forest, hf.grass(p.x, p.z))) * (1 - w.rain * 0.5));
     // rain sounds of what it falls on: under the canopy the leaves take the open hiss and give a dense patter and
     // drips (the heavy layer) even in a light shower; over the sea and the sand it hisses
@@ -243,10 +268,57 @@ export class AudioSystem {
     this.play(n, 0.6 + strength * 0.4, 0.85 + Math.random() * 0.2, delay, undefined, 900 + strength * 2500);
   }
 
+  setPresence(level: number) {
+    this.presenceLevel = THREE.MathUtils.clamp(level, 0, 1);
+    if (this.ctx && this.presenceGain) this.presenceGain.gain.setTargetAtTime(this.muted ? 0 : this.presenceLevel * 0.055, this.ctx.currentTime, 0.8);
+  }
+
+  /** A distant, low metallic swell with a long tail; spatialized at the figure, never a loud startle. */
+  presenceCue(pos: THREE.Vector3, intensity: number) {
+    const ctx = this.ctx;
+    if (!ctx || this.muted) return;
+    const now = ctx.currentTime;
+    const out = ctx.createGain();
+    const filter = ctx.createBiquadFilter();
+    const pan = ctx.createPanner();
+    filter.type = 'lowpass';
+    filter.frequency.value = 430;
+    filter.Q.value = 0.9;
+    pan.panningModel = 'HRTF';
+    pan.distanceModel = 'inverse';
+    pan.refDistance = 8;
+    pan.rolloffFactor = 0.8;
+    pan.positionX.value = pos.x;
+    pan.positionY.value = pos.y + 1.2;
+    pan.positionZ.value = pos.z;
+    out.gain.setValueAtTime(0.0001, now);
+    out.gain.exponentialRampToValueAtTime(0.045 * THREE.MathUtils.clamp(intensity, 0, 1), now + 0.8);
+    out.gain.exponentialRampToValueAtTime(0.0001, now + 4.2);
+    filter.connect(out).connect(pan).connect(this.bus);
+    const partials = [
+      { frequency: 82, type: 'sine' as OscillatorType, gain: 1 },
+      { frequency: 119, type: 'triangle' as OscillatorType, gain: 0.22 },
+    ];
+    const nodes = partials.map((part) => {
+      const osc = ctx.createOscillator();
+      const level = ctx.createGain();
+      osc.type = part.type;
+      osc.frequency.setValueAtTime(part.frequency, now);
+      osc.frequency.exponentialRampToValueAtTime(part.frequency * 0.59, now + 3.8);
+      level.gain.value = part.gain;
+      osc.connect(level).connect(filter);
+      osc.start(now);
+      osc.stop(now + 4.3);
+      return osc;
+    });
+    void nodes;
+  }
+
   state() {
     return {
       running: this.ctx?.state ?? 'none',
       muted: this.muted,
+      presence: +this.presenceLevel.toFixed(3),
       layers: Object.fromEntries(this.layers.map((l) => [l.name, { gain: +l.level.toFixed(3), loaded: !!l.src }])),
       footstepSurface: this.lastSurface,
       steps: this.steps,

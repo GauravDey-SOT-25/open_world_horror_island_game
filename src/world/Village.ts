@@ -584,9 +584,9 @@ export class Village {
       const size = mix(float(0.6), float(5.5), pow(age, 0.7));
       smoke.scaleNode = vec2(size, size);
       const r = length(uv().sub(0.5)).mul(2);
-      const a = smoothstep(1.0, 0.0, r).pow(1.8).mul(smoothstep(0.0, 0.08, age)).mul(pow(float(1).sub(age), 1.5)).mul(0.22);
+      const a = smoothstep(1.0, 0.0, r).pow(1.8).mul(smoothstep(0.0, 0.08, age)).mul(pow(float(1).sub(age), 1.5)).mul(0.26);
       // grey-blue wood smoke, lit a little from below by the fire at night
-      smoke.colorNode = vec4(mix(vec3(0.5, 0.52, 0.55), vec3(0.9, 0.5, 0.25), L.mul(float(1).sub(age).pow(3)).mul(0.6)).mul(0.06), a);
+      smoke.colorNode = vec4(mix(vec3(0.5, 0.52, 0.55), vec3(0.9, 0.5, 0.25), L.mul(float(1).sub(age).pow(3)).mul(0.6)).mul(0.12), a);
       smoke.opacityNode = a;
     }
     const smk = new THREE.Sprite(smoke);
