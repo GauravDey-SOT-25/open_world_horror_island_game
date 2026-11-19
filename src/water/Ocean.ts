@@ -274,7 +274,7 @@ export class Ocean {
       const seawardD = (dist: number) => max(heightAt(xz.sub(c.nrm.mul(dist))).negate(), 0);
       const onReef = smoothstep(105, 175, reefCrestDist(c.along)).mul(smoothstep(30, 55, c.d)).mul(smoothstep(1.8, 0.9, depthH));
       const reefEdge = max(max(smoothstep(2.0, 5.0, seawardD(7)), smoothstep(2.0, 5.0, seawardD(18)).mul(0.65)), smoothstep(2.0, 5.0, seawardD(34)).mul(0.3));
-      const crestVary = mx_noise_float(vec3(c.along.div(31), w.n.mul(0.77), 4.4)).mul(0.35).add(0.8);
+      const crestVary = mx_noise_float(vec3(c.along.div(24), w.n.mul(0.77), 4.4)).mul(0.42).add(0.78);
       const reefAmt = onReef.mul(reefEdge).mul(exp(w.age.div(-1.6)).mul(0.95).add(exp(w.age.div(-6)).mul(0.4))).mul(crestVary);
       const reefFoam = laceMask(reefAmt.clamp(0, 1), xz, w.n, c.nrm, w.age.mul(0.9));
       // (the island data ends at the world tile's edge and clamps there: no shore surf out in the open ocean beyond it)

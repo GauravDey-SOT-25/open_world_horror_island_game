@@ -43,7 +43,7 @@ const PRESETS: ClipDef[] = [
   { name: 'sprint_beach', spot: 'beach', tod: 'noon', weather: 'clear', action: 'sprint', camera: 'follow', yaw: 3.2 },
   { name: 'jump_beach', spot: 'beach', tod: 'noon', weather: 'clear', action: 'jump', camera: 'follow', yaw: 0.0, seconds: 2.5 },
   { name: 'swim_pool', spot: 'waterfall', tod: 'noon', weather: 'clear', action: 'swim', camera: 'follow', yaw: -1.6 },
-  { name: 'waves_beach', spot: 'beach', tod: 'sunrise', weather: 'clear', action: 'idle', camera: 'shot' },
+  { name: 'waves_beach', spot: 'beach', tod: 'sunrise', weather: 'clear', action: 'idle', camera: 'shot', seconds: 8, fps: 24 },
   { name: 'foliage_jungle', spot: 'jungle', tod: 'noon', weather: 'clear', action: 'idle', camera: 'shot' },
   { name: 'rain_village', spot: 'village', tod: '14.5', weather: 'rain', action: 'walk', camera: 'follow', yaw: 3.0 },
 ];
@@ -92,6 +92,7 @@ try {
       api.manual(false);
     });
     const mp4 = join(outRoot, `${c.name}.mp4`);
+    rmSync(mp4, { force: true });
     const ff = spawnSync('ffmpeg', ['-v', 'error', '-y', '-framerate', String(rate), '-i', join(dir, `frame_%04d.${ext}`), '-vf', 'scale=trunc(iw/2)*2:trunc(ih/2)*2', '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', '18', '-threads', '4', mp4]);
     let encoded = ff.status === 0 && existsSync(mp4);
     if (!encoded && process.platform === 'darwin') {

@@ -179,8 +179,8 @@ function setFactor(n: N) {
 
 /** Multi-scale crest timing variation: makes each set bend and bunch along the coast instead of reading as ribbons. */
 function crestWobble(along: N) {
-  return mx_noise_float(vec3(along.div(118), surfU.time.div(47), 3.1)).mul(0.56)
-    .add(mx_noise_float(vec3(along.div(43), surfU.time.div(73), 6.2)).mul(0.29));
+  return mx_noise_float(vec3(along.div(118), surfU.time.div(43), 3.1)).mul(0.9)
+    .add(mx_noise_float(vec3(along.div(39), surfU.time.div(61), 6.2)).mul(0.55));
 }
 
 /** at the waterline: the latest wave's index and the seconds since its front reached it */
@@ -359,7 +359,7 @@ export function laceMask(amount: N, xz: N, n: N, nrm: N, drift: N, stretch: N = 
   const t2 = texture(laceTex, q.div(LACE_M * 2.7).add(0.37));
   const pat = t1.r.mul(0.62).add(t2.a.mul(0.38));
   const cover = amount.mul(mix(float(0.7), float(1.25), t2.b));
-  return smoothstep(-0.055, 0.22, pat.sub(float(1.04).sub(cover.mul(1.12))));
+  return smoothstep(-0.1, 0.34, pat.sub(float(1.04).sub(cover.mul(1.12))));
 }
 
 /** fine bubbly foam (the swash lip, stranded lines): a granular threshold */

@@ -116,9 +116,37 @@ beach, jungle, falls, village, cliffs, and lighthouse.
   (.45). Frame p95 was 17.3–17.5 ms and p99 17.7 ms; GPU timestamp queries remain unavailable. Captures used the
   built-in screen with an emulated 1920x1080 viewport; no second display was connected.
 
-## Awaiting Round 5 critic
+## Round 5 critic review
 
-- The next independent review should compare all six locations across sunrise, noon, sunset, night, and rain, inspect
-  the two motion clips, and record specific remaining differences beside real tropical photography and AAA references.
-- After the review loop finishes, make the OG image from the strongest actual game capture and set the GitHub
-  repository social preview. The final response also needs five recording camera spots.
+- The separate Round 5 critic scored the game 1.35/3 and documented concrete gaps across the 30-state matrix in
+  `artifacts/critique/round-05.md`. The highest priority was water: shore foam still read as parallel bands, and the
+  waterfall pool looked opaque and carried decorative ring patterns.
+- Other repeated gaps were the broad waterfall curtain and bright impact patch, rounded canopy repetition, slab-like
+  cliff seams, and the lighthouse beam appearing as a translucent wedge. The full report includes reference boards,
+  state-by-state notes, and the ranked repair list.
+
+## Round 6 builder pass
+
+- Increased two-scale alongshore crest timing variation and softened the foam lace threshold. A third noise scale was
+  tested and removed after the production low-preset benchmark showed a clear performance regression.
+- Reduced plunge-pool absorption, made the deep water blue-green, warped and weakened the concentric impact ripples,
+  reduced the radial foam contribution, and opened more gaps through the waterfall's strands.
+- Updated the `waves_beach` clip to eight seconds at 24 fps and made `pnpm clip` replace an existing MP4 before
+  encoding, so a rerun cleanly refreshes the evidence.
+- `pnpm build` passes. The final capture run produced all 30 location/condition views plus note-open and first-Keeper
+  checks; the tide note still opens and closes, and the Keeper remains visible. Six comparison strips are in
+  `artifacts/critique/round-06/`.
+- The final review clips are eight seconds at 24 fps in `artifacts/clips/round-06/`: shore waves and swimming in the
+  plunge pool. Both use the final two-scale shader build.
+- Production low-preset auto-pacing ran at 59.1–60 fps in the selected waterfall/lighthouse states, at render scales
+  0.40–0.45. Frame p95 was 17.5–17.6 ms; one waterfall/rain p99 reached 33.3 ms. GPU timestamp queries were
+  unavailable. The run used ANGLE/WebGPU on Apple Metal 3 in a 1920×1080 emulated viewport because only the laptop
+  display was connected; this is not a second-screen capture.
+- Remaining visible water gaps include the waterfall's bright impact patch and graphic pool streaks. The Round 6
+  critic should decide which gaps still matter most before the next builder pass.
+
+## Remaining release tasks
+
+- Continue the sequential Builder/Critic loop until no meaningful viewer-facing gap remains or Round 8 is complete.
+- Then make the OG image from the strongest actual game capture, set the GitHub repository social preview, and give
+  the five best camera spots for recording.

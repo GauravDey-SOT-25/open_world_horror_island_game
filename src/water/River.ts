@@ -205,10 +205,10 @@ export class River {
     // rings running out from the impact, and a short steep chop in the boil
     const dirR = normalize(rel.add(vec2(0.001, 0)));
     // (trains of rings of uneven strength, their fronts warped by the boil, reaching across the pool)
-    const warp = mx_noise_float(vec3(rel.x.mul(0.35), rel.y.mul(0.35), t.mul(0.21))).mul(2.2);
+    const warp = mx_noise_float(vec3(rel.x.mul(0.35), rel.y.mul(0.35), t.mul(0.21))).mul(3.4);
     const swell = sin(t.mul(0.83)).mul(sin(t.mul(0.31).add(2.0))).mul(0.35).add(0.75);
     const ring = sin(rImp.mul(2.3).sub(t.mul(5.5)).add(warp)).mul(0.6).add(sin(rImp.mul(4.1).sub(t.mul(8.3)).add(1.3).add(warp.mul(0.7))).mul(0.4));
-    slope = slope.add(dirR.mul(ring.mul(swell).mul(exp(rImp.mul(-0.085))).mul(smoothstep(0.5, 3.0, rImp)).mul(0.36)));
+    slope = slope.add(dirR.mul(ring.mul(swell).mul(exp(rImp.mul(-0.085))).mul(smoothstep(0.5, 3.0, rImp)).mul(0.3)));
     const boil = float(1).sub(smoothstep(1.0, 8.0, rImp));
     const b1 = texture(laceTex, q.div(2.1).add(vec2(t.mul(0.37), t.mul(-0.29))));
     const b2 = texture(laceTex, q.div(1.3).sub(vec2(t.mul(0.51), t.mul(0.43))).add(0.6));
@@ -224,11 +224,11 @@ export class River {
     const dEff = thick.mul(mix(float(0.65), float(1.4), bedN)).mul(1.5);
     // (rain washes silt in: turbid tan-brown)
     const turbid = wetness.rain.mul(0.85);
-    const sigma = mix(vec3(0.95, 0.5, 0.58), vec3(1.25, 1.15, 1.3), turbid);
+    const sigma = mix(vec3(0.42, 0.14, 0.075), vec3(0.82, 0.4, 0.26), turbid);
     const T = exp(sigma.negate().mul(min(dEff, 30)));
     const bed = behind.mul(mix(float(0.72), float(1.12), bedN)).mul(vec3(0.92, 1.0, 0.94));
     // (clear tea-green over dark basalt: little light comes back out of the deep water)
-    const jade = mix(vec3(0.014, 0.034, 0.022), vec3(0.05, 0.04, 0.024), turbid);
+    const jade = mix(vec3(0.008, 0.048, 0.061), vec3(0.042, 0.039, 0.028), turbid);
     // ---- foam: white where the falls churn the water and in streaks drifting off toward the outflow, the rest clear
     // (cover 1 is nearly solid, ~0.5 thin threads, below ~0.15 none: a scatter of cover over the whole pool saturated
     // the threshold and turned it into a white sheet)
@@ -249,11 +249,11 @@ export class River {
     const r1 = texture(laceTex, q.sub(dirR.mul(ph1.mul(7))).div(6.5)).r;
     const r2 = texture(laceTex, q.sub(dirR.mul(ph2.mul(7))).div(6.5).add(0.5)).r;
     const radial = r1.mul(float(1).sub(abs(ph1.mul(2).sub(1)))).add(r2.mul(float(1).sub(abs(ph2.mul(2).sub(1)))));
-    const pat = mix(l1.a, radial, smoothstep(1.5, 5.0, rImp).mul(smoothstep(13, 7, rImp)).mul(0.3));
+    const pat = mix(l1.a, radial, smoothstep(1.5, 5.0, rImp).mul(smoothstep(13, 7, rImp)).mul(0.14));
     // (thin foam is a lace of bubbles with the water showing through, not a white line)
     const holes = smoothstep(0.32, 0.62, texture(laceTex, q.sub(drift).div(1.5).add(0.71)).g);
-    let foam: N = smoothstep(0, 0.2, pat.sub(float(0.95).sub(cover.mul(mix(float(0.85), float(1.2), l1.b)).mul(0.7))))
-      .mul(mix(float(0.25), float(1), holes));
+    let foam: N = smoothstep(-0.035, 0.24, pat.sub(float(0.95).sub(cover.mul(mix(float(0.85), float(1.2), l1.b)).mul(0.7))))
+      .mul(mix(float(0.22), float(0.82), holes));
     // the boil itself, as wide as the falling water: solid where it lands, breaking into churning clumps a few metres out
     const rCore = length(vec2(ra, max(abs(rc).sub(this.impactW * 0.3), 0)));
     const churn = texture(laceTex, q.div(1.6).add(vec2(t.mul(0.9), t.mul(-0.7)))).g;
@@ -294,7 +294,7 @@ export class River {
     // (foam takes about what a white surface under the half of the sky the gorge leaves it gets: at twice that it
     // glowed brighter than the sky gap in the afternoon shade)
     const skyE = varying(whiteSky()).mul(mix(float(0.85), float(1.1), foam));
-    const water = mix(jade.mul(float(1).sub(T)), vec3(0.07, 0.11, 0.095), aerated.mul(float(1).sub(turbid)));
+    const water = mix(jade.mul(float(1).sub(T)), vec3(0.045, 0.12, 0.14), aerated.mul(float(1).sub(turbid)));
     const diffuse = mix(water, vec3(0.8, 0.83, 0.81), foam);
     m.colorNode = vec4(diffuse, 1);
     m.roughnessNode = mix(float(0.05), float(0.75), foam);
@@ -487,9 +487,9 @@ export class River {
     // fine strands: narrow across, long along the flow
     // (thin bright ridges where the noise crosses zero: the white threads of aerated water)
     const ridges = clamp(float(1).sub(fine.abs().mul(2.2)), 0, 1).mul(0.6).add(clamp(float(1).sub(fine2.abs().mul(2.5)), 0, 1).mul(0.4));
-    const dens = float(0.5).add(fine.mul(0.14)).add(s1.mul(0.3)).add(s2.mul(0.16)).add(lumps.mul(aer).mul(0.32)).add(surge.mul(0.16)).add(clumps.mul(0.22));
-    const strandCoverage = smoothstep(0.15, 0.7, dens).mul(0.54)
-      .add(ridges.mul(0.28)).add(smoothstep(0.12, 0.42, clumps).mul(0.18)).clamp(0, 1);
+    const dens = float(0.4).add(fine.mul(0.14)).add(s1.mul(0.3)).add(s2.mul(0.16)).add(lumps.mul(aer).mul(0.32)).add(surge.mul(0.16)).add(clumps.mul(0.22));
+    const strandCoverage = smoothstep(0.12, 0.68, dens).mul(0.5)
+      .add(ridges.mul(0.34)).add(smoothstep(0.12, 0.42, clumps).mul(0.16)).clamp(0, 1);
     if (veil) {
       // the veil: separate clumps and strands in front of the body, more of them lower down
       const clump = smoothstep(0.3, 0.7, lumps.mul(0.5).add(s1.mul(0.25)).add(clumps.mul(0.45)).add(U.y.mul(0.45)));
@@ -498,12 +498,12 @@ export class River {
       // (a falls this size is a thick white column: see-through only over the lip and at its frayed sides)
       // Keep the core opaque enough to read as weight, while the lace threshold lets irregular dark gaps and narrow
       // white filaments break up the face at every quality setting instead of averaging into a rectangle.
-      const bodyAlpha = clamp(mix(float(0.18), strandCoverage.mul(0.9).add(core.mul(0.1)), aer), 0.08, 0.9);
+      const bodyAlpha = clamp(mix(float(0.18), strandCoverage.mul(0.83).add(core.mul(0.08)), aer), 0.06, 0.84);
       alpha = bodyAlpha.mul(fray).mul(smoothstep(1.0, 0.93, U.y)).mul(lipCut);
     }
     // colour: the glassy tongue is green-dark water; the body's thick strands white with a bright core, the thin water
     // between them and at the sides grey (the wet rock shows through), the clumps in front whitest
-    const strands = clamp(smoothstep(0.15, 0.7, dens).add(core.mul(0.6)).add(clumps.mul(0.3)).add(ridges.sub(0.45).mul(0.7).mul(aer)), 0, 1);
+    const strands = clamp(smoothstep(0.12, 0.68, dens).add(core.mul(0.6)).add(clumps.mul(0.3)).add(ridges.sub(0.45).mul(0.7).mul(aer)), 0, 1);
     const white = mix(vec3(0.42, 0.46, 0.45), vec3(0.93, 0.95, 0.95), veil ? float(0.95) : strands);
     const glassy = vec3(0.07, 0.11, 0.09);
     // (a low sun reaches the falls only through the gaps in the jungle and over the gorge's rim)

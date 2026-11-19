@@ -118,8 +118,8 @@ reports what the current Chrome/M2 session achieves and does not imply that the 
 GPU timing may show `n/a` if Chrome does not expose timestamp queries, while frame and CPU timings remain available.
 
 ## Harness commands
-Motion clips default to `artifacts/clips/<round>/`. For example, `pnpm clip --round round-05 --preset waves_beach`
-records four seconds of animated shore; pass `--out <directory>` to choose another local output directory. The
+Motion clips default to `artifacts/clips/<round>/`. For example, `pnpm clip --round round-06 --preset waves_beach`
+records eight seconds of animated shore at 24 fps; pass `--out <directory>` to choose another local output directory. The
 encoder uses ffmpeg when installed and macOS AVFoundation otherwise; source frames are removed after a successful
 encode unless `--keep-frames` is passed.
 
