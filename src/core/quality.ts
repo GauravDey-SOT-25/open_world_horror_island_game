@@ -1,6 +1,6 @@
 /**
- * Graphics presets. High is the look and budget the game is tuned to (RTX 4060 at 1920x1080, 60 fps with headroom).
- * The preset is picked from the GPU's name unless ?quality= says otherwise; automated runs (?test=1) use High.
+ * Graphics presets. High preserves the full RTX-class look; low is the safe baseline for integrated/unknown GPUs.
+ * The preset is picked from the GPU's name unless ?quality= says otherwise; automated captures (?test=1) use High.
  */
 import { params } from './params';
 
@@ -33,7 +33,7 @@ export interface Knobs {
 }
 
 export const TABLE: Record<Preset, Knobs> = {
-  low: { renderScale: 0.7, shadowMap: 1024, shadowMid: 1024, shadowFarMap: 1024, cascades: 2, shadowFar: 140, ao: false, aoScale: 0.5, taa: true, bloom: true, density: 0.45, grassFar: 28, lodScale: 0.6, oceanSegments: 128, cloudSteps: 8, rainParticles: 4000 },
+  low: { renderScale: 0.5, shadowMap: 512, shadowMid: 512, shadowFarMap: 512, cascades: 1, shadowFar: 100, ao: false, aoScale: 0.5, taa: true, bloom: false, density: 0.45, grassFar: 28, lodScale: 0.6, oceanSegments: 128, cloudSteps: 8, rainParticles: 4000 },
   medium: { renderScale: 0.85, shadowMap: 2048, shadowMid: 1024, shadowFarMap: 1024, cascades: 3, shadowFar: 260, ao: true, aoScale: 0.5, taa: true, bloom: true, density: 0.7, grassFar: 42, lodScale: 0.8, oceanSegments: 192, cloudSteps: 12, rainParticles: 8000 },
   high: { renderScale: 1, shadowMap: 2048, shadowMid: 2048, shadowFarMap: 1024, cascades: 3, shadowFar: 380, ao: true, aoScale: 0.5, taa: true, bloom: true, density: 1, grassFar: 60, lodScale: 1, oceanSegments: 256, cloudSteps: 16, rainParticles: 14000 },
   ultra: { renderScale: 1, shadowMap: 4096, shadowMid: 4096, shadowFarMap: 2048, cascades: 4, shadowFar: 520, ao: true, aoScale: 1, taa: true, bloom: true, density: 1.3, grassFar: 85, lodScale: 1.35, oceanSegments: 320, cloudSteps: 24, rainParticles: 20000 },
@@ -65,8 +65,9 @@ function guess(name: string): Preset {
   if (/rtx\s*(40[7-9]0|50[7-9]0|30[8-9]0)/.test(n)) return 'ultra';
   if (/rtx|rx\s*(6[6-9]|7[6-9])\d\d|arc\(tm\) a7/.test(n)) return 'high';
   if (/gtx|rx\s*\d{3,4}/.test(n)) return 'medium';
-  if (/intel|radeon\(tm\) graphics|vega|apple m1|adreno|mali/.test(n)) return 'low';
-  return 'high';
+  if (/intel|radeon\(tm\) graphics|vega|apple m[1-9]|m[1-9] pro|m[1-9] max|m[1-9] ultra|adreno|mali|angle/.test(n)) return 'low';
+  // Unknown renderer names (Chrome can expose only ANGLE) must not silently select High on an integrated GPU.
+  return 'low';
 }
 
 export const gpuName = cleanGpuName(webglRendererName());

@@ -89,6 +89,11 @@ export class Engine {
   /** frozen world time for deterministic captures (waves, wind, clouds); null = running */
   frozenTime: number | null = null;
   renderScale = Q.renderScale;
+  /** Low-end hardware trades a little render resolution for even frame pacing in dense scenes. */
+  private readonly adaptiveResolution = preset === 'low' && params.fps === 'auto' && !params.test;
+  private adaptiveSamples: number[] = [];
+  private adaptiveCpuSamples: number[] = [];
+  private adaptiveStableWindows = 0;
   /** capture (?accum=n): run before each extra render of a frame, to re-seed the per-frame dithers */
   readonly onSubframe: (() => void)[] = [];
   /** capture: renders averaged into each stepped frame (1 = one plain render) */
@@ -223,6 +228,30 @@ export class Engine {
   setRenderScale(s: number) {
     this.renderScale = s;
     this.resize();
+  }
+
+  /** Keep low preset near 60 fps without lowering the whole island to its worst-case resolution. */
+  private adaptResolution(interval: number, cpu: number) {
+    if (!this.adaptiveResolution) return;
+    const budget = 1000 / Math.min(this.refreshHz, 60);
+    this.adaptiveSamples.push(this.targetFps < 60 || interval > budget * 1.45 || cpu > budget * 0.92 ? 1 : 0);
+    this.adaptiveCpuSamples.push(cpu);
+    if (this.adaptiveSamples.length < 45) return;
+    const late = this.adaptiveSamples.reduce((sum, sample) => sum + sample, 0);
+    const cpuAvg = this.adaptiveCpuSamples.reduce((sum, sample) => sum + sample, 0) / this.adaptiveCpuSamples.length;
+    this.adaptiveSamples.length = 0;
+    this.adaptiveCpuSamples.length = 0;
+    if (late >= 3 && this.renderScale > 0.4) {
+      this.setRenderScale(Math.max(0.4, Math.round((this.renderScale - 0.05) * 1000) / 1000));
+      this.adaptiveStableWindows = 0;
+    } else if (late <= 1 && cpuAvg < budget * 0.78) {
+      this.adaptiveStableWindows++;
+      // Recover more slowly than we lower resolution, so a dense canopy edge cannot make the scale oscillate.
+      if (this.adaptiveStableWindows >= 10 && this.renderScale < Q.renderScale) {
+        this.setRenderScale(Math.min(Q.renderScale, Math.round((this.renderScale + 0.025) * 1000) / 1000));
+        this.adaptiveStableWindows = 0;
+      }
+    } else this.adaptiveStableWindows = 0;
   }
 
   /** the post chain: scene (HDR, MRT normal + velocity) -> GTAO -> TRAA -> bloom -> exposure -> AgX -> grade */
@@ -425,6 +454,7 @@ export class Engine {
       const cpu = performance.now() - t0;
       this.push(this.wall, interval);
       this.push(this.cpu, cpu);
+      this.adaptResolution(interval, cpu);
       if (this.capMode === 'auto' && this.divisor > 0) this.pace(interval, cpu, now);
       if (params.gpuTiming) this.resolveGpu();
     });

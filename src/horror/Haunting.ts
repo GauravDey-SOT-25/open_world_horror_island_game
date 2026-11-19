@@ -32,7 +32,7 @@ const NOTE_COPY = [
 
 const NOTE_SITES = [
   // the first page is deliberately just ahead of the sunrise spawn: the interaction teaches itself in the world.
-  { x: 598, z: 34, yaw: -Math.PI / 2 },
+  { x: 600, z: 39, yaw: -Math.PI / 2 },
   { x: 379, z: 31, yaw: -2.5 },
   { x: 206, z: -24, yaw: 0.3 },
   { x: -429, z: 323, yaw: -1.5 },
@@ -277,7 +277,8 @@ export class Haunting {
     if (fixed) {
       const [x, z] = fixed;
       const ground = this.colliders.surfaceAt(x, z, this.player.pos.y + 12)?.y ?? this.hf.height(x, z);
-      this.candidate.set(x, ground, z);
+      const sea = this.player.seaAt?.(x, z) ?? -Infinity;
+      this.candidate.set(x, Math.max(ground, sea + 0.2), z);
     }
     // A small, bounded search at encounter time only. Favor a shoulder sightline with firm ground and a dark
     // enough backdrop, while still rejecting offshore or cliff-edge placements.
@@ -353,8 +354,12 @@ export class Haunting {
   }
 
   private closeNote() {
+    const wasOpen = this.openNote >= 0;
     this.openNote = -1;
     this.noteLayer.classList.remove('open');
+    if (wasOpen && !this.firstSightingDone && Number.isFinite(this.firstEncounterAt)) {
+      this.firstEncounterAt = this.activeTime + 3.5;
+    }
   }
 
   update(
@@ -375,7 +380,7 @@ export class Haunting {
     if (dismiss || (interact && this.openNote >= 0)) this.closeNote();
     if (this.openNote < 0 && !photoMode) {
       this.nearest = -1;
-      let best = 3.4;
+      let best = 6.6;
       for (let i = 0; i < this.notes.length; i++) {
         const note = this.notes[i];
         const d = Math.hypot(this.player.pos.x - note.x, this.player.pos.z - note.z);
@@ -392,11 +397,12 @@ export class Haunting {
     const forest = this.hf.forest(position.x, position.z);
     const terrainRisk = THREE.MathUtils.clamp(weather.night * 0.72 + weather.rain * 0.24 + forest * 0.23, 0, 1);
     this.cooldown -= dt;
-    if (!this.firstSightingDone && !photoMode && this.player.state !== 'swim' && this.activeTime >= Math.min(24, this.firstEncounterAt)) {
+    if (!this.firstSightingDone && this.openNote < 0 && !photoMode && this.player.state !== 'swim' && this.activeTime >= Math.min(24, this.firstEncounterAt)) {
       const beachDistance = Math.hypot(position.x - 596, position.z - 34);
       // At the starting beach the Keeper crosses the player's open sunrise sightline, far enough away to read as a
-      // person before the player can reach him. Other first encounters use the normal forest-side selection.
-      const first = beachDistance < 105 ? this.spawn(true, [610, 34]) : this.spawn(true);
+      // person before the player can reach him. The offset puts the silhouette in the right third of the follow view,
+      // clear of the avatar. Other first encounters use the normal forest-side selection.
+      const first = beachDistance < 105 ? this.spawn(true, [603, 42]) : this.spawn(true);
       if (first) {
         this.firstSightingDone = true;
         this.cooldown = 999;
@@ -435,7 +441,8 @@ export class Haunting {
         }
       }
       const visibility = this.phase === 'leaving' ? 1 - this.fade : Math.min(1, this.showTime / 1.25);
-      const gaze = seen ? 0.28 : 1;
+      // Let the player read the silhouette before the watched figure begins its leaving dissolve.
+      const gaze = 1;
       this.materials.forEach((m) => { m.opacity = visibility * gaze; });
       this.pressure = Math.max(this.pressure, (1 - Math.min(1, distance / 52)) * (0.2 + terrainRisk * 0.7));
     }

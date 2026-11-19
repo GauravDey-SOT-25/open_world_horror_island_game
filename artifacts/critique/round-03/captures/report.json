@@ -1,0 +1,2906 @@
+{
+ "round": "round-03",
+ "view": "follow",
+ "quality": "low",
+ "loadMs": 7520,
+ "adapter": {
+  "name": "ANGLE",
+  "backend": "WebGPU"
+ },
+ "placement": {
+  "display": "DISPLAY1",
+  "size": [
+   1920,
+   1080
+  ],
+  "viewport": "emulated"
+ },
+ "results": [
+  {
+   "spot": "beach",
+   "condition": "sunrise",
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/beach_sunrise.jpg",
+   "staged": {
+    "time": {
+     "hour": 6.550000000000001,
+     "frozen": true,
+     "sunElevationDeg": 3.850539816760108,
+     "exposure": 3.4871439851750323
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      592.2189841719435,
+      3.2938287032477236,
+      34.42
+     ],
+     "dir": [
+      0.9936139167556968,
+      -0.11283343666397591,
+      -2.220446049250313e-16
+     ],
+     "fov": 55,
+     "mode": "follow"
+    },
+    "player": {
+     "pos": [
+      596,
+      1.36,
+      34
+     ],
+     "heading": 1.571,
+     "state": "ground",
+     "speed": 0,
+     "surface": "sand",
+     "waterDepth": -1.36,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 59.958289885297134,
+    "frame": {
+     "n": 23,
+     "avg": 16.678260869565232,
+     "p50": 16.69999999999891,
+     "p95": 18.400000000001455,
+     "p99": 18.69999999999891,
+     "max": 18.69999999999891
+    },
+    "cpu": {
+     "n": 23,
+     "avg": 2.578260869435642,
+     "p50": 2.5999999940395355,
+     "p95": 3.0999999940395355,
+     "p99": 3.7999999970197678,
+     "max": 3.7999999970197678
+    },
+    "gpu": {
+     "n": 23,
+     "avg": 46.49066852173913,
+     "p50": 46.727168000000006,
+     "p95": 48.103424000000004,
+     "p99": 48.88985600000001,
+     "max": 48.88985600000001
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "low",
+    "renderScale": 0.5,
+    "drawCalls": 115,
+    "triangles": 1136734,
+    "pipelines": {
+     "compiled": 91,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "jungle",
+   "condition": "sunrise",
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/jungle_sunrise.jpg",
+   "staged": {
+    "time": {
+     "hour": 6.550000000000001,
+     "frozen": true,
+     "sunElevationDeg": 3.850539816760108,
+     "exposure": 3.4871439851750323
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      366.58922556982685,
+      31.31847278007191,
+      14.543579484463397
+     ],
+     "dir": [
+      -0.5122093371484587,
+      -0.1128334366639766,
+      0.8514165904588264
+     ],
+     "fov": 55,
+     "mode": "follow"
+    },
+    "player": {
+     "pos": [
+      365,
+      29.39,
+      18
+     ],
+     "heading": -2.6,
+     "state": "ground",
+     "speed": 0,
+     "surface": "leaves",
+     "waterDepth": -29.39,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 60.004138216428586,
+    "frame": {
+     "n": 29,
+     "avg": 16.665517241379348,
+     "p50": 16.600000000000364,
+     "p95": 17.600000000000364,
+     "p99": 18.700000000000728,
+     "max": 18.700000000000728
+    },
+    "cpu": {
+     "n": 29,
+     "avg": 5.000000001027666,
+     "p50": 4.600000008940697,
+     "p95": 6.300000011920929,
+     "p99": 6.5,
+     "max": 6.5
+    },
+    "gpu": {
+     "n": 30,
+     "avg": 43.225361066666665,
+     "p50": 42.72947200000001,
+     "p95": 52.23219200000001,
+     "p99": 53.411840000000005,
+     "max": 53.411840000000005
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "low",
+    "renderScale": 0.5,
+    "drawCalls": 359,
+    "triangles": 2902315,
+    "pipelines": {
+     "compiled": 91,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "waterfall",
+   "condition": "sunrise",
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/waterfall_sunrise.jpg",
+   "staged": {
+    "time": {
+     "hour": 6.550000000000001,
+     "frozen": true,
+     "sunElevationDeg": 3.850539816760108,
+     "exposure": 3.4871439851750323
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      189.6227396305756,
+      41.6427258623473,
+      -38.83886337536413
+     ],
+     "dir": [
+      -0.9069349537556196,
+      -0.11283343666397522,
+      -0.40587880608241766
+     ],
+     "fov": 55,
+     "mode": "follow"
+    },
+    "player": {
+     "pos": [
+      186,
+      39.71,
+      -40
+     ],
+     "heading": -1.15,
+     "state": "ground",
+     "speed": 0,
+     "surface": "dirt",
+     "waterDepth": -1.89,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 49.49619939897466,
+    "frame": {
+     "n": 28,
+     "avg": 20.203571428571454,
+     "p50": 16.700000000000728,
+     "p95": 33.399999999999636,
+     "p99": 35.20000000000073,
+     "max": 35.20000000000073
+    },
+    "cpu": {
+     "n": 28,
+     "avg": 3.682142856929983,
+     "p50": 3.3999999910593033,
+     "p95": 5.299999997019768,
+     "p99": 5.700000002980232,
+     "max": 5.700000002980232
+    },
+    "gpu": {
+     "n": 29,
+     "avg": 52.27738924137932,
+     "p50": 54.984704,
+     "p95": 59.834368000000005,
+     "p99": 66.715648,
+     "max": 66.715648
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "low",
+    "renderScale": 0.5,
+    "drawCalls": 267,
+    "triangles": 3259624,
+    "pipelines": {
+     "compiled": 91,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "village",
+   "condition": "sunrise",
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/village_sunrise.jpg",
+   "staged": {
+    "time": {
+     "hour": 6.550000000000001,
+     "frozen": true,
+     "sunElevationDeg": 3.850539816760108,
+     "exposure": 3.4871439851750323
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      -406.32342543664714,
+      4.692012883507428,
+      335.0226156477003
+     ],
+     "dir": [
+      -0.9825746336395558,
+      -0.11283343666397726,
+      0.14770140452510616
+     ],
+     "fov": 55,
+     "mode": "follow"
+    },
+    "player": {
+     "pos": [
+      -410,
+      2.76,
+      336
+     ],
+     "heading": -1.72,
+     "state": "ground",
+     "speed": 0,
+     "surface": "sand",
+     "waterDepth": -2.76,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 60.01200240048014,
+    "frame": {
+     "n": 30,
+     "avg": 16.66333333333332,
+     "p50": 16.69999999999891,
+     "p95": 18.5,
+     "p99": 18.600000000000364,
+     "max": 18.600000000000364
+    },
+    "cpu": {
+     "n": 30,
+     "avg": 4.126666665573915,
+     "p50": 4.200000002980232,
+     "p95": 5.200000002980232,
+     "p99": 5.899999991059303,
+     "max": 5.899999991059303
+    },
+    "gpu": {
+     "n": 32,
+     "avg": 51.099648,
+     "p50": 50.266112,
+     "p95": 63.111168000000006,
+     "p99": 63.897600000000004,
+     "max": 63.897600000000004
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "low",
+    "renderScale": 0.5,
+    "drawCalls": 432,
+    "triangles": 1604646,
+    "pipelines": {
+     "compiled": 91,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "cliffs",
+   "condition": "sunrise",
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/cliffs_sunrise.jpg",
+   "staged": {
+    "time": {
+     "hour": 6.550000000000001,
+     "frozen": true,
+     "sunElevationDeg": 3.850539816760108,
+     "exposure": 3.4871439851750323
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      -54.19879733885878,
+      52.57009307273548,
+      -576.8472288608845
+     ],
+     "dir": [
+      -0.9823381503945221,
+      -0.11283343666397562,
+      -0.14926611755541186
+     ],
+     "fov": 55,
+     "mode": "follow"
+    },
+    "player": {
+     "pos": [
+      -58,
+      50.64,
+      -577
+     ],
+     "heading": -1.42,
+     "state": "ground",
+     "speed": 0,
+     "surface": "rock",
+     "waterDepth": -50.64,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 59.963099630996254,
+    "frame": {
+     "n": 26,
+     "avg": 16.676923076923092,
+     "p50": 16.69999999999891,
+     "p95": 18.5,
+     "p99": 18.700000000000728,
+     "max": 18.700000000000728
+    },
+    "cpu": {
+     "n": 26,
+     "avg": 2.7730769211283097,
+     "p50": 2.5999999940395355,
+     "p95": 3.8999999910593033,
+     "p99": 4.0999999940395355,
+     "max": 4.0999999940395355
+    },
+    "gpu": {
+     "n": 26,
+     "avg": 44.027588923076934,
+     "p50": 44.04019200000001,
+     "p95": 46.465024000000014,
+     "p99": 48.496640000000006,
+     "max": 48.496640000000006
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "low",
+    "renderScale": 0.5,
+    "drawCalls": 204,
+    "triangles": 1401991,
+    "pipelines": {
+     "compiled": 91,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "lighthouse",
+   "condition": "sunrise",
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/lighthouse_sunrise.jpg",
+   "staged": {
+    "time": {
+     "hour": 6.550000000000001,
+     "frozen": true,
+     "sunElevationDeg": 3.850539816760108,
+     "exposure": 3.4871439851750323
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      -294.913691670981,
+      251.72540537786043,
+      -330.38224927409937
+     ],
+     "dir": [
+      0.578883987310888,
+      -0.22563999510979302,
+      0.7835687090752799
+     ],
+     "fov": 62.79545319580562,
+     "mode": "follow"
+    },
+    "player": {
+     "pos": [
+      -301.81,
+      231,
+      -301.86
+     ],
+     "heading": 2.38,
+     "state": "ground",
+     "speed": 0,
+     "surface": "stone",
+     "waterDepth": -231,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 59.99999999999999,
+    "frame": {
+     "n": 21,
+     "avg": 16.666666666666668,
+     "p50": 16.69999999999891,
+     "p95": 18.299999999999272,
+     "p99": 18.399999999999636,
+     "max": 18.399999999999636
+    },
+    "cpu": {
+     "n": 21,
+     "avg": 3.7047619067487263,
+     "p50": 4.299999997019768,
+     "p95": 4.899999991059303,
+     "p99": 5.5,
+     "max": 5.5
+    },
+    "gpu": {
+     "n": 20,
+     "avg": 51.193446400000006,
+     "p50": 51.052544000000005,
+     "p95": 65.929216,
+     "p99": 65.929216,
+     "max": 65.929216
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "low",
+    "renderScale": 0.5,
+    "drawCalls": 169,
+    "triangles": 2447153,
+    "pipelines": {
+     "compiled": 91,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "beach",
+   "condition": "noon",
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/beach_noon.jpg",
+   "staged": {
+    "time": {
+     "hour": 12.299999999999997,
+     "frozen": true,
+     "sunElevationDeg": 59.672146048980366,
+     "exposure": 0.5956033549667784
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      592.2189841719435,
+      3.2938287032477236,
+      34.42
+     ],
+     "dir": [
+      0.9936139167556968,
+      -0.11283343666397591,
+      -2.220446049250313e-16
+     ],
+     "fov": 55.20333843982962,
+     "mode": "follow"
+    },
+    "player": {
+     "pos": [
+      596,
+      1.36,
+      34
+     ],
+     "heading": 1.571,
+     "state": "ground",
+     "speed": 0,
+     "surface": "sand",
+     "waterDepth": -1.36,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 60.15399422521624,
+    "frame": {
+     "n": 25,
+     "avg": 16.624000000000088,
+     "p50": 16.700000000000728,
+     "p95": 17.900000000001455,
+     "p99": 18.099999999998545,
+     "max": 18.099999999998545
+    },
+    "cpu": {
+     "n": 25,
+     "avg": 2.8319999992847444,
+     "p50": 2.7000000029802322,
+     "p95": 3.7999999970197678,
+     "p99": 3.7999999970197678,
+     "max": 3.7999999970197678
+    },
+    "gpu": {
+     "n": 25,
+     "avg": 45.82014976000001,
+     "p50": 46.071808,
+     "p95": 47.906816000000006,
+     "p99": 48.037888,
+     "max": 48.037888
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "low",
+    "renderScale": 0.5,
+    "drawCalls": 115,
+    "triangles": 1136734,
+    "pipelines": {
+     "compiled": 91,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "jungle",
+   "condition": "noon",
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/jungle_noon.jpg",
+   "staged": {
+    "time": {
+     "hour": 12.299999999999997,
+     "frozen": true,
+     "sunElevationDeg": 59.672146048980366,
+     "exposure": 0.5956033549667784
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      366.58922556982685,
+      31.31847278007191,
+      14.543579484463397
+     ],
+     "dir": [
+      -0.5122093371484587,
+      -0.1128334366639766,
+      0.8514165904588264
+     ],
+     "fov": 55.04714706608921,
+     "mode": "follow"
+    },
+    "player": {
+     "pos": [
+      365,
+      29.39,
+      18
+     ],
+     "heading": -2.6,
+     "state": "ground",
+     "speed": 0,
+     "surface": "leaves",
+     "waterDepth": -29.39,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 59.88023952095826,
+    "frame": {
+     "n": 28,
+     "avg": 16.69999999999995,
+     "p50": 16.69999999999709,
+     "p95": 18.5,
+     "p99": 18.700000000000728,
+     "max": 18.700000000000728
+    },
+    "cpu": {
+     "n": 28,
+     "avg": 5.157142856823547,
+     "p50": 5.200000002980232,
+     "p95": 6.799999997019768,
+     "p99": 6.9000000059604645,
+     "max": 6.9000000059604645
+    },
+    "gpu": {
+     "n": 28,
+     "avg": 42.172416,
+     "p50": 42.33625600000001,
+     "p95": 49.020928000000005,
+     "p99": 49.41414400000001,
+     "max": 49.41414400000001
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "low",
+    "renderScale": 0.5,
+    "drawCalls": 358,
+    "triangles": 2902314,
+    "pipelines": {
+     "compiled": 91,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "waterfall",
+   "condition": "noon",
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/waterfall_noon.jpg",
+   "staged": {
+    "time": {
+     "hour": 12.299999999999997,
+     "frozen": true,
+     "sunElevationDeg": 59.672146048980366,
+     "exposure": 0.5956033549667784
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      189.6227396305756,
+      41.6427258623473,
+      -38.83886337536413
+     ],
+     "dir": [
+      -0.9069349537556196,
+      -0.11283343666397522,
+      -0.40587880608241766
+     ],
+     "fov": 55.04714706608921,
+     "mode": "follow"
+    },
+    "player": {
+     "pos": [
+      186,
+      39.71,
+      -40
+     ],
+     "heading": -1.15,
+     "state": "ground",
+     "speed": 0,
+     "surface": "dirt",
+     "waterDepth": -1.89,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 49.970017989206546,
+    "frame": {
+     "n": 25,
+     "avg": 20.011999999999972,
+     "p50": 16.700000000000728,
+     "p95": 33.70000000000073,
+     "p99": 34.599999999998545,
+     "max": 34.599999999998545
+    },
+    "cpu": {
+     "n": 25,
+     "avg": 3.4199999988079073,
+     "p50": 3.2000000029802322,
+     "p95": 4.5999999940395355,
+     "p99": 5,
+     "max": 5
+    },
+    "gpu": {
+     "n": 25,
+     "avg": 52.33704960000001,
+     "p50": 51.052544000000005,
+     "p95": 65.01171199999999,
+     "p99": 66.781184,
+     "max": 66.781184
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "low",
+    "renderScale": 0.5,
+    "drawCalls": 267,
+    "triangles": 3259624,
+    "pipelines": {
+     "compiled": 91,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "village",
+   "condition": "noon",
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/village_noon.jpg",
+   "staged": {
+    "time": {
+     "hour": 12.299999999999997,
+     "frozen": true,
+     "sunElevationDeg": 59.672146048980366,
+     "exposure": 0.5956033549667784
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      -406.32342543664714,
+      4.692012883507428,
+      335.0226156477003
+     ],
+     "dir": [
+      -0.9825746336395558,
+      -0.11283343666397726,
+      0.14770140452510616
+     ],
+     "fov": 55.04714706608921,
+     "mode": "follow"
+    },
+    "player": {
+     "pos": [
+      -410,
+      2.76,
+      336
+     ],
+     "heading": -1.72,
+     "state": "ground",
+     "speed": 0,
+     "surface": "sand",
+     "waterDepth": -2.76,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 60.004138216428814,
+    "frame": {
+     "n": 29,
+     "avg": 16.665517241379284,
+     "p50": 16.700000000000728,
+     "p95": 17.100000000002183,
+     "p99": 17.900000000001455,
+     "max": 17.900000000001455
+    },
+    "cpu": {
+     "n": 29,
+     "avg": 4.351724139061467,
+     "p50": 4.100000008940697,
+     "p95": 6.200000002980232,
+     "p99": 6.799999997019768,
+     "max": 6.799999997019768
+    },
+    "gpu": {
+     "n": 29,
+     "avg": 52.20507365517241,
+     "p50": 50.39718400000001,
+     "p95": 63.963136000000006,
+     "p99": 64.88064,
+     "max": 64.88064
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "low",
+    "renderScale": 0.5,
+    "drawCalls": 431,
+    "triangles": 1604645,
+    "pipelines": {
+     "compiled": 91,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "cliffs",
+   "condition": "noon",
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/cliffs_noon.jpg",
+   "staged": {
+    "time": {
+     "hour": 12.299999999999997,
+     "frozen": true,
+     "sunElevationDeg": 59.672146048980366,
+     "exposure": 0.5956033549667784
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      -54.19879733885878,
+      52.57009307273548,
+      -576.8472288608845
+     ],
+     "dir": [
+      -0.9823381503945221,
+      -0.11283343666397562,
+      -0.14926611755541186
+     ],
+     "fov": 55.04714706608921,
+     "mode": "follow"
+    },
+    "player": {
+     "pos": [
+      -58,
+      50.64,
+      -577
+     ],
+     "heading": -1.42,
+     "state": "ground",
+     "speed": 0,
+     "surface": "rock",
+     "waterDepth": -50.64,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 60.163300386763886,
+    "frame": {
+     "n": 28,
+     "avg": 16.621428571428623,
+     "p50": 16.700000000000728,
+     "p95": 18.400000000001455,
+     "p99": 18.69999999999709,
+     "max": 18.69999999999709
+    },
+    "cpu": {
+     "n": 28,
+     "avg": 3.735714283372675,
+     "p50": 3.699999988079071,
+     "p95": 4.4000000059604645,
+     "p99": 4.799999997019768,
+     "max": 4.799999997019768
+    },
+    "gpu": {
+     "n": 27,
+     "avg": 44.91157807407409,
+     "p50": 44.63001600000001,
+     "p95": 48.037888,
+     "p99": 48.431104000000005,
+     "max": 48.431104000000005
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "low",
+    "renderScale": 0.5,
+    "drawCalls": 205,
+    "triangles": 1401992,
+    "pipelines": {
+     "compiled": 91,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "lighthouse",
+   "condition": "noon",
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/lighthouse_noon.jpg",
+   "staged": {
+    "time": {
+     "hour": 12.299999999999997,
+     "frozen": true,
+     "sunElevationDeg": 59.672146048980366,
+     "exposure": 0.5956033549667784
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      -292.90165293991345,
+      250.0607464336453,
+      -332.44235064903194
+     ],
+     "dir": [
+      0.5686716683843946,
+      -0.21731720722752884,
+      0.7933383672933867
+     ],
+     "fov": 62.78373900187828,
+     "mode": "follow"
+    },
+    "player": {
+     "pos": [
+      -301.81,
+      231,
+      -301.86
+     ],
+     "heading": 2.38,
+     "state": "ground",
+     "speed": 0,
+     "surface": "stone",
+     "waterDepth": -231,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 59.994545950368625,
+    "frame": {
+     "n": 22,
+     "avg": 16.668181818181687,
+     "p50": 16.69999999999709,
+     "p95": 17.799999999999272,
+     "p99": 18.600000000002183,
+     "max": 18.600000000002183
+    },
+    "cpu": {
+     "n": 22,
+     "avg": 3.577272728085518,
+     "p50": 4,
+     "p95": 5.0999999940395355,
+     "p99": 5.4000000059604645,
+     "max": 5.4000000059604645
+    },
+    "gpu": {
+     "n": 19,
+     "avg": 50.93526905263159,
+     "p50": 50.13504000000001,
+     "p95": 64.749568,
+     "p99": 64.749568,
+     "max": 64.749568
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "low",
+    "renderScale": 0.5,
+    "drawCalls": 162,
+    "triangles": 2440551,
+    "pipelines": {
+     "compiled": 91,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "beach",
+   "condition": "sunset",
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/beach_sunset.jpg",
+   "staged": {
+    "time": {
+     "hour": 17.42,
+     "frozen": true,
+     "sunElevationDeg": 4.266718812475577,
+     "exposure": 3.5076742381767176
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      592.2189841719435,
+      3.2938287032477236,
+      34.42
+     ],
+     "dir": [
+      0.9936139167556968,
+      -0.11283343666397591,
+      -2.220446049250313e-16
+     ],
+     "fov": 55.21722678250856,
+     "mode": "follow"
+    },
+    "player": {
+     "pos": [
+      596,
+      1.36,
+      34
+     ],
+     "heading": 1.571,
+     "state": "ground",
+     "speed": 0,
+     "surface": "sand",
+     "waterDepth": -1.36,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 59.994545950368035,
+    "frame": {
+     "n": 22,
+     "avg": 16.66818181818185,
+     "p50": 16.700000000000728,
+     "p95": 18,
+     "p99": 18.299999999999272,
+     "max": 18.299999999999272
+    },
+    "cpu": {
+     "n": 22,
+     "avg": 1.986363637176427,
+     "p50": 1.7999999970197678,
+     "p95": 3,
+     "p99": 3.7999999970197678,
+     "max": 3.7999999970197678
+    },
+    "gpu": {
+     "n": 23,
+     "avg": 45.772621913043494,
+     "p50": 46.00627200000001,
+     "p95": 47.775744,
+     "p99": 48.168960000000006,
+     "max": 48.168960000000006
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "low",
+    "renderScale": 0.5,
+    "drawCalls": 115,
+    "triangles": 1136734,
+    "pipelines": {
+     "compiled": 91,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "jungle",
+   "condition": "sunset",
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/jungle_sunset.jpg",
+   "staged": {
+    "time": {
+     "hour": 17.42,
+     "frozen": true,
+     "sunElevationDeg": 4.266718812475577,
+     "exposure": 3.5076742381767176
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      366.58922556982685,
+      31.31847278007191,
+      14.543579484463397
+     ],
+     "dir": [
+      -0.5122093371484587,
+      -0.1128334366639766,
+      0.8514165904588264
+     ],
+     "fov": 55.04688706737574,
+     "mode": "follow"
+    },
+    "player": {
+     "pos": [
+      365,
+      29.39,
+      18
+     ],
+     "heading": -2.6,
+     "state": "ground",
+     "speed": 0,
+     "surface": "leaves",
+     "waterDepth": -29.39,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 60.19095060190959,
+    "frame": {
+     "n": 29,
+     "avg": 16.613793103448252,
+     "p50": 16.69999999999709,
+     "p95": 17.799999999999272,
+     "p99": 18,
+     "max": 18
+    },
+    "cpu": {
+     "n": 29,
+     "avg": 4.865517240659944,
+     "p50": 4.5,
+     "p95": 6.199999988079071,
+     "p99": 8.200000002980232,
+     "max": 8.200000002980232
+    },
+    "gpu": {
+     "n": 29,
+     "avg": 43.17466482758621,
+     "p50": 42.33625600000001,
+     "p95": 51.445760000000014,
+     "p99": 53.73952000000001,
+     "max": 53.73952000000001
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "low",
+    "renderScale": 0.5,
+    "drawCalls": 359,
+    "triangles": 2902315,
+    "pipelines": {
+     "compiled": 91,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "waterfall",
+   "condition": "sunset",
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/waterfall_sunset.jpg",
+   "staged": {
+    "time": {
+     "hour": 17.42,
+     "frozen": true,
+     "sunElevationDeg": 4.266718812475577,
+     "exposure": 3.5076742381767176
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      189.6227396305756,
+      41.6427258623473,
+      -38.83886337536413
+     ],
+     "dir": [
+      -0.9069349537556196,
+      -0.11283343666397522,
+      -0.40587880608241766
+     ],
+     "fov": 55.04688706737574,
+     "mode": "follow"
+    },
+    "player": {
+     "pos": [
+      186,
+      39.71,
+      -40
+     ],
+     "heading": -1.15,
+     "state": "ground",
+     "speed": 0,
+     "surface": "dirt",
+     "waterDepth": -1.89,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 49.453946012775674,
+    "frame": {
+     "n": 24,
+     "avg": 20.220833333333303,
+     "p50": 16.700000000000728,
+     "p95": 33.39999999999782,
+     "p99": 33.70000000000073,
+     "max": 33.70000000000073
+    },
+    "cpu": {
+     "n": 24,
+     "avg": 4.129166666418314,
+     "p50": 4.200000002980232,
+     "p95": 5.0999999940395355,
+     "p99": 5.200000002980232,
+     "max": 5.200000002980232
+    },
+    "gpu": {
+     "n": 24,
+     "avg": 51.32014933333334,
+     "p50": 49.47968000000001,
+     "p95": 59.63776000000001,
+     "p99": 60.94848000000001,
+     "max": 60.94848000000001
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "low",
+    "renderScale": 0.5,
+    "drawCalls": 267,
+    "triangles": 3259624,
+    "pipelines": {
+     "compiled": 91,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "village",
+   "condition": "sunset",
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/village_sunset.jpg",
+   "staged": {
+    "time": {
+     "hour": 17.42,
+     "frozen": true,
+     "sunElevationDeg": 4.266718812475577,
+     "exposure": 3.5076742381767176
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      -406.32342543664714,
+      4.692012883507428,
+      335.0226156477003
+     ],
+     "dir": [
+      -0.9825746336395558,
+      -0.11283343666397726,
+      0.14770140452510616
+     ],
+     "fov": 55.04688706737574,
+     "mode": "follow"
+    },
+    "player": {
+     "pos": [
+      -410,
+      2.76,
+      336
+     ],
+     "heading": -1.72,
+     "state": "ground",
+     "speed": 0,
+     "surface": "sand",
+     "waterDepth": -2.76,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 59.8669623059867,
+    "frame": {
+     "n": 27,
+     "avg": 16.703703703703702,
+     "p50": 16.700000000000728,
+     "p95": 17.900000000001455,
+     "p99": 18.700000000000728,
+     "max": 18.700000000000728
+    },
+    "cpu": {
+     "n": 27,
+     "avg": 4.922222220787296,
+     "p50": 4.9000000059604645,
+     "p95": 6.200000002980232,
+     "p99": 6.399999991059303,
+     "max": 6.399999991059303
+    },
+    "gpu": {
+     "n": 28,
+     "avg": 53.327579428571426,
+     "p50": 50.52825600000001,
+     "p95": 65.40492800000001,
+     "p99": 66.12582400000001,
+     "max": 66.12582400000001
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "low",
+    "renderScale": 0.5,
+    "drawCalls": 411,
+    "triangles": 1592043,
+    "pipelines": {
+     "compiled": 91,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "cliffs",
+   "condition": "sunset",
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/cliffs_sunset.jpg",
+   "staged": {
+    "time": {
+     "hour": 17.42,
+     "frozen": true,
+     "sunElevationDeg": 4.266718812475577,
+     "exposure": 3.5076742381767176
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      -54.19879733885878,
+      52.57009307273548,
+      -576.8472288608845
+     ],
+     "dir": [
+      -0.9823381503945221,
+      -0.11283343666397562,
+      -0.14926611755541186
+     ],
+     "fov": 55.04688706737574,
+     "mode": "follow"
+    },
+    "player": {
+     "pos": [
+      -58,
+      50.64,
+      -577
+     ],
+     "heading": -1.42,
+     "state": "ground",
+     "speed": 0,
+     "surface": "rock",
+     "waterDepth": -50.64,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 60.01846722068268,
+    "frame": {
+     "n": 13,
+     "avg": 16.66153846153863,
+     "p50": 16.700000000000728,
+     "p95": 18.200000000000728,
+     "p99": 18.200000000000728,
+     "max": 18.200000000000728
+    },
+    "cpu": {
+     "n": 13,
+     "avg": 3.5230769239939175,
+     "p50": 3.5,
+     "p95": 4.600000008940697,
+     "p99": 4.600000008940697,
+     "max": 4.600000008940697
+    },
+    "gpu": {
+     "n": 13,
+     "avg": 44.579603692307714,
+     "p50": 44.630016000000005,
+     "p95": 47.38252800000001,
+     "p99": 47.38252800000001,
+     "max": 47.38252800000001
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "low",
+    "renderScale": 0.5,
+    "drawCalls": 204,
+    "triangles": 1401991,
+    "pipelines": {
+     "compiled": 91,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "lighthouse",
+   "condition": "sunset",
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/lighthouse_sunset.jpg",
+   "staged": {
+    "time": {
+     "hour": 17.42,
+     "frozen": true,
+     "sunElevationDeg": 4.266718812475577,
+     "exposure": 3.5076742381767176
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      -292.64521006000996,
+      249.84857858263916,
+      -332.7049193169824
+     ],
+     "dir": [
+      0.5673598381046014,
+      -0.21625285211965378,
+      0.7945675037755042
+     ],
+     "fov": 62.78208203277047,
+     "mode": "follow"
+    },
+    "player": {
+     "pos": [
+      -301.81,
+      231,
+      -301.86
+     ],
+     "heading": 2.38,
+     "state": "ground",
+     "speed": 0,
+     "surface": "stone",
+     "waterDepth": -231,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 59.897318881916966,
+    "frame": {
+     "n": 21,
+     "avg": 16.695238095238025,
+     "p50": 16.69999999999709,
+     "p95": 17.399999999997817,
+     "p99": 17.600000000002183,
+     "max": 17.600000000002183
+    },
+    "cpu": {
+     "n": 21,
+     "avg": 3.6000000011353266,
+     "p50": 4,
+     "p95": 5.299999997019768,
+     "p99": 5.4000000059604645,
+     "max": 5.4000000059604645
+    },
+    "gpu": {
+     "n": 18,
+     "avg": 51.15084800000001,
+     "p50": 51.314688000000004,
+     "p95": 65.66707199999999,
+     "p99": 65.66707199999999,
+     "max": 65.66707199999999
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "low",
+    "renderScale": 0.5,
+    "drawCalls": 169,
+    "triangles": 2444763,
+    "pipelines": {
+     "compiled": 91,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "beach",
+   "condition": "night",
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/beach_night.jpg",
+   "staged": {
+    "time": {
+     "hour": 22.5,
+     "frozen": true,
+     "sunElevationDeg": -68.18562877171131,
+     "exposure": 11
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      592.2189841719435,
+      3.2938287032477236,
+      34.42
+     ],
+     "dir": [
+      0.9936139167556968,
+      -0.11283343666397591,
+      -2.220446049250313e-16
+     ],
+     "fov": 55.218781415937016,
+     "mode": "follow"
+    },
+    "player": {
+     "pos": [
+      596,
+      1.36,
+      34
+     ],
+     "heading": 1.571,
+     "state": "ground",
+     "speed": 0,
+     "surface": "sand",
+     "waterDepth": -1.36,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 59.952038369304816,
+    "frame": {
+     "n": 20,
+     "avg": 16.67999999999993,
+     "p50": 16.700000000000728,
+     "p95": 18.599999999998545,
+     "p99": 18.599999999998545,
+     "max": 18.599999999998545
+    },
+    "cpu": {
+     "n": 20,
+     "avg": 1.819999998062849,
+     "p50": 1.6000000089406967,
+     "p95": 3.699999988079071,
+     "p99": 3.699999988079071,
+     "max": 3.699999988079071
+    },
+    "gpu": {
+     "n": 21,
+     "avg": 46.32771047619048,
+     "p50": 46.39948800000001,
+     "p95": 48.03788800000001,
+     "p99": 48.36556800000001,
+     "max": 48.36556800000001
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "low",
+    "renderScale": 0.5,
+    "drawCalls": 117,
+    "triangles": 1136330,
+    "pipelines": {
+     "compiled": 91,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "jungle",
+   "condition": "night",
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/jungle_night.jpg",
+   "staged": {
+    "time": {
+     "hour": 22.5,
+     "frozen": true,
+     "sunElevationDeg": -68.18562877171131,
+     "exposure": 11
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      366.58922556982685,
+      31.31847278007191,
+      14.543579484463397
+     ],
+     "dir": [
+      -0.5122093371484587,
+      -0.1128334366639766,
+      0.8514165904588264
+     ],
+     "fov": 55.046996499989945,
+     "mode": "follow"
+    },
+    "player": {
+     "pos": [
+      365,
+      29.39,
+      18
+     ],
+     "heading": -2.6,
+     "state": "ground",
+     "speed": 0,
+     "surface": "leaves",
+     "waterDepth": -29.39,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 60.22584692597239,
+    "frame": {
+     "n": 24,
+     "avg": 16.604166666666668,
+     "p50": 16.60000000000582,
+     "p95": 17.900000000001455,
+     "p99": 18.30000000000291,
+     "max": 18.30000000000291
+    },
+    "cpu": {
+     "n": 24,
+     "avg": 4.058333333581686,
+     "p50": 3.9000000059604645,
+     "p95": 5.799999997019768,
+     "p99": 6,
+     "max": 6
+    },
+    "gpu": {
+     "n": 26,
+     "avg": 42.6614153846154,
+     "p50": 42.598400000000005,
+     "p95": 48.95539200000001,
+     "p99": 50.06950400000001,
+     "max": 50.06950400000001
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "low",
+    "renderScale": 0.5,
+    "drawCalls": 360,
+    "triangles": 2901910,
+    "pipelines": {
+     "compiled": 91,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "waterfall",
+   "condition": "night",
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/waterfall_night.jpg",
+   "staged": {
+    "time": {
+     "hour": 22.5,
+     "frozen": true,
+     "sunElevationDeg": -68.18562877171131,
+     "exposure": 11
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      189.6227396305756,
+      41.6427258623473,
+      -38.83886337536413
+     ],
+     "dir": [
+      -0.9069349537556196,
+      -0.11283343666397522,
+      -0.40587880608241766
+     ],
+     "fov": 55.046996499989945,
+     "mode": "follow"
+    },
+    "player": {
+     "pos": [
+      186,
+      39.71,
+      -40
+     ],
+     "heading": -1.15,
+     "state": "ground",
+     "speed": 0,
+     "surface": "dirt",
+     "waterDepth": -1.89,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 49.8649490961975,
+    "frame": {
+     "n": 24,
+     "avg": 20.054166666666788,
+     "p50": 16.69999999999709,
+     "p95": 34.5,
+     "p99": 34.69999999999709,
+     "max": 34.69999999999709
+    },
+    "cpu": {
+     "n": 24,
+     "avg": 4.049999998882413,
+     "p50": 4.100000008940697,
+     "p95": 5.899999991059303,
+     "p99": 6,
+     "max": 6
+    },
+    "gpu": {
+     "n": 24,
+     "avg": 53.91155200000001,
+     "p50": 54.984704,
+     "p95": 67.43654400000001,
+     "p99": 67.96083200000001,
+     "max": 67.96083200000001
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "low",
+    "renderScale": 0.5,
+    "drawCalls": 273,
+    "triangles": 3266666,
+    "pipelines": {
+     "compiled": 91,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "village",
+   "condition": "night",
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/village_night.jpg",
+   "staged": {
+    "time": {
+     "hour": 22.5,
+     "frozen": true,
+     "sunElevationDeg": -68.18562877171131,
+     "exposure": 11
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      -406.32342543664714,
+      4.692012883507428,
+      335.0226156477003
+     ],
+     "dir": [
+      -0.9825746336395558,
+      -0.11283343666397726,
+      0.14770140452510616
+     ],
+     "fov": 55.046996499989945,
+     "mode": "follow"
+    },
+    "player": {
+     "pos": [
+      -410,
+      2.76,
+      336
+     ],
+     "heading": -1.72,
+     "state": "ground",
+     "speed": 0,
+     "surface": "sand",
+     "waterDepth": -2.76,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 59.98956703182032,
+    "frame": {
+     "n": 23,
+     "avg": 16.66956521739137,
+     "p50": 16.69999999999709,
+     "p95": 18.60000000000582,
+     "p99": 18.700000000004366,
+     "max": 18.700000000004366
+    },
+    "cpu": {
+     "n": 23,
+     "avg": 4.465217390786046,
+     "p50": 4.5,
+     "p95": 5.200000002980232,
+     "p99": 6,
+     "max": 6
+    },
+    "gpu": {
+     "n": 24,
+     "avg": 53.813247999999994,
+     "p50": 51.44576,
+     "p95": 64.55296000000001,
+     "p99": 65.07724799999998,
+     "max": 65.07724799999998
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "low",
+    "renderScale": 0.5,
+    "drawCalls": 419,
+    "triangles": 1595839,
+    "pipelines": {
+     "compiled": 91,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "cliffs",
+   "condition": "night",
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/cliffs_night.jpg",
+   "staged": {
+    "time": {
+     "hour": 22.5,
+     "frozen": true,
+     "sunElevationDeg": -68.18562877171131,
+     "exposure": 11
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      -54.19879733885878,
+      52.57009307273548,
+      -576.8472288608845
+     ],
+     "dir": [
+      -0.9823381503945221,
+      -0.11283343666397562,
+      -0.14926611755541186
+     ],
+     "fov": 55.046996499989945,
+     "mode": "follow"
+    },
+    "player": {
+     "pos": [
+      -58,
+      50.64,
+      -577
+     ],
+     "heading": -1.42,
+     "state": "ground",
+     "speed": 0,
+     "surface": "rock",
+     "waterDepth": -50.64,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 60.005217845030685,
+    "frame": {
+     "n": 23,
+     "avg": 16.665217391304157,
+     "p50": 16.69999999999709,
+     "p95": 18.69999999999709,
+     "p99": 18.69999999999709,
+     "max": 18.69999999999709
+    },
+    "cpu": {
+     "n": 23,
+     "avg": 2.873913043866987,
+     "p50": 2.4000000059604645,
+     "p95": 4.0999999940395355,
+     "p99": 4.4000000059604645,
+     "max": 4.4000000059604645
+    },
+    "gpu": {
+     "n": 23,
+     "avg": 44.601522086956535,
+     "p50": 44.63001600000001,
+     "p95": 46.79270400000001,
+     "p99": 46.923776,
+     "max": 46.923776
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "low",
+    "renderScale": 0.5,
+    "drawCalls": 206,
+    "triangles": 1401587,
+    "pipelines": {
+     "compiled": 91,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "lighthouse",
+   "condition": "night",
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/lighthouse_night.jpg",
+   "staged": {
+    "time": {
+     "hour": 22.5,
+     "frozen": true,
+     "sunElevationDeg": -68.18562877171131,
+     "exposure": 11
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      -292.77376772736466,
+      249.95494068566683,
+      -332.57329072396067
+     ],
+     "dir": [
+      0.5680177559135511,
+      -0.21678652138323784,
+      0.7939517826124511
+     ],
+     "fov": 62.78269433974338,
+     "mode": "follow"
+    },
+    "player": {
+     "pos": [
+      -301.81,
+      231,
+      -301.86
+     ],
+     "heading": 2.38,
+     "state": "ground",
+     "speed": 0,
+     "surface": "stone",
+     "waterDepth": -231,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 60.374960279630564,
+    "frame": {
+     "n": 19,
+     "avg": 16.56315789473707,
+     "p50": 16.69999999999709,
+     "p95": 17.700000000004366,
+     "p99": 17.700000000004366,
+     "max": 17.700000000004366
+    },
+    "cpu": {
+     "n": 19,
+     "avg": 3.7789473674799265,
+     "p50": 4.199999988079071,
+     "p95": 5.299999997019768,
+     "p99": 5.299999997019768,
+     "max": 5.299999997019768
+    },
+    "gpu": {
+     "n": 17,
+     "avg": 49.23681129411764,
+     "p50": 50.462720000000004,
+     "p95": 65.99475199999999,
+     "p99": 65.99475199999999,
+     "max": 65.99475199999999
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "low",
+    "renderScale": 0.5,
+    "drawCalls": 172,
+    "triangles": 2443585,
+    "pipelines": {
+     "compiled": 91,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "beach",
+   "condition": "rain",
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/beach_rain.jpg",
+   "staged": {
+    "time": {
+     "hour": 14.5,
+     "frozen": true,
+     "sunElevationDeg": 42.32106431770195,
+     "exposure": 1.2405268865907093
+    },
+    "weather": {
+     "kind": "rain",
+     "auto": false,
+     "progress": 0,
+     "rain": 0.626,
+     "cover": 0.978,
+     "wet": 1,
+     "wind": 0.83
+    },
+    "camera": {
+     "pos": [
+      592.2189841719435,
+      3.2938287032477236,
+      34.42
+     ],
+     "dir": [
+      0.9936139167556968,
+      -0.11283343666397591,
+      -2.220446049250313e-16
+     ],
+     "fov": 55.21595125428083,
+     "mode": "follow"
+    },
+    "player": {
+     "pos": [
+      596,
+      1.36,
+      34
+     ],
+     "heading": 1.571,
+     "state": "ground",
+     "speed": 0,
+     "surface": "sand",
+     "waterDepth": -1.36,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 60.18657839301915,
+    "frame": {
+     "n": 20,
+     "avg": 16.61499999999978,
+     "p50": 16.69999999999709,
+     "p95": 18.69999999999709,
+     "p99": 18.69999999999709,
+     "max": 18.69999999999709
+    },
+    "cpu": {
+     "n": 20,
+     "avg": 1.9449999995529652,
+     "p50": 1.5999999940395355,
+     "p95": 3.3999999910593033,
+     "p99": 3.3999999910593033,
+     "max": 3.3999999910593033
+    },
+    "gpu": {
+     "n": 20,
+     "avg": 49.489510400000015,
+     "p50": 49.34860800000001,
+     "p95": 53.01862400000001,
+     "p99": 53.01862400000001,
+     "max": 53.01862400000001
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "low",
+    "renderScale": 0.5,
+    "drawCalls": 117,
+    "triangles": 1146734,
+    "pipelines": {
+     "compiled": 91,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "jungle",
+   "condition": "rain",
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/jungle_rain.jpg",
+   "staged": {
+    "time": {
+     "hour": 14.5,
+     "frozen": true,
+     "sunElevationDeg": 42.32106431770195,
+     "exposure": 1.967768673203052
+    },
+    "weather": {
+     "kind": "rain",
+     "auto": false,
+     "progress": 0,
+     "rain": 0.626,
+     "cover": 0.978,
+     "wet": 1,
+     "wind": 0.83
+    },
+    "camera": {
+     "pos": [
+      366.58922556982685,
+      31.31847278007191,
+      14.543579484463397
+     ],
+     "dir": [
+      -0.5122093371484587,
+      -0.1128334366639766,
+      0.8514165904588264
+     ],
+     "fov": 55.04672375499385,
+     "mode": "follow"
+    },
+    "player": {
+     "pos": [
+      365,
+      29.39,
+      18
+     ],
+     "heading": -2.6,
+     "state": "ground",
+     "speed": 0,
+     "surface": "leaves",
+     "waterDepth": -29.39,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 59.99520038396971,
+    "frame": {
+     "n": 25,
+     "avg": 16.667999999999882,
+     "p50": 16.60000000000582,
+     "p95": 17.700000000004366,
+     "p99": 18.599999999998545,
+     "max": 18.599999999998545
+    },
+    "cpu": {
+     "n": 25,
+     "avg": 5.096000001430512,
+     "p50": 5.0999999940395355,
+     "p95": 6.0999999940395355,
+     "p99": 6.0999999940395355,
+     "max": 6.0999999940395355
+    },
+    "gpu": {
+     "n": 25,
+     "avg": 43.18822400000001,
+     "p50": 41.81196800000001,
+     "p95": 50.33164800000001,
+     "p99": 52.887552,
+     "max": 52.887552
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "low",
+    "renderScale": 0.5,
+    "drawCalls": 360,
+    "triangles": 2912314,
+    "pipelines": {
+     "compiled": 91,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "waterfall",
+   "condition": "rain",
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/waterfall_rain.jpg",
+   "staged": {
+    "time": {
+     "hour": 14.5,
+     "frozen": true,
+     "sunElevationDeg": 42.32106431770195,
+     "exposure": 1.967768673203052
+    },
+    "weather": {
+     "kind": "rain",
+     "auto": false,
+     "progress": 0,
+     "rain": 0.626,
+     "cover": 0.978,
+     "wet": 1,
+     "wind": 0.83
+    },
+    "camera": {
+     "pos": [
+      189.6227396305756,
+      41.6427258623473,
+      -38.83886337536413
+     ],
+     "dir": [
+      -0.9069349537556196,
+      -0.11283343666397522,
+      -0.40587880608241766
+     ],
+     "fov": 55.04672375499385,
+     "mode": "follow"
+    },
+    "player": {
+     "pos": [
+      186,
+      39.71,
+      -40
+     ],
+     "heading": -1.15,
+     "state": "ground",
+     "speed": 0,
+     "surface": "dirt",
+     "waterDepth": -1.89,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 50.46583850931706,
+    "frame": {
+     "n": 26,
+     "avg": 19.815384615384502,
+     "p50": 16.69999999999709,
+     "p95": 33.400000000001455,
+     "p99": 34.30000000000291,
+     "max": 34.30000000000291
+    },
+    "cpu": {
+     "n": 26,
+     "avg": 4.323076923306171,
+     "p50": 4.299999997019768,
+     "p95": 5.399999991059303,
+     "p99": 5.700000002980232,
+     "max": 5.700000002980232
+    },
+    "gpu": {
+     "n": 24,
+     "avg": 51.14811733333334,
+     "p50": 48.693248000000004,
+     "p95": 62.717952000000004,
+     "p99": 67.82976,
+     "max": 67.82976
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "low",
+    "renderScale": 0.5,
+    "drawCalls": 273,
+    "triangles": 3277070,
+    "pipelines": {
+     "compiled": 91,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "village",
+   "condition": "rain",
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/village_rain.jpg",
+   "staged": {
+    "time": {
+     "hour": 14.5,
+     "frozen": true,
+     "sunElevationDeg": 42.32106431770195,
+     "exposure": 1.967768673203052
+    },
+    "weather": {
+     "kind": "rain",
+     "auto": false,
+     "progress": 0,
+     "rain": 0.626,
+     "cover": 0.978,
+     "wet": 1,
+     "wind": 0.83
+    },
+    "camera": {
+     "pos": [
+      -406.32342543664714,
+      4.692012883507428,
+      335.0226156477003
+     ],
+     "dir": [
+      -0.9825746336395558,
+      -0.11283343666397726,
+      0.14770140452510616
+     ],
+     "fov": 55.04672375499385,
+     "mode": "follow"
+    },
+    "player": {
+     "pos": [
+      -410,
+      2.76,
+      336
+     ],
+     "heading": -1.72,
+     "state": "ground",
+     "speed": 0,
+     "surface": "sand",
+     "waterDepth": -2.76,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 60.13952369497276,
+    "frame": {
+     "n": 25,
+     "avg": 16.627999999999883,
+     "p50": 16.69999999999709,
+     "p95": 18.5,
+     "p99": 18.700000000004366,
+     "max": 18.700000000004366
+    },
+    "cpu": {
+     "n": 25,
+     "avg": 4.4720000010728835,
+     "p50": 4.4000000059604645,
+     "p95": 5.4000000059604645,
+     "p99": 6,
+     "max": 6
+    },
+    "gpu": {
+     "n": 25,
+     "avg": 54.439444479999985,
+     "p50": 51.904512000000004,
+     "p95": 64.42188799999998,
+     "p99": 65.40492799999998,
+     "max": 65.40492799999998
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "low",
+    "renderScale": 0.5,
+    "drawCalls": 413,
+    "triangles": 1602043,
+    "pipelines": {
+     "compiled": 91,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "cliffs",
+   "condition": "rain",
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/cliffs_rain.jpg",
+   "staged": {
+    "time": {
+     "hour": 14.5,
+     "frozen": true,
+     "sunElevationDeg": 42.32106431770195,
+     "exposure": 1.967768673203052
+    },
+    "weather": {
+     "kind": "rain",
+     "auto": false,
+     "progress": 0,
+     "rain": 0.626,
+     "cover": 0.978,
+     "wet": 1,
+     "wind": 0.83
+    },
+    "camera": {
+     "pos": [
+      -54.19879733885878,
+      52.57009307273548,
+      -576.8472288608845
+     ],
+     "dir": [
+      -0.9823381503945221,
+      -0.11283343666397562,
+      -0.14926611755541186
+     ],
+     "fov": 55.04672375499385,
+     "mode": "follow"
+    },
+    "player": {
+     "pos": [
+      -58,
+      50.64,
+      -577
+     ],
+     "heading": -1.42,
+     "state": "ground",
+     "speed": 0,
+     "surface": "rock",
+     "waterDepth": -50.64,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 60.11560693641619,
+    "frame": {
+     "n": 26,
+     "avg": 16.634615384615383,
+     "p50": 16.69999999999709,
+     "p95": 18.099999999998545,
+     "p99": 18.60000000000582,
+     "max": 18.60000000000582
+    },
+    "cpu": {
+     "n": 26,
+     "avg": 3.226923076579204,
+     "p50": 3.5,
+     "p95": 4,
+     "p99": 4.299999997019768,
+     "max": 4.299999997019768
+    },
+    "gpu": {
+     "n": 28,
+     "avg": 47.693824000000006,
+     "p50": 46.596096,
+     "p95": 58.91686400000001,
+     "p99": 59.244544000000005,
+     "max": 59.244544000000005
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "low",
+    "renderScale": 0.5,
+    "drawCalls": 207,
+    "triangles": 1411992,
+    "pipelines": {
+     "compiled": 91,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "lighthouse",
+   "condition": "rain",
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/lighthouse_rain.jpg",
+   "staged": {
+    "time": {
+     "hour": 14.5,
+     "frozen": true,
+     "sunElevationDeg": 42.32106431770195,
+     "exposure": 1.967768673203052
+    },
+    "weather": {
+     "kind": "rain",
+     "auto": false,
+     "progress": 0,
+     "rain": 0.626,
+     "cover": 0.978,
+     "wet": 1,
+     "wind": 0.83
+    },
+    "camera": {
+     "pos": [
+      -294.9872210693395,
+      251.7862398780866,
+      -330.3069634397277
+     ],
+     "dir": [
+      0.5792544338869093,
+      -0.22594315465611192,
+      0.7832075023174896
+     ],
+     "fov": 62.79737859676645,
+     "mode": "follow"
+    },
+    "player": {
+     "pos": [
+      -301.81,
+      231,
+      -301.86
+     ],
+     "heading": 2.38,
+     "state": "ground",
+     "speed": 0,
+     "surface": "stone",
+     "waterDepth": -231,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 60.50129645635226,
+    "frame": {
+     "n": 14,
+     "avg": 16.52857142857153,
+     "p50": 16.69999999999709,
+     "p95": 18.700000000004366,
+     "p99": 18.700000000004366,
+     "max": 18.700000000004366
+    },
+    "cpu": {
+     "n": 14,
+     "avg": 4.128571426229818,
+     "p50": 4.399999991059303,
+     "p95": 4.9000000059604645,
+     "p99": 4.9000000059604645,
+     "max": 4.9000000059604645
+    },
+    "gpu": {
+     "n": 12,
+     "avg": 49.53429333333333,
+     "p50": 51.249152,
+     "p95": 63.307776000000004,
+     "p99": 63.307776000000004,
+     "max": 63.307776000000004
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "low",
+    "renderScale": 0.5,
+    "drawCalls": 166,
+    "triangles": 2458952,
+    "pipelines": {
+     "compiled": 91,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "beach",
+   "condition": "note-interaction",
+   "noteTitle": "TIDE NOTE · EAST BEACH",
+   "opened": true,
+   "closedWithEscape": true,
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/beach_note_open.jpg"
+  },
+  {
+   "spot": "beach",
+   "condition": "first-keeper",
+   "file": "/Users/gaurav/open_world_horror_island_game/artifacts/critique/round-03/captures/beach_first_keeper.jpg",
+   "reveal": {
+    "state": {
+     "phase": "watching",
+     "activeTime": 25,
+     "pressure": 0.15,
+     "presenceCount": 1,
+     "seenTime": 0.72,
+     "noteCount": 6,
+     "nearestNote": "TIDE NOTE · EAST BEACH"
+    },
+    "visible": true,
+    "figureNdc": {
+     "x": 0.753,
+     "y": -0.037,
+     "z": 0.009
+    },
+    "playerNdc": {
+     "x": -0.118,
+     "y": -0.174,
+     "z": 0.026
+    },
+    "lateralNdc": 0.871,
+    "figurePosition": [
+     603,
+     0.91,
+     42
+    ]
+   }
+  }
+ ],
+ "console": [
+  "[log] vegetation grass0:12261 grass1:12006 total 24267",
+  "[log] [island] canopy shell: 79491 vertices, 155926 triangles",
+  "[info] [island] pool rocks: basalt_d:2 pebbles_b:25 basalt_c:15 basalt_b:18 basalt_a:9 pebbles_a:63",
+  "[log] [island] rocks 1428 1410 188 195",
+  "[log] [island] cliff rocks 30 39",
+  "[info] [island] rock kit: cleared the falls (cliff_c along 12.4 m, cliff_a along -2.4 m, cliff_a along -1.6 m)",
+  "[log] vegetation (glb) coconut_e:173 coconut_f:204 coconut_young_a:67 coconut_b:132 coconut_d:159 coconut_young_c:35 coconut_a:127 coconut_young_b:44 scrub_d:605 scrub_b:591 scrub_a:565 pandanus_b:40 pandanus_a:34 scrub_c:175 midstorey_a:1561 midstorey_b:1538 rainforest_b:1013 rainforest_a:438 rainforest_c:443 rainforest_d:1419 banana_a:3894 sapling_a:4315 sapling_b:4299 licuala_a:3975 rattan_a:3153 treefern_a:4365 alocasia_a:4611 calathea_b:15297 fern_a:15080 fern_b:15379 anthurium_a:15014 litter_b:14016 litter_a:14186 litter_c:13915 log_a:193 log_b:199 roots_a:225 total 141479",
+  "[info] [island] Catching the light: 107 materials, batches 237ms/+11 240ms/+7 1564ms/+8 129ms/+0 130ms/+0 59ms/+9 78ms/+3 782ms/+21 125ms/+1 125ms/+2 135ms/+9 92ms/+11 87ms/+7 20ms/+1",
+  "[log] [island] ledge plants vinecurtain_b:94 moss_b:44 moss_a:42 hangfern_a:50 hangfern_b:60 wallclump_a:44 vinecurtain_a:38",
+  "[info] [island] Dressing the palms: 134 materials, batches 15ms/+0 63ms/+0",
+  "[info] [island] 91 pipelines compiled in parallel, 0.0 s after the last prime",
+  "[log] vegetation grass0:12261 grass1:12006 total 24267",
+  "[log] [island] canopy shell: 79491 vertices, 155926 triangles",
+  "[info] [island] pool rocks: basalt_d:2 pebbles_b:25 basalt_c:15 basalt_b:18 basalt_a:9 pebbles_a:63",
+  "[log] [island] rocks 1428 1410 188 195",
+  "[log] [island] cliff rocks 30 39",
+  "[info] [island] rock kit: cleared the falls (cliff_c along 12.4 m, cliff_a along -2.4 m, cliff_a along -1.6 m)",
+  "[log] vegetation (glb) coconut_e:173 coconut_f:204 coconut_young_a:67 coconut_b:132 coconut_d:159 coconut_young_c:35 coconut_a:127 coconut_young_b:44 scrub_d:605 scrub_b:591 scrub_a:565 pandanus_b:40 pandanus_a:34 scrub_c:175 midstorey_a:1561 midstorey_b:1538 rainforest_b:1013 rainforest_a:438 rainforest_c:443 rainforest_d:1419 banana_a:3894 sapling_a:4315 sapling_b:4299 licuala_a:3975 rattan_a:3153 treefern_a:4365 alocasia_a:4611 calathea_b:15297 fern_a:15080 fern_b:15379 anthurium_a:15014 litter_b:14016 litter_a:14186 litter_c:13915 log_a:193 log_b:199 roots_a:225 total 141479",
+  "[info] [island] Catching the light: 105 materials, batches 242ms/+11 194ms/+7 200ms/+6 115ms/+0 293ms/+4 1332ms/+7 845ms/+19 70ms/+1 185ms/+7 142ms/+0 85ms/+9 98ms/+11 83ms/+7 18ms/+1",
+  "[log] [island] ledge plants vinecurtain_b:94 moss_b:44 moss_a:42 hangfern_a:50 hangfern_b:60 wallclump_a:44 vinecurtain_a:38",
+  "[info] [island] Dressing the palms: 134 materials, batches 17ms/+0 58ms/+0",
+  "[info] [island] 91 pipelines compiled in parallel, 0.0 s after the last prime"
+ ],
+ "at": "2026-11-18T19:42:32.791Z"
+}

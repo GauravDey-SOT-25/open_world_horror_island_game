@@ -1,0 +1,60 @@
+{
+ "round": "round-03",
+ "mode": "uncapped",
+ "quality": {
+  "preset": "high",
+  "renderScale": 1,
+  "shadowMap": 2048,
+  "shadowMid": 2048,
+  "shadowFarMap": 1024,
+  "cascades": 3,
+  "shadowFar": 380,
+  "ao": true,
+  "aoScale": 0.5,
+  "taa": true,
+  "bloom": true,
+  "density": 1,
+  "grassFar": 60,
+  "lodScale": 1,
+  "oceanSegments": 256,
+  "cloudSteps": 16,
+  "rainParticles": 14000
+ },
+ "adapter": {
+  "name": "ANGLE",
+  "backend": "WebGPU"
+ },
+ "placement": {
+  "display": "DISPLAY1",
+  "size": [
+   1920,
+   1080
+  ],
+  "viewport": "emulated"
+ },
+ "rows": [
+  {
+   "spot": "beach",
+   "condition": "sunrise",
+   "uncapped": {
+    "fps": 19.8,
+    "target": null,
+    "refreshHz": 26,
+    "frameAvg": 50.53,
+    "frameP95": 100,
+    "frameP99": 104.9,
+    "frameMax": 105.1,
+    "cpuAvg": 47.29,
+    "cpuP95": 54.7,
+    "gpuAvg": 0,
+    "gpuP95": 0,
+    "gpuP99": 0,
+    "gpuN": 0,
+    "drawCalls": 194,
+    "triangles": 4297894
+   },
+   "capped": null
+  }
+ ],
+ "at": "2026-11-18T18:09:38.147Z"
+}

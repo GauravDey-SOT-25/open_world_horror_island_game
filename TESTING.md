@@ -7,7 +7,7 @@ Everything a tester needs without reading the source: how to run the game, the U
 ## Run it
 
 ```bash
-cd c:\Code\island
+cd /path/to/open_world_horror_island_game
 pnpm install
 pnpm dev                    # development server: http://127.0.0.1:5230/
 pnpm build                  # production build into dist/ (type-check + vite build)
@@ -37,11 +37,11 @@ All optional, combine freely: `http://127.0.0.1:5231/?spot=cliffs&tod=sunset&fre
 | `mute` | `1` | mute all sound |
 | `debug` | `1` | debug overlay: GPU adapter, backend, preset, frame cap, fps, frame / CPU / GPU ms, draws, triangles, player state and surface, time, weather |
 | `photo` | `1` | start in photo mode |
-| `quality` | `low` `medium` `high` `ultra` | graphics preset (default: from the GPU; automated runs use `high`) |
+| `quality` | `low` `medium` `high` `ultra` | graphics preset (default: from the GPU); the low preset adapts render resolution from 0.5 down to 0.4 when needed to hold the frame budget |
 | `fps` | `auto` `<n>` `0` | frame cap: `auto` = largest integer divisor of the display refresh that keeps >= 60 fps (66.7 on a 200 Hz screen), paced evenly: when more than 4 % of the last 120 frames land a refresh late it steps to the next divisor (50 fps on a 200 Hz screen, never below 45) and steps back up on trial after 8 s of clear headroom; a number = that fixed rate, no adaptation; `0` uncapped |
 | `cam` | `orbit` `free` or `x,y,z,tx,ty,tz` | camera override (position and look-at target in metres) |
 | `webgl` | `1` | force the WebGL 2 backend |
-| `test` | `1` | automated run: no pointer lock, audio starts without a gesture, `high` preset, GPU timing on |
+| `test` | `1` | automated run: no pointer lock, audio starts without a gesture, `high` preset, GPU timing on, adaptive resolution off for repeatable screenshots |
 | `capture` | `1` | trailer capture (`pnpm record`): `test` plus no HUD, muted, frozen time of day, clear weather, a seeded `Math.random` |
 | `clean` | `1` | with `capture=1` only: no vignette (the picture exactly as rendered and tone mapped) |
 | `accum` | `n` | with `capture=1` only: every stepped frame is the mean of n renders of the same instant, each with its own sub-pixel jitter and fresh dither seeds (supersampling; the temporal AA is off) |
@@ -166,14 +166,18 @@ only DISPLAY1 is connected.
 pnpm shots --round round-01                                    # all 6 spots x 5 conditions, production build
 pnpm shots --round round-01 --spots beach,cliffs --conditions sunrise,rain
 pnpm shots --round round-01 --view follow                      # third-person camera instead of the authored shot
+pnpm shots --round round-03 --view follow --quality low --note-test --encounter
 pnpm shots --round dev --dev                                   # against the dev server
+pnpm exec tsx scripts/contact-sheets.ts --in artifacts/critique/round-03/captures --out artifacts/critique/round-03
 ```
 
 Options: `--spots` (comma list), `--conditions` (comma list), `--view shot|follow`, `--quality low|medium|high|ultra`
-(default high), `--settle <ms>` (default 1500), `--dev`.
-Output: `E:\shots\island\<round>\<spot>_<condition>.png` (1920x1080) and `report.json` (load time, adapter, window
-placement (display, real or emulated viewport), the staged state and frame stats per shot, console warnings). Deterministic: the world clock is frozen at t = 1000 s for
-every shot.
+(default high), `--settle <ms>` (default 1500), `--out <path>`, `--q <url-params>`, `--note-test`, `--encounter`, and `--dev`.
+Output defaults to `artifacts/critique/<round>/captures/<spot>_<condition>.jpg` (1920x1080, JPEG quality 92) and `report.json` (load time,
+adapter, window placement, staged state and frame stats per shot, console warnings). `--note-test` opens a nearby page
+with E and closes it with Escape. `--encounter` reloads a fresh beach session and captures the first Keeper sighting.
+The system clock is frozen at t = 1000 s for each location/time/weather shot; the Keeper encounter runs with world time
+advancing. Contact sheets can be generated with `scripts/contact-sheets.ts`.
 
 ### `pnpm perf`: frame-time statistics
 
@@ -188,10 +192,11 @@ By default every combination is measured twice, in two browser sessions: uncappe
 off and the game's cap off: what the view costs on this GPU, whatever display the window is on, so this is the
 headroom number) and capped (the game's own cap for the refresh of that display: what a player sees there). The
 player walks during each measurement so streaming, culling and LOD run as in play.
-Output: `E:\shots\island\<round>\perf\perf.json` (both runs per row) and `perf.md` (uncapped fps and frame avg / p95 /
+Output defaults to `artifacts/perf/<round>/perf.json` (both runs per row) and `perf.md` (uncapped fps and frame avg / p95 /
 p99, capped fps with its cap and the refresh it came from, capped p99, CPU avg, GPU avg, draw calls and triangles of a
 whole frame (shadow cascades, scene and post passes) per spot and condition, and a summary line: how many
-combinations hold 60 and 70 fps uncapped). `--q "skip=veg"` etc. passes extra URL parameters for A/B measurements.
+combinations hold 60 and 70 fps uncapped); each row records the final render scale. `--out <path>` changes the output
+directory, and `--q "q.density=0.3"` passes extra URL parameters for A/B measurements.
 
 ### `pnpm clip`: motion clips
 

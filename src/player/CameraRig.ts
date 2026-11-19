@@ -19,6 +19,8 @@ export interface CamWorld {
   waterAt?(x: number, z: number): number;
   /** a room camera for enclosed spaces (the lighthouse): fills pos / target and returns true when it applies */
   interior?(player: THREE.Vector3, pos: THREE.Vector3, target: THREE.Vector3): boolean;
+  /** elevated composition for the lighthouse gallery: keep the tower below the sightline */
+  galleryPanorama?(player: THREE.Vector3, yaw: number, pos: THREE.Vector3, target: THREE.Vector3): boolean;
 }
 
 const tmp = new THREE.Vector3();
@@ -50,6 +52,7 @@ export class CameraRig {
   private idleLook = 10;
   /** interior camera state and the blend between it and the follow camera */
   private inside = false;
+  private panorama = false;
   private blend = 1;
   private blendFrom = new THREE.Vector3();
   private blendFromQ = new THREE.Quaternion();
@@ -171,6 +174,27 @@ export class CameraRig {
       this.iLook.lerp(this.iTarget, 1 - Math.exp(-dt * 8));
       cam.position.copy(this.iSmooth);
       cam.lookAt(this.iLook);
+      this.applyBlend(dt);
+      return;
+    }
+    const panorama = !!this.world.galleryPanorama?.(playerPos, this.yaw, this.iPos, this.iTarget);
+    if (panorama !== this.panorama) {
+      this.startBlend();
+      this.panorama = panorama;
+      if (!panorama) {
+        this.smoothTarget.copy(this.target);
+        this.curDist = 1.2;
+      }
+    }
+    if (panorama) {
+      cam.position.lerp(this.iPos, 1 - Math.exp(-dt * 7));
+      cam.lookAt(this.iTarget);
+      const fov = this.baseFov + 8;
+      if (Math.abs(cam.fov - fov) > 0.05) {
+        cam.fov += (fov - cam.fov) * (1 - Math.exp(-dt * 4));
+        cam.updateProjectionMatrix();
+      }
+      this.curDist = this.dist;
       this.applyBlend(dt);
       return;
     }

@@ -187,6 +187,14 @@ async function boot() {
     groundAt: (x, z, y = 1e9) => Math.max(hf.height(x, z), colliders.surfaceAt(x, z, y + 0.3)?.y ?? -1e9),
     raycast: (f, d, m) => colliders.raycast(f, d, m),
     interior: (p, pos, target) => lighthouse.interiorCamera(p, pos, target),
+    galleryPanorama: (p, yaw, pos, target) => {
+      const radius = Math.hypot(p.x - LIGHTHOUSE.p[0], p.z - LIGHTHOUSE.p[1]);
+      if (p.y < lighthouse.galleryY - 0.25 || p.y > lighthouse.galleryY + 0.65 || radius < Lighthouse.RW + 0.15 || radius > Lighthouse.RR - 0.05) return false;
+      const fx = Math.sin(yaw), fz = -Math.cos(yaw);
+      pos.set(p.x - fx * 15, p.y + 35, p.z - fz * 15);
+      target.set(p.x + fx * 180, p.y - 25, p.z + fz * 180);
+      return true;
+    },
   });
   player.seaAt = (x, z) => ocean.surfaceAt(x, z, 0);
   player.onStep = (e) => audio.step(e);

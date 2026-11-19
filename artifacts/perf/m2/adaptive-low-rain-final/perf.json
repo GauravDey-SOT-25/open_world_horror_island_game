@@ -1,0 +1,90 @@
+{
+ "round": "round-03",
+ "mode": "capped",
+ "quality": {
+  "preset": "low",
+  "renderScale": 0.5,
+  "shadowMap": 512,
+  "shadowMid": 512,
+  "shadowFarMap": 512,
+  "cascades": 1,
+  "shadowFar": 100,
+  "ao": false,
+  "aoScale": 0.5,
+  "taa": true,
+  "bloom": false,
+  "density": 0.45,
+  "grassFar": 28,
+  "lodScale": 0.6,
+  "oceanSegments": 128,
+  "cloudSteps": 8,
+  "rainParticles": 4000
+ },
+ "adapter": {
+  "name": "ANGLE",
+  "backend": "WebGPU"
+ },
+ "webgpuAdapter": {
+  "vendor": "apple",
+  "architecture": "metal-3",
+  "device": "",
+  "description": ""
+ },
+ "placement": {
+  "display": "DISPLAY1",
+  "size": [
+   1920,
+   1080
+  ],
+  "viewport": "emulated"
+ },
+ "rows": [
+  {
+   "spot": "waterfall",
+   "condition": "rain",
+   "uncapped": null,
+   "capped": {
+    "fps": 59.6,
+    "target": 60,
+    "refreshHz": 60,
+    "renderScale": 0.425,
+    "frameAvg": 16.77,
+    "frameP95": 17.4,
+    "frameP99": 17.7,
+    "frameMax": 33.3,
+    "cpuAvg": 3.7,
+    "cpuP95": 4.8,
+    "gpuAvg": 0,
+    "gpuP95": 0,
+    "gpuP99": 0,
+    "gpuN": 0,
+    "drawCalls": 273,
+    "triangles": 3393170
+   }
+  },
+  {
+   "spot": "lighthouse",
+   "condition": "rain",
+   "uncapped": null,
+   "capped": {
+    "fps": 60,
+    "target": 60,
+    "refreshHz": 60,
+    "renderScale": 0.425,
+    "frameAvg": 16.67,
+    "frameP95": 17.6,
+    "frameP99": 17.7,
+    "frameMax": 17.8,
+    "cpuAvg": 2.71,
+    "cpuP95": 3.3,
+    "gpuAvg": 0,
+    "gpuP95": 0,
+    "gpuP99": 0,
+    "gpuN": 0,
+    "drawCalls": 154,
+    "triangles": 2427219
+   }
+  }
+ ],
+ "at": "2026-11-19T03:10:43.174Z"
+}

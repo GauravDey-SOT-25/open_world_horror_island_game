@@ -1,0 +1,66 @@
+{
+ "round": "round-03",
+ "mode": "uncapped",
+ "quality": {
+  "preset": "low",
+  "renderScale": 0.5,
+  "shadowMap": 512,
+  "shadowMid": 512,
+  "shadowFarMap": 512,
+  "cascades": 1,
+  "shadowFar": 100,
+  "ao": false,
+  "aoScale": 0.5,
+  "taa": true,
+  "bloom": false,
+  "density": 0.15,
+  "grassFar": 20,
+  "lodScale": 0.45,
+  "oceanSegments": 128,
+  "cloudSteps": 6,
+  "rainParticles": 2500
+ },
+ "adapter": {
+  "name": "ANGLE",
+  "backend": "WebGPU"
+ },
+ "webgpuAdapter": {
+  "vendor": "apple",
+  "architecture": "metal-3",
+  "device": "",
+  "description": ""
+ },
+ "placement": {
+  "display": "DISPLAY1",
+  "size": [
+   1920,
+   1080
+  ],
+  "viewport": "emulated"
+ },
+ "rows": [
+  {
+   "spot": "waterfall",
+   "condition": "rain",
+   "uncapped": {
+    "fps": 56.8,
+    "target": null,
+    "refreshHz": 64,
+    "frameAvg": 17.6,
+    "frameP95": 34.7,
+    "frameP99": 69.2,
+    "frameMax": 133.6,
+    "cpuAvg": 17.27,
+    "cpuP95": 32.2,
+    "gpuAvg": 0,
+    "gpuP95": 0,
+    "gpuP99": 0,
+    "gpuN": 0,
+    "drawCalls": 221,
+    "triangles": 2155451
+   },
+   "capped": null
+  }
+ ],
+ "at": "2026-11-18T19:18:09.161Z"
+}

@@ -229,7 +229,7 @@ export class Lighthouse {
     this.lamp.position.copy(this.lampPos);
     this.group.add(this.lamp);
     const lampMat = new THREE.MeshBasicNodeMaterial();
-    lampMat.colorNode = vec3(1.0, 0.84, 0.58).mul(lighthouseU.on.mul(52).add(0.6));
+    lampMat.colorNode = vec3(1.0, 0.84, 0.58).mul(lighthouseU.on.mul(8).add(0.6));
     const bulb = new THREE.Mesh(new THREE.SphereGeometry(0.2, 16, 10), lampMat);
     bulb.position.copy(this.lampPos);
     bulb.castShadow = false;
@@ -269,7 +269,7 @@ export class Lighthouse {
     const fade = exp(tAx.div(-380)).mul(smoothstep(0, 6, tAx));
     const k = profile.div(r.mul(sinV)).mul(phase).mul(fade).mul(side).min(0.9);
     // A visible but restrained shaft in the humid air; haze adds at most a small lift instead of a clipped white fan.
-    bm.colorNode = vec4(vec3(1.0, 0.86, 0.62).mul(k).mul(0.24).mul(lighthouseU.on).mul(float(0.52).add(min(atmo.mist.mul(1100), 0.75))), 1);
+    bm.colorNode = vec4(vec3(1.0, 0.86, 0.62).mul(k).mul(0.08).mul(lighthouseU.on).mul(float(0.52).add(min(atmo.mist.mul(1100), 0.75))), 1);
     this.beam = new THREE.Mesh(cone, bm);
     const beam2 = new THREE.Mesh(cone, bm);
     beam2.rotation.y = Math.PI;
@@ -557,7 +557,7 @@ export class Lighthouse {
     // drawn in the first frames by day too (prime), so its pipeline compiles behind the loading screen
     this.beam.visible = (lighthouseU.on.value as number) > 0.01 || this.prime > 0;
     if (this.prime > 0) this.prime--;
-    this.lamp.intensity = (lighthouseU.on.value as number) * 6;
+    this.lamp.intensity = (lighthouseU.on.value as number) * 3.5;
   }
 }
 
@@ -665,6 +665,6 @@ function lensMaterial() {
   m.roughnessNode = float(0.08);
   m.metalnessNode = float(0.6);
   // (the lit optic is a hard point far brighter than anything else at night: it blooms)
-  m.emissiveNode = vec3(1.0, 0.8, 0.5).mul(lighthouseU.on.mul(28));
+  m.emissiveNode = vec3(1.0, 0.8, 0.5).mul(lighthouseU.on.mul(9));
   return m;
 }

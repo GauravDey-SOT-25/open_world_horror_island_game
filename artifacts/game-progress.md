@@ -36,22 +36,33 @@ beach, jungle, falls, village, cliffs, and lighthouse.
   drying fish, firewood, boats, and scattered props remain the village's signs of use; no new licensed assets were
   added.
 - Documented the existing `?debug=1` / F3 overlay as a live Mac performance spot-check. It reports frame percentiles,
-  adapter, backend, CPU/GPU timings, and render counts. M2 performance remains unmeasured.
+  adapter, backend, CPU/GPU timings, and render counts.
 
-## Remaining gaps for the critic and next builder
+## Round 3 builder pass
 
-- Later random Keeper placements use terrain sampling rather than a full occlusion query and can appear behind a
-  trunk or against a weak silhouette; review them from all six locations, especially sunset, rain, and the lighthouse.
-- The figure uses the traveler's base character mesh. Its new dark material treatment and animation need screenshot
-  review at realistic viewing distances; a better licensed creature model or authored cloak may be warranted if the
-  silhouette reads as the player.
-- The note stands and sites have not yet been visually checked in game for floating, overlap, or natural approach
-  direction. The lighthouse page especially needs a close inspection on the gallery.
-- The M2 MacBook Air 60 fps goal has not been measured. Added work is limited to one skinned figure when present,
-  six small props, a few scalar audio controls, and DOM transitions, but sustained frame-time evidence is outstanding.
-- Rain, sunrise, noon, sunset, night, and all six named camera spots still need the separate screenshot comparison
-  requested by the user. Build validation does not establish visual quality or end-to-end interaction quality.
-- The changed water and village smoke have not yet had screenshot comparison. Cliffs, waterfall, timber, dock, boats,
-  and foliage still need review against the report's photo and AAA references.
-- The social preview is still the repository's existing `docs/social-preview.jpg`; replace it with the best in-game
-  horror shot and set it in the GitHub repository after the critic loop selects a frame.
+- Kept the beach Keeper on dry sand, clear of the avatar and tide note. A fresh-session screenshot confirms the
+  first encounter is visible in the right side of the beach view and waits until after the note can be read.
+- Pulled the lighthouse panorama above and outside the lantern structure, so the island and sea fill the view. Reduced
+  beacon output to keep the night sweep visible without the previous bright band across the frame.
+- Added low-preset dynamic resolution: it starts at 0.5 and drops in steps to 0.4 after sustained frame-budget misses,
+  then recovers slowly in lighter areas. This preserves the full vegetation density instead of thinning the island.
+- Captured all 30 production views (six locations x sunrise, noon, sunset, night and rain) on the built-in Mac display
+  with a 1920x1080 emulated viewport; no external second display was connected. `--note-test` confirmed E opens the
+  tide page and Escape closes it. `--encounter` reloads to a fresh beach session and captures the intended first
+  sighting at `[603, 0.91, 42]`.
+- `pnpm build` passes. On the M2 MacBook Air in headed Chrome/WebGPU, the final capped 8-second rain run measured 59.6
+  fps at the waterfall (final render scale 0.425, frame p95 17.4 ms, p99 17.7 ms) and 60 fps at the lighthouse
+  (scale 0.425, p95 17.6 ms, p99 17.7 ms). These are close to the 60 fps goal, with occasional frames over 16.7 ms; the GPU
+  timestamp query was unavailable in this browser, so GPU time is recorded as 0.
+
+## Awaiting Round 3 critic and next builder
+
+- The independent critic still needs to compare the captures against licensed tropical-island photography and top
+  open-world game references, with exact visual differences recorded by place and condition.
+- Later random Keeper placements need review for tree/building occlusion and silhouette readability. The figure still
+  uses the base traveler rig; improve or replace it if the critic finds that it reads as the player.
+- The tide page and all five other note sites need close inspection in the authored world for floating, overlap, and
+  natural approach direction, especially the lighthouse page.
+- Review the waterfall's nearly white plume, night exposure, cliff/player placement, village scale, foliage silhouettes,
+  water surface, lighting and shadow quality against the critic's references.
+- Choose the strongest final in-game frame, create the OG image from it, and set that image as the GitHub social preview.
