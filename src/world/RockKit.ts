@@ -23,6 +23,7 @@ import { fallsPath } from '../water/fallsPath';
 import { sunLit } from '../core/lighting';
 import { instancedMesh } from '../core/instancing';
 import { PoolRocks } from './poolRocks';
+import { atmo } from '../sky/Atmosphere';
 
 /**
  * Piece geometry at scale 1 (from rocks.json and the lod1 meshes): plan extent, how far the face's foot stands out
@@ -543,6 +544,13 @@ function kitMaterial(src: THREE.MeshStandardMaterial) {
   // (soaked rock under a running film is near black)
   alb = alb.mul(mix(float(1), float(0.48), wet)).mul(mix(float(1), float(0.58), soaked));
   m.colorNode = vec4(alb, 1);
+  // The cliff faces see the sun and moon directly but have no local fill light. A restrained blue-grey sky bounce
+  // keeps their scanned relief readable at dusk and night without flattening the daytime contrast.
+  const skyUp = normalWorldGeometry.y.mul(0.5).add(0.5).clamp(0, 1).mul(0.65).add(0.35);
+  const nightBounce = vec3(0.0013, 0.0024, 0.0058)
+    .mul(atmo.night.mul(float(1).sub(atmo.overcast.mul(0.45))).mul(7.5))
+    .mul(skyUp);
+  m.emissiveNode = alb.mul(nightBounce);
   const wetRough = mix(min(orm.g, float(0.48)), min(orm.g, float(0.17)), soaked.div(wet.max(0.001)));
   m.roughnessNode = mix(orm.g.max(0.62).mul(float(1).sub(green.mul(0.1))), wetRough, wet.mul(float(1).sub(green.mul(0.5))));
   m.metalnessNode = float(0);

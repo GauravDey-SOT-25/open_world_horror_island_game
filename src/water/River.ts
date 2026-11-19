@@ -440,9 +440,31 @@ export class River {
     const across = U.x.sub(0.5).mul(W);
     // when this water left the lip: the pattern rides with it
     const tau = riverU.time.sub(U.y.mul(tFall)).add(veil ? 17.3 : 0);
-    const s1 = mx_noise_float(vec3(across.mul(1.9), tau.mul(0.8), 0.3));
-    const s2 = mx_noise_float(vec3(across.mul(6.5), tau.mul(2.4), 1.7));
-    const lumps = mx_noise_float(vec3(across.mul(0.9), tau.mul(3.1), 4.1));
+    let s1: N, s2: N, lumps: N, clumps: N, fine: N, fine2: N, surge: N;
+    if (preset === 'low') {
+      // The low preset used eight layered 3D noise fields in each waterfall sheet. At 1080p that cost more than
+      // the rest of the falls while making the water read as a solid white card. Two mipmapped, flowing lace samples
+      // keep breakup animated and detailed while letting the gorge rock show between the strands.
+      const flowUv = vec2(U.x.mul(8.5), U.y.mul(2.2).sub(riverU.time.mul(0.38)));
+      const detailUv = vec2(U.x.mul(18), U.y.mul(5.4).sub(riverU.time.mul(0.72))).add(0.31);
+      const flowTex = texture(laceTex, flowUv);
+      const detailTex = texture(laceTex, detailUv);
+      s1 = flowTex.r.sub(0.5).mul(2);
+      s2 = detailTex.r.sub(0.5).mul(2);
+      lumps = flowTex.a.sub(0.5).mul(2);
+      clumps = flowTex.b.sub(0.5).mul(2);
+      fine = flowTex.g.sub(0.5).mul(2);
+      fine2 = detailTex.g.sub(0.5).mul(2);
+      surge = sin(across.mul(0.24).add(riverU.time.mul(0.55)));
+    } else {
+      s1 = mx_noise_float(vec3(across.mul(1.9), tau.mul(0.8), 0.3));
+      s2 = mx_noise_float(vec3(across.mul(6.5), tau.mul(2.4), 1.7));
+      lumps = mx_noise_float(vec3(across.mul(0.9), tau.mul(3.1), 4.1));
+      clumps = mx_noise_float(vec3(across.mul(2.6), tau.mul(5.2), 2.2));
+      fine = mx_noise_float(vec3(across.mul(13), tau.mul(1.6), 5.9));
+      fine2 = mx_noise_float(vec3(across.mul(29), tau.mul(3.4), 8.3));
+      surge = mx_noise_float(vec3(across.mul(0.18), tau.mul(0.55), 8.8));
+    }
     // the lip is not a weir: the water comes over it in lobes, thick where the rock is low and parted where a ledge
     // stands up, so the top of the falls is a ragged line of tongues with dark rock between them that closes a few
     // metres down as the lobes spread
@@ -460,22 +482,24 @@ export class River {
     const core = smoothstep(0.04, 0.24, edge.add(s1.mul(0.05)));
     let alpha: N;
     // thickness of the water here: strands and lumps over a body that pulses as surges come over the lip
-    const surge = mx_noise_float(vec3(across.mul(0.18), tau.mul(0.55), 8.8));
     // clumps of aerated water a metre or two across, tumbling down with it and stretching as it accelerates
-    const clumps = mx_noise_float(vec3(across.mul(2.6), tau.mul(5.2), 2.2)).mul(aer);
+    clumps = clumps.mul(aer);
     // fine strands: narrow across, long along the flow
-    const fine = mx_noise_float(vec3(across.mul(13), tau.mul(1.6), 5.9));
-    const fine2 = mx_noise_float(vec3(across.mul(29), tau.mul(3.4), 8.3));
     // (thin bright ridges where the noise crosses zero: the white threads of aerated water)
     const ridges = clamp(float(1).sub(fine.abs().mul(2.2)), 0, 1).mul(0.6).add(clamp(float(1).sub(fine2.abs().mul(2.5)), 0, 1).mul(0.4));
     const dens = float(0.5).add(fine.mul(0.14)).add(s1.mul(0.3)).add(s2.mul(0.16)).add(lumps.mul(aer).mul(0.32)).add(surge.mul(0.16)).add(clumps.mul(0.22));
+    const strandCoverage = smoothstep(0.15, 0.7, dens).mul(0.54)
+      .add(ridges.mul(0.28)).add(smoothstep(0.12, 0.42, clumps).mul(0.18)).clamp(0, 1);
     if (veil) {
       // the veil: separate clumps and strands in front of the body, more of them lower down
       const clump = smoothstep(0.3, 0.7, lumps.mul(0.5).add(s1.mul(0.25)).add(clumps.mul(0.45)).add(U.y.mul(0.45)));
       alpha = clump.mul(fray).mul(aer).mul(0.9).mul(smoothstep(1.0, 0.86, U.y)).mul(lipCut);
     } else {
       // (a falls this size is a thick white column: see-through only over the lip and at its frayed sides)
-      alpha = clamp(mix(float(0.6), dens.mul(1.5).add(0.55).add(core.mul(0.7)), aer), 0, 1).mul(fray).mul(smoothstep(1.0, 0.93, U.y)).mul(lipCut);
+      // Keep the core opaque enough to read as weight, while the lace threshold lets irregular dark gaps and narrow
+      // white filaments break up the face at every quality setting instead of averaging into a rectangle.
+      const bodyAlpha = clamp(mix(float(0.18), strandCoverage.mul(0.9).add(core.mul(0.1)), aer), 0.08, 0.9);
+      alpha = bodyAlpha.mul(fray).mul(smoothstep(1.0, 0.93, U.y)).mul(lipCut);
     }
     // colour: the glassy tongue is green-dark water; the body's thick strands white with a bright core, the thin water
     // between them and at the sides grey (the wet rock shows through), the clumps in front whitest

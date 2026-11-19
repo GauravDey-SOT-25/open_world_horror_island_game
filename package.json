@@ -11,6 +11,7 @@
     "typecheck": "tsc --noEmit",
     "shots": "tsx scripts/shots.ts",
     "perf": "tsx scripts/perf.ts",
+    "contact-sheets": "tsx scripts/contact-sheets.ts",
     "clip": "tsx scripts/clip.ts",
     "record": "tsx scripts/record.ts",
     "flyover": "tsx scripts/flyover.ts",

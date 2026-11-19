@@ -55,14 +55,44 @@ beach, jungle, falls, village, cliffs, and lighthouse.
   (scale 0.425, p95 17.6 ms, p99 17.7 ms). These are close to the 60 fps goal, with occasional frames over 16.7 ms; the GPU
   timestamp query was unavailable in this browser, so GPU time is recorded as 0.
 
-## Awaiting Round 3 critic and next builder
+## Round 3 critic review
 
-- The independent critic still needs to compare the captures against licensed tropical-island photography and top
-  open-world game references, with exact visual differences recorded by place and condition.
-- Later random Keeper placements need review for tree/building occlusion and silhouette readability. The figure still
-  uses the base traveler rig; improve or replace it if the critic finds that it reads as the player.
-- The tide page and all five other note sites need close inspection in the authored world for floating, overlap, and
-  natural approach direction, especially the lighthouse page.
-- Review the waterfall's nearly white plume, night exposure, cliff/player placement, village scale, foliage silhouettes,
-  water surface, lighting and shadow quality against the critic's references.
-- Choose the strongest final in-game frame, create the OG image from it, and set that image as the GitHub social preview.
+- The separate critic reviewed all 30 low-preset captures and assembled six side-by-side boards with Unsplash island
+  photos and publisher-hosted Ghost of Tsushima / Far Cry 6 screenshots. The full condition matrix, links, and concrete
+  gaps are in `artifacts/critique/round-03.md`.
+- The matrix scored 1.07/3. The strongest visual failures were the waterfall's broad white face, cliffs losing detail at
+  sunset and night, repeated far-canopy crowns, the lighthouse beam crossing the night panorama, and an unoccupied,
+  overexposed village/beach foreground.
+- Performance captures showed about 50 fps at the waterfall in a frozen low-preset 30-state sweep. The separate
+  adaptive 8-second rain benchmark reached 59.6 fps at scale 0.425; the capture display was emulated, not a second
+  physical screen.
+
+## Round 4 builder pass
+
+- Replaced most of the low-preset waterfall's layered 3D noise fields with two animated, mipmapped water textures.
+  The strand mask now opens irregular dark gaps and narrow white filaments across all presets; a full-size noon capture
+  shows the gorge through the frayed edges instead of a uniformly bright card.
+- Added a restrained blue-grey sky bounce to scanned cliff faces. The sunset and night cliff captures now retain rock
+  relief and readable silhouettes. Reduced the lighthouse beam multiplier from 0.08 to 0.028; the night panorama no
+  longer has the clipped diagonal stripe.
+- Changed distant tree-crown proxies from circular clusters to ellipses fitted to each source tree's branch spread,
+  keeping the forest silhouette varied at gallery distance.
+- Fixed `contact-sheets` round selection so each round writes boards beside its own captures. `TESTING.md` documents
+  `pnpm contact-sheets --round <round>`.
+- `pnpm build` passes. `pnpm shots --round round-04 --note-test --encounter` saved all 30 location/condition frames,
+  the note-open frame, and a first-Keeper frame. The note opens and closes with Escape; the Keeper lands at the right
+  edge of the beach view (NDC x=0.753). The production capture rig used the high preset at 1920x1080 emulated output.
+- On the M2 MacBook Air in headed Chrome/WebGPU, the production-default low preset's capped 8-second samples measured
+  60 fps for waterfall rain (scale 0.425), 59.4 fps for waterfall night (scale 0.4), and 60 fps for lighthouse rain
+  and night (scale 0.45). Waterfall night remains just under target; GPU timestamp queries were unavailable. Only the
+  built-in laptop panel was connected, and the harness emulated the 1920x1080 viewport.
+
+## Awaiting Round 4 critic
+
+- The independent critic still needs to compare the new full-quality captures against real tropical photography and
+  AAA open-world references, with the full six-location by five-condition matrix and concrete differences.
+- Remaining viewer-facing gaps include shore and pool water depth, the wide empty beach/village foreground, the
+  physical tide-note post, Keeper silhouette, close-range foliage scale, and rain/water/boat motion. Still images do not
+  verify motion; use a headed gameplay clip for the next review.
+- After the review loops finish, make the OG image from the strongest actual game capture and set it as the GitHub
+  repository social preview. The final response also needs the five best recording spots.

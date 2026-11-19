@@ -1,0 +1,136 @@
+{
+ "round": "round-04",
+ "mode": "capped",
+ "quality": {
+  "preset": "low",
+  "renderScale": 0.5,
+  "shadowMap": 512,
+  "shadowMid": 512,
+  "shadowFarMap": 512,
+  "cascades": 1,
+  "shadowFar": 100,
+  "ao": false,
+  "aoScale": 0.5,
+  "taa": true,
+  "bloom": false,
+  "density": 0.45,
+  "grassFar": 28,
+  "lodScale": 0.6,
+  "oceanSegments": 128,
+  "cloudSteps": 8,
+  "rainParticles": 4000
+ },
+ "adapter": {
+  "name": "ANGLE",
+  "backend": "WebGPU"
+ },
+ "webgpuAdapter": {
+  "vendor": "apple",
+  "architecture": "metal-3",
+  "device": "",
+  "description": ""
+ },
+ "placement": {
+  "display": "DISPLAY1",
+  "size": [
+   1920,
+   1080
+  ],
+  "viewport": "emulated"
+ },
+ "rows": [
+  {
+   "spot": "waterfall",
+   "condition": "rain",
+   "uncapped": null,
+   "capped": {
+    "fps": 60,
+    "target": 60,
+    "refreshHz": 60,
+    "renderScale": 0.425,
+    "frameAvg": 16.66,
+    "frameP95": 17.3,
+    "frameP99": 17.6,
+    "frameMax": 17.6,
+    "cpuAvg": 3.68,
+    "cpuP95": 4.9,
+    "gpuAvg": 0,
+    "gpuP95": 0,
+    "gpuP99": 0,
+    "gpuN": 0,
+    "drawCalls": 272,
+    "triangles": 3392069
+   }
+  },
+  {
+   "spot": "lighthouse",
+   "condition": "rain",
+   "uncapped": null,
+   "capped": {
+    "fps": 60,
+    "target": 60,
+    "refreshHz": 60,
+    "renderScale": 0.45,
+    "frameAvg": 16.67,
+    "frameP95": 17.2,
+    "frameP99": 17.5,
+    "frameMax": 17.7,
+    "cpuAvg": 2.69,
+    "cpuP95": 3.3,
+    "gpuAvg": 0,
+    "gpuP95": 0,
+    "gpuP99": 0,
+    "gpuN": 0,
+    "drawCalls": 155,
+    "triangles": 2427273
+   }
+  },
+  {
+   "spot": "waterfall",
+   "condition": "night",
+   "uncapped": null,
+   "capped": {
+    "fps": 59.4,
+    "target": 60,
+    "refreshHz": 60,
+    "renderScale": 0.4,
+    "frameAvg": 16.84,
+    "frameP95": 17.3,
+    "frameP99": 32.7,
+    "frameMax": 34.1,
+    "cpuAvg": 3.67,
+    "cpuP95": 4.8,
+    "gpuAvg": 0,
+    "gpuP95": 0,
+    "gpuP99": 0,
+    "gpuN": 0,
+    "drawCalls": 272,
+    "triangles": 3381027
+   }
+  },
+  {
+   "spot": "lighthouse",
+   "condition": "night",
+   "uncapped": null,
+   "capped": {
+    "fps": 60,
+    "target": 60,
+    "refreshHz": 60,
+    "renderScale": 0.45,
+    "frameAvg": 16.67,
+    "frameP95": 17.2,
+    "frameP99": 17.5,
+    "frameMax": 17.6,
+    "cpuAvg": 2.75,
+    "cpuP95": 3.5,
+    "gpuAvg": 0,
+    "gpuP95": 0,
+    "gpuP99": 0,
+    "gpuN": 0,
+    "drawCalls": 165,
+    "triangles": 2425843
+   }
+  }
+ ],
+ "at": "2026-11-19T04:22:40.589Z"
+}

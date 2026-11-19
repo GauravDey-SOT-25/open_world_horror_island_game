@@ -372,16 +372,26 @@ export function crownProxy(v: GlbVariant, leafMat: string, clusters = 12): THREE
   const P: number[] = [], Nn: number[] = [], C: number[] = [], U: number[] = [], I: number[] = [];
   const ip = ico.getAttribute('position'), ii = ico.index!;
   for (let k = 0; k < K; k++) {
-    let sxz = 0, sy = 0, cnt = 0;
+    let sx = 0, sz = 0, sxz = 0, sy = 0, cnt = 0;
     for (let i = 0; i < pts.length; i++) if (asg[i] === k) {
       const d = pts[i].clone().sub(cen[k]);
-      sxz += d.x * d.x + d.z * d.z;
+      sx += d.x * d.x;
+      sz += d.z * d.z;
+      sxz += d.x * d.z;
       sy += d.y * d.y;
       cnt++;
     }
     if (!cnt) continue;
-    // (generous: neighbouring crowns overlap into one closed, lumpy canopy instead of balls with ground between)
-    const rxz = Math.sqrt(sxz / cnt / 2) * 2.0 + 0.5, ry = Math.sqrt(sy / cnt) * 1.75 + 0.4;
+    // Fit the clump to its actual horizontal footprint. Equal X/Z radii turned the distant broadleaf crowns into
+    // repeated round balls; the covariance ellipse preserves each tree's lean and branch spread at low LOD.
+    const vx = sx / cnt, vz = sz / cnt, cov = sxz / cnt;
+    const spread = Math.sqrt(Math.max(0, (vx - vz) * (vx - vz) + 4 * cov * cov));
+    const major = Math.max(0.12, (vx + vz + spread) * 0.5);
+    const minor = Math.max(0.08, (vx + vz - spread) * 0.5);
+    const angle = 0.5 * Math.atan2(2 * cov, vx - vz);
+    const rx = Math.sqrt(major) * 1.95 + 0.36, rz = Math.sqrt(minor) * 1.7 + 0.28;
+    const ca = Math.cos(angle), sa = Math.sin(angle);
+    const ry = Math.sqrt(sy / cnt) * 1.75 + 0.4;
     const base = P.length / 3, phase = rnd();
     for (let i = 0; i < ip.count; i++) {
       const x = ip.getX(i), y = ip.getY(i), z = ip.getZ(i);
@@ -389,8 +399,9 @@ export function crownProxy(v: GlbVariant, leafMat: string, clusters = 12): THREE
       const lump = 1 + 0.16 * Math.sin(x * 5.1 + k) * Math.sin(y * 4.3 + 2 * k) * Math.sin(z * 4.7 + 3) + 0.09 * Math.sin(x * 11.3 + 2 * k) * Math.sin(y * 9.1 + k) * Math.sin(z * 10.7 + 1);
       // flattened underneath, as crowns are
       const yy = y < 0 ? y * 0.55 : y;
-      P.push(cen[k].x + x * rxz * lump, cen[k].y + yy * ry * lump, cen[k].z + z * rxz * lump);
-      const nn = new THREE.Vector3(x / rxz, yy / ry, z / rxz).normalize();
+      const ex = x * rx * lump, ez = z * rz * lump;
+      P.push(cen[k].x + ex * ca - ez * sa, cen[k].y + yy * ry * lump, cen[k].z + ex * sa + ez * ca);
+      const nn = new THREE.Vector3(x / rx, yy / ry, z / rz).applyAxisAngle(new THREE.Vector3(0, 1, 0), -angle).normalize();
       Nn.push(nn.x, nn.y, nn.z);
       // COLOR_0: AO darker underneath and toward the crown's core, a gentle bend, no flutter, a phase per lump
       C.push(0.35 + 0.65 * (0.5 + 0.5 * y), 0.32, 0, phase);

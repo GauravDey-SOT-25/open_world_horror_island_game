@@ -269,7 +269,7 @@ export class Lighthouse {
     const fade = exp(tAx.div(-380)).mul(smoothstep(0, 6, tAx));
     const k = profile.div(r.mul(sinV)).mul(phase).mul(fade).mul(side).min(0.9);
     // A visible but restrained shaft in the humid air; haze adds at most a small lift instead of a clipped white fan.
-    bm.colorNode = vec4(vec3(1.0, 0.86, 0.62).mul(k).mul(0.08).mul(lighthouseU.on).mul(float(0.52).add(min(atmo.mist.mul(1100), 0.75))), 1);
+    bm.colorNode = vec4(vec3(1.0, 0.86, 0.62).mul(k).mul(0.028).mul(lighthouseU.on).mul(float(0.52).add(min(atmo.mist.mul(1100), 0.75))), 1);
     this.beam = new THREE.Mesh(cone, bm);
     const beam2 = new THREE.Mesh(cone, bm);
     beam2.rotation.y = Math.PI;

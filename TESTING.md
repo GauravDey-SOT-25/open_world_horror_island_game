@@ -2,7 +2,7 @@
 
 Everything a tester needs without reading the source: how to run the game, the URL parameters, the
 `window.__island` debug API, the named spots and conditions, and the harness commands (`pnpm shots`, `pnpm perf`,
-`pnpm clip`) with their output paths.
+`pnpm contact-sheets`, `pnpm clip`) with their output paths.
 
 ## Run it
 
@@ -70,6 +70,8 @@ All optional, combine freely: `http://127.0.0.1:5231/?spot=cliffs&tod=sunset&fre
 | `rain` | 14:30 | rain (full overcast, rain streaks and splashes, wet surfaces, puddles, ripples) |
 
 `pnpm shots` and `pnpm perf` also accept `morning`, `afternoon` and `dusk`; an unknown name stops the run before the browser starts.
+Use `pnpm contact-sheets --round round-04` to build six labeled location strips from that round's capture folder;
+`--in` and `--out` can override the default round paths.
 
 ## The debug API: `window.__island`
 

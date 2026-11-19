@@ -5,8 +5,10 @@ import sharp from 'sharp';
 import { argv } from './lib/browser';
 
 const a = argv();
-const input = resolve(a.get('in', 'artifacts/critique/round-03/captures'));
-const output = resolve(a.get('out', 'artifacts/critique/round-03'));
+const round = a.get('round', 'round-03');
+const roundDir = join('artifacts', 'critique', round);
+const input = resolve(a.get('in', join(roundDir, 'captures')));
+const output = resolve(a.get('out', roundDir));
 const spots = a.get('spots', 'beach,jungle,waterfall,village,cliffs,lighthouse').split(',');
 const conditions = a.get('conditions', 'sunrise,noon,sunset,night,rain').split(',');
 const tileWidth = Number(a.get('width', '384'));
