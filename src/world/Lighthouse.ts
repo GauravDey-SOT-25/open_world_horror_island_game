@@ -262,14 +262,16 @@ export class Lighthouse {
     const r = max(tAx.mul(0.019), 0.45);
     const camT = e, camR = length(w0.sub(axis.mul(e)));
     const camInside = camT.greaterThan(0).and(camR.lessThan(camT.mul(60 / coneLen)));
-    const side = select(frontFacing, float(1), select(camInside, float(1), float(0)));
+    // When the gallery camera sits inside the cone, its exit surface spans most of the view; keep that shaft
+    // visible but dimmer so the beam reads as light in air rather than a translucent panel.
+    const side = select(camInside, float(0.4), select(frontFacing, float(1), float(0)));
     const profile = exp(sep.mul(sep).div(r.mul(r)).mul(-4));
     const sinV = sqrt(den).max(0.2);
     const phase = float(1).add(pow(max(b.negate(), 0), 10).mul(2.2));
     const fade = exp(tAx.div(-380)).mul(smoothstep(0, 6, tAx));
     const k = profile.div(r.mul(sinV)).mul(phase).mul(fade).mul(side).min(0.9);
     // A visible but restrained shaft in the humid air; haze adds at most a small lift instead of a clipped white fan.
-    bm.colorNode = vec4(vec3(1.0, 0.86, 0.62).mul(k).mul(0.028).mul(lighthouseU.on).mul(float(0.52).add(min(atmo.mist.mul(1100), 0.75))), 1);
+    bm.colorNode = vec4(vec3(1.0, 0.86, 0.62).mul(k).mul(0.016).mul(lighthouseU.on).mul(float(0.24).add(min(atmo.mist.mul(1100), 0.75))), 1);
     this.beam = new THREE.Mesh(cone, bm);
     const beam2 = new THREE.Mesh(cone, bm);
     beam2.rotation.y = Math.PI;

@@ -1,0 +1,2906 @@
+{
+ "round": "round-05",
+ "view": "shot",
+ "quality": "high",
+ "loadMs": 7453,
+ "adapter": {
+  "name": "ANGLE",
+  "backend": "WebGPU"
+ },
+ "placement": {
+  "display": "DISPLAY1",
+  "size": [
+   1920,
+   1080
+  ],
+  "viewport": "emulated"
+ },
+ "results": [
+  {
+   "spot": "beach",
+   "condition": "sunrise",
+   "file": "artifacts/critique/round-05/captures/beach_sunrise.jpg",
+   "staged": {
+    "time": {
+     "hour": 6.550000000000001,
+     "frozen": true,
+     "sunElevationDeg": 3.850539816760108,
+     "exposure": 3.4871439851750323
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      584,
+      4.890272402763367,
+      64
+     ],
+     "dir": [
+      0.8278390561638514,
+      -0.032751655393048265,
+      -0.5600087732873109
+     ],
+     "fov": 55,
+     "mode": "pose"
+    },
+    "player": {
+     "pos": [
+      596,
+      1.36,
+      34
+     ],
+     "heading": 1.571,
+     "state": "ground",
+     "speed": 0,
+     "surface": "sand",
+     "waterDepth": -1.36,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 18.754688672168015,
+    "frame": {
+     "n": 5,
+     "avg": 53.32000000000007,
+     "p50": 50,
+     "p95": 83.39999999999964,
+     "p99": 83.39999999999964,
+     "max": 83.39999999999964
+    },
+    "cpu": {
+     "n": 5,
+     "avg": 4.660000005364418,
+     "p50": 4.399999991059303,
+     "p95": 5.5,
+     "p99": 5.5,
+     "max": 5.5
+    },
+    "gpu": {
+     "n": 4,
+     "avg": 647.069696,
+     "p50": 640.6144000000002,
+     "p95": 677.445632,
+     "p99": 677.445632,
+     "max": 677.445632
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "high",
+    "renderScale": 1,
+    "drawCalls": 233,
+    "triangles": 5122768,
+    "pipelines": {
+     "compiled": 100,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "jungle",
+   "condition": "sunrise",
+   "file": "artifacts/critique/round-05/captures/jungle_sunrise.jpg",
+   "staged": {
+    "time": {
+     "hour": 6.550000000000001,
+     "frozen": true,
+     "sunElevationDeg": 3.850539816760108,
+     "exposure": 3.4871439851750323
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      358,
+      31.085343647003175,
+      32
+     ],
+     "dir": [
+      0.5401794410456696,
+      0.046229366118585496,
+      -0.8402791305154863
+     ],
+     "fov": 60,
+     "mode": "pose"
+    },
+    "player": {
+     "pos": [
+      365,
+      29.39,
+      18
+     ],
+     "heading": -2.6,
+     "state": "ground",
+     "speed": 0,
+     "surface": "leaves",
+     "waterDepth": -29.39,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 17.642907551164456,
+    "frame": {
+     "n": 5,
+     "avg": 56.67999999999993,
+     "p50": 50,
+     "p95": 100,
+     "p99": 100,
+     "max": 100
+    },
+    "cpu": {
+     "n": 5,
+     "avg": 7.419999998807907,
+     "p50": 6.5999999940395355,
+     "p95": 9.599999994039536,
+     "p99": 9.599999994039536,
+     "max": 9.599999994039536
+    },
+    "gpu": {
+     "n": 4,
+     "avg": 548.0284159999999,
+     "p50": 550.7645440000001,
+     "p95": 581.3698559999999,
+     "p99": 581.3698559999999,
+     "max": 581.3698559999999
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "high",
+    "renderScale": 1,
+    "drawCalls": 285,
+    "triangles": 8429945,
+    "pipelines": {
+     "compiled": 100,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "waterfall",
+   "condition": "sunrise",
+   "file": "artifacts/critique/round-05/captures/waterfall_sunrise.jpg",
+   "staged": {
+    "time": {
+     "hour": 6.550000000000001,
+     "frozen": true,
+     "sunElevationDeg": 3.850539816760108,
+     "exposure": 3.4871439851750323
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      186,
+      39.64682312011719,
+      -42
+     ],
+     "dir": [
+      -0.9295154696167118,
+      0.20000275482331603,
+      -0.30983848987223683
+     ],
+     "fov": 58,
+     "mode": "pose"
+    },
+    "player": {
+     "pos": [
+      186,
+      39.71,
+      -40
+     ],
+     "heading": -1.15,
+     "state": "ground",
+     "speed": 0,
+     "surface": "dirt",
+     "waterDepth": -1.89,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 13.631406761177715,
+    "frame": {
+     "n": 5,
+     "avg": 73.36000000000021,
+     "p50": 66.90000000000146,
+     "p95": 116.69999999999891,
+     "p99": 116.69999999999891,
+     "max": 116.69999999999891
+    },
+    "cpu": {
+     "n": 5,
+     "avg": 6.840000003576279,
+     "p50": 7.5,
+     "p95": 8.099999994039536,
+     "p99": 8.099999994039536,
+     "max": 8.099999994039536
+    },
+    "gpu": {
+     "n": 4,
+     "avg": 729.1699199999999,
+     "p50": 727.9083519999997,
+     "p95": 754.6470400000001,
+     "p99": 754.6470400000001,
+     "max": 754.6470400000001
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "high",
+    "renderScale": 1,
+    "drawCalls": 435,
+    "triangles": 8816570,
+    "pipelines": {
+     "compiled": 100,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "village",
+   "condition": "sunrise",
+   "file": "artifacts/critique/round-05/captures/village_sunrise.jpg",
+   "staged": {
+    "time": {
+     "hour": 6.550000000000001,
+     "frozen": true,
+     "sunElevationDeg": 3.850539816760108,
+     "exposure": 3.4871439851750323
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      -446.5,
+      3.4,
+      366
+     ],
+     "dir": [
+      -0.33727990387379503,
+      0.017256181128426723,
+      -0.9412462433687302
+     ],
+     "fov": 55,
+     "mode": "pose"
+    },
+    "player": {
+     "pos": [
+      -410,
+      2.76,
+      336
+     ],
+     "heading": -1.72,
+     "state": "ground",
+     "speed": 0,
+     "surface": "sand",
+     "waterDepth": -2.76,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 14.999999999999998,
+    "frame": {
+     "n": 6,
+     "avg": 66.66666666666667,
+     "p50": 66.29999999999927,
+     "p95": 100.39999999999964,
+     "p99": 100.39999999999964,
+     "max": 100.39999999999964
+    },
+    "cpu": {
+     "n": 6,
+     "avg": 11.566666667660078,
+     "p50": 10.700000002980232,
+     "p95": 17.5,
+     "p99": 17.5,
+     "max": 17.5
+    },
+    "gpu": {
+     "n": 4,
+     "avg": 848.887808,
+     "p50": 847.7736960000001,
+     "p95": 882.900992,
+     "p99": 882.900992,
+     "max": 882.900992
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "high",
+    "renderScale": 1,
+    "drawCalls": 664,
+    "triangles": 4715416,
+    "pipelines": {
+     "compiled": 100,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "cliffs",
+   "condition": "sunrise",
+   "file": "artifacts/critique/round-05/captures/cliffs_sunrise.jpg",
+   "staged": {
+    "time": {
+     "hour": 6.550000000000001,
+     "frozen": true,
+     "sunElevationDeg": 3.850539816760108,
+     "exposure": 3.4871439851750323
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      -90,
+      5,
+      -660
+     ],
+     "dir": [
+      -0.9630868246861538,
+      0.12038585308576921,
+      0.24077170617153842
+     ],
+     "fov": 55,
+     "mode": "pose"
+    },
+    "player": {
+     "pos": [
+      -58,
+      50.64,
+      -577
+     ],
+     "heading": -1.42,
+     "state": "ground",
+     "speed": 0,
+     "surface": "rock",
+     "waterDepth": -50.64,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 17.64913519237562,
+    "frame": {
+     "n": 5,
+     "avg": 56.659999999999854,
+     "p50": 50,
+     "p95": 100,
+     "p99": 100,
+     "max": 100
+    },
+    "cpu": {
+     "n": 5,
+     "avg": 4.3799999982118605,
+     "p50": 4.5,
+     "p95": 5,
+     "p99": 5,
+     "max": 5
+    },
+    "gpu": {
+     "n": 4,
+     "avg": 731.6766719999997,
+     "p50": 736.0348159999998,
+     "p95": 762.8390399999996,
+     "p99": 762.8390399999996,
+     "max": 762.8390399999996
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "high",
+    "renderScale": 1,
+    "drawCalls": 214,
+    "triangles": 2993762,
+    "pipelines": {
+     "compiled": 100,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "lighthouse",
+   "condition": "sunrise",
+   "file": "artifacts/critique/round-05/captures/lighthouse_sunrise.jpg",
+   "staged": {
+    "time": {
+     "hour": 6.550000000000001,
+     "frozen": true,
+     "sunElevationDeg": 3.850539816760108,
+     "exposure": 3.4871439851750323
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      -297.6300233055079,
+      232.7487030029297,
+      -298.1606494440797
+     ],
+     "dir": [
+      0.7742690582422908,
+      -0.18878177296166326,
+      0.6040437630222228
+     ],
+     "fov": 52,
+     "mode": "pose"
+    },
+    "player": {
+     "pos": [
+      -301.81,
+      231,
+      -301.86
+     ],
+     "heading": 2.38,
+     "state": "ground",
+     "speed": 0,
+     "surface": "stone",
+     "waterDepth": -231,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 18.951358180669484,
+    "frame": {
+     "n": 6,
+     "avg": 52.76666666666703,
+     "p50": 49.900000000001455,
+     "p95": 100.10000000000218,
+     "p99": 100.10000000000218,
+     "max": 100.10000000000218
+    },
+    "cpu": {
+     "n": 6,
+     "avg": 7.366666662196319,
+     "p50": 6.300000011920929,
+     "p95": 11.699999988079071,
+     "p99": 11.699999988079071,
+     "max": 11.699999988079071
+    },
+    "gpu": {
+     "n": 4,
+     "avg": 712.0977919999999,
+     "p50": 706.4780799999999,
+     "p95": 754.7125759999999,
+     "p99": 754.7125759999999,
+     "max": 754.7125759999999
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "high",
+    "renderScale": 1,
+    "drawCalls": 253,
+    "triangles": 5234930,
+    "pipelines": {
+     "compiled": 100,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "beach",
+   "condition": "noon",
+   "file": "artifacts/critique/round-05/captures/beach_noon.jpg",
+   "staged": {
+    "time": {
+     "hour": 12.299999999999997,
+     "frozen": true,
+     "sunElevationDeg": 59.672146048980366,
+     "exposure": 0.5956033549667784
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      584,
+      4.890272402763367,
+      64
+     ],
+     "dir": [
+      0.8278390561638514,
+      -0.032751655393048265,
+      -0.5600087732873109
+     ],
+     "fov": 55,
+     "mode": "pose"
+    },
+    "player": {
+     "pos": [
+      596,
+      1.36,
+      34
+     ],
+     "heading": 1.571,
+     "state": "ground",
+     "speed": 0,
+     "surface": "sand",
+     "waterDepth": -1.36,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 19.993335554815157,
+    "frame": {
+     "n": 6,
+     "avg": 50.016666666666424,
+     "p50": 33.29999999999927,
+     "p95": 100.10000000000218,
+     "p99": 100.10000000000218,
+     "max": 100.10000000000218
+    },
+    "cpu": {
+     "n": 6,
+     "avg": 6.466666663686435,
+     "p50": 6.799999997019768,
+     "p95": 8.700000002980232,
+     "p99": 8.700000002980232,
+     "max": 8.700000002980232
+    },
+    "gpu": {
+     "n": 8,
+     "avg": 626.6060799999999,
+     "p50": 629.6698879999998,
+     "p95": 649.5272959999999,
+     "p99": 649.5272959999999,
+     "max": 649.5272959999999
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "high",
+    "renderScale": 1,
+    "drawCalls": 233,
+    "triangles": 5122768,
+    "pipelines": {
+     "compiled": 100,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "jungle",
+   "condition": "noon",
+   "file": "artifacts/critique/round-05/captures/jungle_noon.jpg",
+   "staged": {
+    "time": {
+     "hour": 12.299999999999997,
+     "frozen": true,
+     "sunElevationDeg": 59.672146048980366,
+     "exposure": 0.5956033549667784
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      358,
+      31.085343647003175,
+      32
+     ],
+     "dir": [
+      0.5401794410456696,
+      0.046229366118585496,
+      -0.8402791305154863
+     ],
+     "fov": 60,
+     "mode": "pose"
+    },
+    "player": {
+     "pos": [
+      365,
+      29.39,
+      18
+     ],
+     "heading": -2.6,
+     "state": "ground",
+     "speed": 0,
+     "surface": "leaves",
+     "waterDepth": -29.39,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 21.178962230850743,
+    "frame": {
+     "n": 6,
+     "avg": 47.21666666666655,
+     "p50": 50,
+     "p95": 83.40000000000146,
+     "p99": 83.40000000000146,
+     "max": 83.40000000000146
+    },
+    "cpu": {
+     "n": 6,
+     "avg": 8.550000001986822,
+     "p50": 8.200000002980232,
+     "p95": 13.5,
+     "p99": 13.5,
+     "max": 13.5
+    },
+    "gpu": {
+     "n": 4,
+     "avg": 543.064064,
+     "p50": 549.51936,
+     "p95": 553.9758080000001,
+     "p99": 553.9758080000001,
+     "max": 553.9758080000001
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "high",
+    "renderScale": 1,
+    "drawCalls": 284,
+    "triangles": 8429944,
+    "pipelines": {
+     "compiled": 100,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "waterfall",
+   "condition": "noon",
+   "file": "artifacts/critique/round-05/captures/waterfall_noon.jpg",
+   "staged": {
+    "time": {
+     "hour": 12.299999999999997,
+     "frozen": true,
+     "sunElevationDeg": 59.672146048980366,
+     "exposure": 0.5956033549667784
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      186,
+      39.64682312011719,
+      -42
+     ],
+     "dir": [
+      -0.9295154696167118,
+      0.20000275482331603,
+      -0.30983848987223683
+     ],
+     "fov": 58,
+     "mode": "pose"
+    },
+    "player": {
+     "pos": [
+      186,
+      39.71,
+      -40
+     ],
+     "heading": -1.15,
+     "state": "ground",
+     "speed": 0,
+     "surface": "dirt",
+     "waterDepth": -1.89,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 15.69448077426108,
+    "frame": {
+     "n": 6,
+     "avg": 63.71666666666655,
+     "p50": 66.60000000000218,
+     "p95": 116.70000000000073,
+     "p99": 116.70000000000073,
+     "max": 116.70000000000073
+    },
+    "cpu": {
+     "n": 6,
+     "avg": 9.34999999900659,
+     "p50": 8.799999997019768,
+     "p95": 16.200000002980232,
+     "p99": 16.200000002980232,
+     "max": 16.200000002980232
+    },
+    "gpu": {
+     "n": 4,
+     "avg": 755.712,
+     "p50": 756.9408,
+     "p95": 784.7935999999999,
+     "p99": 784.7935999999999,
+     "max": 784.7935999999999
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "high",
+    "renderScale": 1,
+    "drawCalls": 436,
+    "triangles": 8816571,
+    "pipelines": {
+     "compiled": 100,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "village",
+   "condition": "noon",
+   "file": "artifacts/critique/round-05/captures/village_noon.jpg",
+   "staged": {
+    "time": {
+     "hour": 12.299999999999997,
+     "frozen": true,
+     "sunElevationDeg": 59.672146048980366,
+     "exposure": 0.5956033549667784
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      -446.5,
+      3.4,
+      366
+     ],
+     "dir": [
+      -0.33727990387379503,
+      0.017256181128426723,
+      -0.9412462433687302
+     ],
+     "fov": 55,
+     "mode": "pose"
+    },
+    "player": {
+     "pos": [
+      -410,
+      2.76,
+      336
+     ],
+     "heading": -1.72,
+     "state": "ground",
+     "speed": 0,
+     "surface": "sand",
+     "waterDepth": -2.76,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 16.380016380016414,
+    "frame": {
+     "n": 6,
+     "avg": 61.049999999999876,
+     "p50": 50,
+     "p95": 116.70000000000073,
+     "p99": 116.70000000000073,
+     "max": 116.70000000000073
+    },
+    "cpu": {
+     "n": 6,
+     "avg": 7.400000000993411,
+     "p50": 7.5,
+     "p95": 9.900000005960464,
+     "p99": 9.900000005960464,
+     "max": 9.900000005960464
+    },
+    "gpu": {
+     "n": 8,
+     "avg": 854.802432,
+     "p50": 842.596352,
+     "p95": 915.931136,
+     "p99": 915.931136,
+     "max": 915.931136
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "high",
+    "renderScale": 1,
+    "drawCalls": 655,
+    "triangles": 4731664,
+    "pipelines": {
+     "compiled": 100,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "cliffs",
+   "condition": "noon",
+   "file": "artifacts/critique/round-05/captures/cliffs_noon.jpg",
+   "staged": {
+    "time": {
+     "hour": 12.299999999999997,
+     "frozen": true,
+     "sunElevationDeg": 59.672146048980366,
+     "exposure": 0.5956033549667784
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      -90,
+      5,
+      -660
+     ],
+     "dir": [
+      -0.9630868246861538,
+      0.12038585308576921,
+      0.24077170617153842
+     ],
+     "fov": 55,
+     "mode": "pose"
+    },
+    "player": {
+     "pos": [
+      -58,
+      50.64,
+      -577
+     ],
+     "heading": -1.42,
+     "state": "ground",
+     "speed": 0,
+     "surface": "rock",
+     "waterDepth": -50.64,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 16.711229946524025,
+    "frame": {
+     "n": 5,
+     "avg": 59.840000000000146,
+     "p50": 50,
+     "p95": 100,
+     "p99": 100,
+     "max": 100
+    },
+    "cpu": {
+     "n": 5,
+     "avg": 8.57999999821186,
+     "p50": 7.799999997019768,
+     "p95": 10.899999991059303,
+     "p99": 10.899999991059303,
+     "max": 10.899999991059303
+    },
+    "gpu": {
+     "n": 4,
+     "avg": 732.3648,
+     "p50": 734.527488,
+     "p95": 784.072704,
+     "p99": 784.072704,
+     "max": 784.072704
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "high",
+    "renderScale": 1,
+    "drawCalls": 214,
+    "triangles": 2993762,
+    "pipelines": {
+     "compiled": 100,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "lighthouse",
+   "condition": "noon",
+   "file": "artifacts/critique/round-05/captures/lighthouse_noon.jpg",
+   "staged": {
+    "time": {
+     "hour": 12.299999999999997,
+     "frozen": true,
+     "sunElevationDeg": 59.672146048980366,
+     "exposure": 0.5956033549667784
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      -297.6300233055079,
+      232.7487030029297,
+      -298.1606494440797
+     ],
+     "dir": [
+      0.7742690582422908,
+      -0.18878177296166326,
+      0.6040437630222228
+     ],
+     "fov": 52,
+     "mode": "pose"
+    },
+    "player": {
+     "pos": [
+      -301.81,
+      231,
+      -301.86
+     ],
+     "heading": 2.38,
+     "state": "ground",
+     "speed": 0,
+     "surface": "stone",
+     "waterDepth": -231,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 20.013342228152148,
+    "frame": {
+     "n": 6,
+     "avg": 49.96666666666655,
+     "p50": 49.89999999999782,
+     "p95": 100,
+     "p99": 100,
+     "max": 100
+    },
+    "cpu": {
+     "n": 6,
+     "avg": 5.883333330353101,
+     "p50": 5.799999997019768,
+     "p95": 8.599999994039536,
+     "p99": 8.599999994039536,
+     "max": 8.599999994039536
+    },
+    "gpu": {
+     "n": 4,
+     "avg": 715.227136,
+     "p50": 716.8327679999999,
+     "p95": 743.4403840000001,
+     "p99": 743.4403840000001,
+     "max": 743.4403840000001
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "high",
+    "renderScale": 1,
+    "drawCalls": 251,
+    "triangles": 5234917,
+    "pipelines": {
+     "compiled": 100,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "beach",
+   "condition": "sunset",
+   "file": "artifacts/critique/round-05/captures/beach_sunset.jpg",
+   "staged": {
+    "time": {
+     "hour": 17.42,
+     "frozen": true,
+     "sunElevationDeg": 4.266718812475577,
+     "exposure": 3.5076742381767176
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      622,
+      1.5,
+      38
+     ],
+     "dir": [
+      -0.9419921833375918,
+      0.20188841125352835,
+      -0.26812645511475197
+     ],
+     "fov": 52,
+     "mode": "pose"
+    },
+    "player": {
+     "pos": [
+      596,
+      1.36,
+      34
+     ],
+     "heading": 1.571,
+     "state": "ground",
+     "speed": 0,
+     "surface": "sand",
+     "waterDepth": -1.36,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 14.99250374812591,
+    "frame": {
+     "n": 6,
+     "avg": 66.70000000000012,
+     "p50": 66.70000000000073,
+     "p95": 132.70000000000073,
+     "p99": 132.70000000000073,
+     "max": 132.70000000000073
+    },
+    "cpu": {
+     "n": 6,
+     "avg": 10.68333333482345,
+     "p50": 10.200000002980232,
+     "p95": 17.099999994039536,
+     "p99": 17.099999994039536,
+     "max": 17.099999994039536
+    },
+    "gpu": {
+     "n": 8,
+     "avg": 858.5543679999997,
+     "p50": 852.1646079999998,
+     "p95": 899.1539199999999,
+     "p99": 899.1539199999999,
+     "max": 899.1539199999999
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "high",
+    "renderScale": 1,
+    "drawCalls": 456,
+    "triangles": 7834880,
+    "pipelines": {
+     "compiled": 100,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "jungle",
+   "condition": "sunset",
+   "file": "artifacts/critique/round-05/captures/jungle_sunset.jpg",
+   "staged": {
+    "time": {
+     "hour": 17.42,
+     "frozen": true,
+     "sunElevationDeg": 4.266718812475577,
+     "exposure": 3.5076742381767176
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      358,
+      31.085343647003175,
+      32
+     ],
+     "dir": [
+      0.5401794410456696,
+      0.046229366118585496,
+      -0.8402791305154863
+     ],
+     "fov": 60,
+     "mode": "pose"
+    },
+    "player": {
+     "pos": [
+      365,
+      29.39,
+      18
+     ],
+     "heading": -2.6,
+     "state": "ground",
+     "speed": 0,
+     "surface": "leaves",
+     "waterDepth": -29.39,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 21.17896223085047,
+    "frame": {
+     "n": 6,
+     "avg": 47.21666666666715,
+     "p50": 33.30000000000291,
+     "p95": 99.99999999999636,
+     "p99": 99.99999999999636,
+     "max": 99.99999999999636
+    },
+    "cpu": {
+     "n": 6,
+     "avg": 5.666666669150193,
+     "p50": 5.5999999940395355,
+     "p95": 8,
+     "p99": 8,
+     "max": 8
+    },
+    "gpu": {
+     "n": 8,
+     "avg": 547.1354879999999,
+     "p50": 545.3250559999998,
+     "p95": 582.9427199999999,
+     "p99": 582.9427199999999,
+     "max": 582.9427199999999
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "high",
+    "renderScale": 1,
+    "drawCalls": 284,
+    "triangles": 8429944,
+    "pipelines": {
+     "compiled": 100,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "waterfall",
+   "condition": "sunset",
+   "file": "artifacts/critique/round-05/captures/waterfall_sunset.jpg",
+   "staged": {
+    "time": {
+     "hour": 17.42,
+     "frozen": true,
+     "sunElevationDeg": 4.266718812475577,
+     "exposure": 3.5076742381767176
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      186,
+      39.64682312011719,
+      -42
+     ],
+     "dir": [
+      -0.9295154696167118,
+      0.20000275482331603,
+      -0.30983848987223683
+     ],
+     "fov": 58,
+     "mode": "pose"
+    },
+    "player": {
+     "pos": [
+      186,
+      39.71,
+      -40
+     ],
+     "heading": -1.15,
+     "state": "ground",
+     "speed": 0,
+     "surface": "dirt",
+     "waterDepth": -1.89,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 15.645371577574968,
+    "frame": {
+     "n": 6,
+     "avg": 63.916666666666664,
+     "p50": 66.59999999999854,
+     "p95": 116.69999999999709,
+     "p99": 116.69999999999709,
+     "max": 116.69999999999709
+    },
+    "cpu": {
+     "n": 6,
+     "avg": 10.233333339293798,
+     "p50": 9.200000002980232,
+     "p95": 14.800000011920929,
+     "p99": 14.800000011920929,
+     "max": 14.800000011920929
+    },
+    "gpu": {
+     "n": 8,
+     "avg": 738.6480639999999,
+     "p50": 737.2144639999998,
+     "p95": 774.9632,
+     "p99": 774.9632,
+     "max": 774.9632
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "high",
+    "renderScale": 1,
+    "drawCalls": 440,
+    "triangles": 8853583,
+    "pipelines": {
+     "compiled": 100,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "village",
+   "condition": "sunset",
+   "file": "artifacts/critique/round-05/captures/village_sunset.jpg",
+   "staged": {
+    "time": {
+     "hour": 17.42,
+     "frozen": true,
+     "sunElevationDeg": 4.266718812475577,
+     "exposure": 3.5076742381767176
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      -449.5,
+      3.3,
+      385
+     ],
+     "dir": [
+      -0.9611872494805197,
+      0.03560241492806922,
+      -0.27359009391307126
+     ],
+     "fov": 55,
+     "mode": "pose"
+    },
+    "player": {
+     "pos": [
+      -410,
+      2.76,
+      336
+     ],
+     "heading": -1.72,
+     "state": "ground",
+     "speed": 0,
+     "surface": "sand",
+     "waterDepth": -2.76,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 17.17229536348018,
+    "frame": {
+     "n": 6,
+     "avg": 58.233333333333576,
+     "p50": 50,
+     "p95": 116.69999999999709,
+     "p99": 116.69999999999709,
+     "max": 116.69999999999709
+    },
+    "cpu": {
+     "n": 6,
+     "avg": 5.700000002980232,
+     "p50": 5.9000000059604645,
+     "p95": 6.800000011920929,
+     "p99": 6.800000011920929,
+     "max": 6.800000011920929
+    },
+    "gpu": {
+     "n": 8,
+     "avg": 851.795968,
+     "p50": 851.050496,
+     "p95": 899.6126719999999,
+     "p99": 899.6126719999999,
+     "max": 899.6126719999999
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "high",
+    "renderScale": 1,
+    "drawCalls": 444,
+    "triangles": 3067658,
+    "pipelines": {
+     "compiled": 100,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "cliffs",
+   "condition": "sunset",
+   "file": "artifacts/critique/round-05/captures/cliffs_sunset.jpg",
+   "staged": {
+    "time": {
+     "hour": 17.42,
+     "frozen": true,
+     "sunElevationDeg": 4.266718812475577,
+     "exposure": 3.5076742381767176
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      -90,
+      5,
+      -660
+     ],
+     "dir": [
+      -0.9630868246861538,
+      0.12038585308576921,
+      0.24077170617153842
+     ],
+     "fov": 55,
+     "mode": "pose"
+    },
+    "player": {
+     "pos": [
+      -58,
+      50.64,
+      -577
+     ],
+     "heading": -1.42,
+     "state": "ground",
+     "speed": 0,
+     "surface": "rock",
+     "waterDepth": -50.64,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 20,
+    "frame": {
+     "n": 6,
+     "avg": 50,
+     "p50": 50,
+     "p95": 83.40000000000146,
+     "p99": 83.40000000000146,
+     "max": 83.40000000000146
+    },
+    "cpu": {
+     "n": 6,
+     "avg": 4.316666665176551,
+     "p50": 3.9000000059604645,
+     "p95": 5.699999988079071,
+     "p99": 5.699999988079071,
+     "max": 5.699999988079071
+    },
+    "gpu": {
+     "n": 5,
+     "avg": 725.0116608000001,
+     "p50": 725.942272,
+     "p95": 777.5191040000002,
+     "p99": 777.5191040000002,
+     "max": 777.5191040000002
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "high",
+    "renderScale": 1,
+    "drawCalls": 225,
+    "triangles": 3033382,
+    "pipelines": {
+     "compiled": 100,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "lighthouse",
+   "condition": "sunset",
+   "file": "artifacts/critique/round-05/captures/lighthouse_sunset.jpg",
+   "staged": {
+    "time": {
+     "hour": 17.42,
+     "frozen": true,
+     "sunElevationDeg": 4.266718812475577,
+     "exposure": 3.5076742381767176
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      -302.8391871673213,
+      232.7487030029297,
+      -299.0309715025254
+     ],
+     "dir": [
+      -0.9312524242000719,
+      -0.17817410076166545,
+      0.31784101723858926
+     ],
+     "fov": 52,
+     "mode": "pose"
+    },
+    "player": {
+     "pos": [
+      -301.81,
+      231,
+      -301.86
+     ],
+     "heading": 2.38,
+     "state": "ground",
+     "speed": 0,
+     "surface": "stone",
+     "waterDepth": -231,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 21.164021164021165,
+    "frame": {
+     "n": 6,
+     "avg": 47.25,
+     "p50": 49.80000000000291,
+     "p95": 83.5,
+     "p99": 83.5,
+     "max": 83.5
+    },
+    "cpu": {
+     "n": 6,
+     "avg": 6.816666667660077,
+     "p50": 5.9000000059604645,
+     "p95": 11.5,
+     "p99": 11.5,
+     "max": 11.5
+    },
+    "gpu": {
+     "n": 8,
+     "avg": 673.1284479999999,
+     "p50": 674.6275840000001,
+     "p95": 711.7864959999999,
+     "p99": 711.7864959999999,
+     "max": 711.7864959999999
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "high",
+    "renderScale": 1,
+    "drawCalls": 259,
+    "triangles": 3377482,
+    "pipelines": {
+     "compiled": 100,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "beach",
+   "condition": "night",
+   "file": "artifacts/critique/round-05/captures/beach_night.jpg",
+   "staged": {
+    "time": {
+     "hour": 22.5,
+     "frozen": true,
+     "sunElevationDeg": -68.18562877171131,
+     "exposure": 11
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      584,
+      4.890272402763367,
+      64
+     ],
+     "dir": [
+      0.8278390561638514,
+      -0.032751655393048265,
+      -0.5600087732873109
+     ],
+     "fov": 55,
+     "mode": "pose"
+    },
+    "player": {
+     "pos": [
+      596,
+      1.36,
+      34
+     ],
+     "heading": 1.571,
+     "state": "ground",
+     "speed": 0,
+     "surface": "sand",
+     "waterDepth": -1.36,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 19.993335554815157,
+    "frame": {
+     "n": 6,
+     "avg": 50.016666666666424,
+     "p50": 49.89999999999418,
+     "p95": 83.5,
+     "p99": 83.5,
+     "max": 83.5
+    },
+    "cpu": {
+     "n": 6,
+     "avg": 4.566666665176551,
+     "p50": 3.7000000029802322,
+     "p95": 6.799999997019768,
+     "p99": 6.799999997019768,
+     "max": 6.799999997019768
+    },
+    "gpu": {
+     "n": 5,
+     "avg": 633.6937983999999,
+     "p50": 623.4439679999999,
+     "p95": 665.0593279999999,
+     "p99": 665.0593279999999,
+     "max": 665.0593279999999
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "high",
+    "renderScale": 1,
+    "drawCalls": 235,
+    "triangles": 5122364,
+    "pipelines": {
+     "compiled": 100,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "jungle",
+   "condition": "night",
+   "file": "artifacts/critique/round-05/captures/jungle_night.jpg",
+   "staged": {
+    "time": {
+     "hour": 22.5,
+     "frozen": true,
+     "sunElevationDeg": -68.18562877171131,
+     "exposure": 11
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      358,
+      31.085343647003175,
+      32
+     ],
+     "dir": [
+      0.5401794410456696,
+      0.046229366118585496,
+      -0.8402791305154863
+     ],
+     "fov": 60,
+     "mode": "pose"
+    },
+    "player": {
+     "pos": [
+      365,
+      29.39,
+      18
+     ],
+     "heading": -2.6,
+     "state": "ground",
+     "speed": 0,
+     "surface": "leaves",
+     "waterDepth": -29.39,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 22.49718785151819,
+    "frame": {
+     "n": 6,
+     "avg": 44.45000000000073,
+     "p50": 49.89999999999418,
+     "p95": 83.40000000000146,
+     "p99": 83.40000000000146,
+     "max": 83.40000000000146
+    },
+    "cpu": {
+     "n": 6,
+     "avg": 5.733333331843217,
+     "p50": 5.299999997019768,
+     "p95": 8.5,
+     "p99": 8.5,
+     "max": 8.5
+    },
+    "gpu": {
+     "n": 4,
+     "avg": 545.50528,
+     "p50": 542.9002239999999,
+     "p95": 564.133888,
+     "p99": 564.133888,
+     "max": 564.133888
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "high",
+    "renderScale": 1,
+    "drawCalls": 286,
+    "triangles": 8429540,
+    "pipelines": {
+     "compiled": 100,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "waterfall",
+   "condition": "night",
+   "file": "artifacts/critique/round-05/captures/waterfall_night.jpg",
+   "staged": {
+    "time": {
+     "hour": 22.5,
+     "frozen": true,
+     "sunElevationDeg": -68.18562877171131,
+     "exposure": 11
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      186,
+      39.64682312011719,
+      -42
+     ],
+     "dir": [
+      -0.9295154696167118,
+      0.20000275482331603,
+      -0.30983848987223683
+     ],
+     "fov": 58,
+     "mode": "pose"
+    },
+    "player": {
+     "pos": [
+      186,
+      39.71,
+      -40
+     ],
+     "heading": -1.15,
+     "state": "ground",
+     "speed": 0,
+     "surface": "dirt",
+     "waterDepth": -1.89,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 17.1477565018576,
+    "frame": {
+     "n": 6,
+     "avg": 58.31666666666691,
+     "p50": 66.5,
+     "p95": 116.89999999999418,
+     "p99": 116.89999999999418,
+     "max": 116.89999999999418
+    },
+    "cpu": {
+     "n": 6,
+     "avg": 8.283333331346512,
+     "p50": 7.899999991059303,
+     "p95": 12.200000002980232,
+     "p99": 12.200000002980232,
+     "max": 12.200000002980232
+    },
+    "gpu": {
+     "n": 4,
+     "avg": 744.669184,
+     "p50": 742.260736,
+     "p95": 774.2423039999999,
+     "p99": 774.2423039999999,
+     "max": 774.2423039999999
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "high",
+    "renderScale": 1,
+    "drawCalls": 438,
+    "triangles": 8816167,
+    "pipelines": {
+     "compiled": 100,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "village",
+   "condition": "night",
+   "file": "artifacts/critique/round-05/captures/village_night.jpg",
+   "staged": {
+    "time": {
+     "hour": 22.5,
+     "frozen": true,
+     "sunElevationDeg": -68.18562877171131,
+     "exposure": 11
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      -446.5,
+      3.4,
+      366
+     ],
+     "dir": [
+      -0.33727990387379503,
+      0.017256181128426723,
+      -0.9412462433687302
+     ],
+     "fov": 55,
+     "mode": "pose"
+    },
+    "player": {
+     "pos": [
+      -410,
+      2.76,
+      336
+     ],
+     "heading": -1.72,
+     "state": "ground",
+     "speed": 0,
+     "surface": "sand",
+     "waterDepth": -2.76,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 15.661707126076506,
+    "frame": {
+     "n": 6,
+     "avg": 63.85000000000097,
+     "p50": 66.5,
+     "p95": 116.80000000000291,
+     "p99": 116.80000000000291,
+     "max": 116.80000000000291
+    },
+    "cpu": {
+     "n": 6,
+     "avg": 11.23333332935969,
+     "p50": 10.399999991059303,
+     "p95": 16.799999997019768,
+     "p99": 16.799999997019768,
+     "max": 16.799999997019768
+    },
+    "gpu": {
+     "n": 8,
+     "avg": 873.4228479999998,
+     "p50": 867.893248,
+     "p95": 911.5402240000001,
+     "p99": 911.5402240000001,
+     "max": 911.5402240000001
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "high",
+    "renderScale": 1,
+    "drawCalls": 662,
+    "triangles": 4717777,
+    "pipelines": {
+     "compiled": 100,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "cliffs",
+   "condition": "night",
+   "file": "artifacts/critique/round-05/captures/cliffs_night.jpg",
+   "staged": {
+    "time": {
+     "hour": 22.5,
+     "frozen": true,
+     "sunElevationDeg": -68.18562877171131,
+     "exposure": 11
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      -90,
+      5,
+      -660
+     ],
+     "dir": [
+      -0.9630868246861538,
+      0.12038585308576921,
+      0.24077170617153842
+     ],
+     "fov": 55,
+     "mode": "pose"
+    },
+    "player": {
+     "pos": [
+      -58,
+      50.64,
+      -577
+     ],
+     "heading": -1.42,
+     "state": "ground",
+     "speed": 0,
+     "surface": "rock",
+     "waterDepth": -50.64,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 17.649135192375844,
+    "frame": {
+     "n": 5,
+     "avg": 56.65999999999913,
+     "p50": 50.099999999998545,
+     "p95": 100,
+     "p99": 100,
+     "max": 100
+    },
+    "cpu": {
+     "n": 5,
+     "avg": 6.6,
+     "p50": 5,
+     "p95": 10.400000005960464,
+     "p99": 10.400000005960464,
+     "max": 10.400000005960464
+    },
+    "gpu": {
+     "n": 4,
+     "avg": 736.559104,
+     "p50": 738.852864,
+     "p95": 773.5214080000001,
+     "p99": 773.5214080000001,
+     "max": 773.5214080000001
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "high",
+    "renderScale": 1,
+    "drawCalls": 216,
+    "triangles": 2993358,
+    "pipelines": {
+     "compiled": 100,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "lighthouse",
+   "condition": "night",
+   "file": "artifacts/critique/round-05/captures/lighthouse_night.jpg",
+   "staged": {
+    "time": {
+     "hour": 22.5,
+     "frozen": true,
+     "sunElevationDeg": -68.18562877171131,
+     "exposure": 11
+    },
+    "weather": {
+     "kind": "clear",
+     "auto": false,
+     "progress": 0,
+     "rain": 0,
+     "cover": 0,
+     "wet": 0,
+     "wind": 0.3
+    },
+    "camera": {
+     "pos": [
+      -297.6300233055079,
+      232.7487030029297,
+      -298.1606494440797
+     ],
+     "dir": [
+      0.7742690582422908,
+      -0.18878177296166326,
+      0.6040437630222228
+     ],
+     "fov": 52,
+     "mode": "pose"
+    },
+    "player": {
+     "pos": [
+      -301.81,
+      231,
+      -301.86
+     ],
+     "heading": 2.38,
+     "state": "ground",
+     "speed": 0,
+     "surface": "stone",
+     "waterDepth": -231,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 17.162471395880722,
+    "frame": {
+     "n": 6,
+     "avg": 58.26666666666764,
+     "p50": 50.099999999998545,
+     "p95": 99.90000000000146,
+     "p99": 99.90000000000146,
+     "max": 99.90000000000146
+    },
+    "cpu": {
+     "n": 6,
+     "avg": 8.683333337306976,
+     "p50": 7.600000008940697,
+     "p95": 12.900000005960464,
+     "p99": 12.900000005960464,
+     "max": 12.900000005960464
+    },
+    "gpu": {
+     "n": 4,
+     "avg": 711.704576,
+     "p50": 710.5413120000001,
+     "p95": 749.6007679999998,
+     "p99": 749.6007679999998,
+     "max": 749.6007679999998
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "high",
+    "renderScale": 1,
+    "drawCalls": 252,
+    "triangles": 5233517,
+    "pipelines": {
+     "compiled": 100,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "beach",
+   "condition": "rain",
+   "file": "artifacts/critique/round-05/captures/beach_rain.jpg",
+   "staged": {
+    "time": {
+     "hour": 14.5,
+     "frozen": true,
+     "sunElevationDeg": 42.32106431770195,
+     "exposure": 1.3842485118654626
+    },
+    "weather": {
+     "kind": "rain",
+     "auto": false,
+     "progress": 0,
+     "rain": 0.626,
+     "cover": 0.978,
+     "wet": 1,
+     "wind": 0.83
+    },
+    "camera": {
+     "pos": [
+      584,
+      4.890272402763367,
+      64
+     ],
+     "dir": [
+      0.8278390561638514,
+      -0.032751655393048265,
+      -0.5600087732873109
+     ],
+     "fov": 55,
+     "mode": "pose"
+    },
+    "player": {
+     "pos": [
+      596,
+      1.36,
+      34
+     ],
+     "heading": 1.571,
+     "state": "ground",
+     "speed": 0,
+     "surface": "sand",
+     "waterDepth": -1.36,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 17.642907551164342,
+    "frame": {
+     "n": 5,
+     "avg": 56.68000000000029,
+     "p50": 50,
+     "p95": 100,
+     "p99": 100,
+     "max": 100
+    },
+    "cpu": {
+     "n": 5,
+     "avg": 4.440000000596046,
+     "p50": 4.600000008940697,
+     "p95": 5.399999991059303,
+     "p99": 5.399999991059303,
+     "max": 5.399999991059303
+    },
+    "gpu": {
+     "n": 4,
+     "avg": 672.6123519999999,
+     "p50": 666.7632639999999,
+     "p95": 707.7887999999998,
+     "p99": 707.7887999999998,
+     "max": 707.7887999999998
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "high",
+    "renderScale": 1,
+    "drawCalls": 236,
+    "triangles": 5157769,
+    "pipelines": {
+     "compiled": 100,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "jungle",
+   "condition": "rain",
+   "file": "artifacts/critique/round-05/captures/jungle_rain.jpg",
+   "staged": {
+    "time": {
+     "hour": 14.5,
+     "frozen": true,
+     "sunElevationDeg": 42.32106431770195,
+     "exposure": 1.967768673203052
+    },
+    "weather": {
+     "kind": "rain",
+     "auto": false,
+     "progress": 0,
+     "rain": 0.626,
+     "cover": 0.978,
+     "wet": 1,
+     "wind": 0.83
+    },
+    "camera": {
+     "pos": [
+      358,
+      31.085343647003175,
+      32
+     ],
+     "dir": [
+      0.5401794410456696,
+      0.046229366118585496,
+      -0.8402791305154863
+     ],
+     "fov": 60,
+     "mode": "pose"
+    },
+    "player": {
+     "pos": [
+      365,
+      29.39,
+      18
+     ],
+     "heading": -2.6,
+     "state": "ground",
+     "speed": 0,
+     "surface": "leaves",
+     "waterDepth": -29.39,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 20,
+    "frame": {
+     "n": 6,
+     "avg": 50,
+     "p50": 50,
+     "p95": 100.09999999999854,
+     "p99": 100.09999999999854,
+     "max": 100.09999999999854
+    },
+    "cpu": {
+     "n": 6,
+     "avg": 6.000000002483527,
+     "p50": 5.200000002980232,
+     "p95": 11.200000002980232,
+     "p99": 11.200000002980232,
+     "max": 11.200000002980232
+    },
+    "gpu": {
+     "n": 8,
+     "avg": 568.4756479999999,
+     "p50": 569.0490879999999,
+     "p95": 596.3775999999999,
+     "p99": 596.3775999999999,
+     "max": 596.3775999999999
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "high",
+    "renderScale": 1,
+    "drawCalls": 286,
+    "triangles": 8464944,
+    "pipelines": {
+     "compiled": 100,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "waterfall",
+   "condition": "rain",
+   "file": "artifacts/critique/round-05/captures/waterfall_rain.jpg",
+   "staged": {
+    "time": {
+     "hour": 14.5,
+     "frozen": true,
+     "sunElevationDeg": 42.32106431770195,
+     "exposure": 1.967768673203052
+    },
+    "weather": {
+     "kind": "rain",
+     "auto": false,
+     "progress": 0,
+     "rain": 0.626,
+     "cover": 0.978,
+     "wet": 1,
+     "wind": 0.83
+    },
+    "camera": {
+     "pos": [
+      186,
+      39.64682312011719,
+      -42
+     ],
+     "dir": [
+      -0.9295154696167118,
+      0.20000275482331603,
+      -0.30983848987223683
+     ],
+     "fov": 58,
+     "mode": "pose"
+    },
+    "player": {
+     "pos": [
+      186,
+      39.71,
+      -40
+     ],
+     "heading": -1.15,
+     "state": "ground",
+     "speed": 0,
+     "surface": "dirt",
+     "waterDepth": -1.89,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 13.635124079629232,
+    "frame": {
+     "n": 5,
+     "avg": 73.33999999999942,
+     "p50": 50,
+     "p95": 133.40000000000146,
+     "p99": 133.40000000000146,
+     "max": 133.40000000000146
+    },
+    "cpu": {
+     "n": 5,
+     "avg": 9.940000000596047,
+     "p50": 9,
+     "p95": 15.399999991059303,
+     "p99": 15.399999991059303,
+     "max": 15.399999991059303
+    },
+    "gpu": {
+     "n": 4,
+     "avg": 757.5633919999999,
+     "p50": 751.239168,
+     "p95": 812.97408,
+     "p99": 812.97408,
+     "max": 812.97408
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "high",
+    "renderScale": 1,
+    "drawCalls": 438,
+    "triangles": 8851571,
+    "pipelines": {
+     "compiled": 100,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "village",
+   "condition": "rain",
+   "file": "artifacts/critique/round-05/captures/village_rain.jpg",
+   "staged": {
+    "time": {
+     "hour": 14.5,
+     "frozen": true,
+     "sunElevationDeg": 42.32106431770195,
+     "exposure": 1.967768673203052
+    },
+    "weather": {
+     "kind": "rain",
+     "auto": false,
+     "progress": 0,
+     "rain": 0.626,
+     "cover": 0.978,
+     "wet": 1,
+     "wind": 0.83
+    },
+    "camera": {
+     "pos": [
+      -446.5,
+      3.4,
+      366
+     ],
+     "dir": [
+      -0.33727990387379503,
+      0.017256181128426723,
+      -0.9412462433687302
+     ],
+     "fov": 55,
+     "mode": "pose"
+    },
+    "player": {
+     "pos": [
+      -410,
+      2.76,
+      336
+     ],
+     "heading": -1.72,
+     "state": "ground",
+     "speed": 0,
+     "surface": "sand",
+     "waterDepth": -2.76,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 15.653535090007708,
+    "frame": {
+     "n": 6,
+     "avg": 63.883333333333816,
+     "p50": 66.59999999999854,
+     "p95": 116.60000000000582,
+     "p99": 116.60000000000582,
+     "max": 116.60000000000582
+    },
+    "cpu": {
+     "n": 6,
+     "avg": 10.166666669150194,
+     "p50": 9.5,
+     "p95": 16.900000005960464,
+     "p99": 16.900000005960464,
+     "max": 16.900000005960464
+    },
+    "gpu": {
+     "n": 8,
+     "avg": 885.972992,
+     "p50": 891.6172799999999,
+     "p95": 913.8995200000003,
+     "p99": 913.8995200000003,
+     "max": 913.8995200000003
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "high",
+    "renderScale": 1,
+    "drawCalls": 684,
+    "triangles": 4801534,
+    "pipelines": {
+     "compiled": 100,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "cliffs",
+   "condition": "rain",
+   "file": "artifacts/critique/round-05/captures/cliffs_rain.jpg",
+   "staged": {
+    "time": {
+     "hour": 14.5,
+     "frozen": true,
+     "sunElevationDeg": 42.32106431770195,
+     "exposure": 1.967768673203052
+    },
+    "weather": {
+     "kind": "rain",
+     "auto": false,
+     "progress": 0,
+     "rain": 0.626,
+     "cover": 0.978,
+     "wet": 1,
+     "wind": 0.83
+    },
+    "camera": {
+     "pos": [
+      -90,
+      5,
+      -660
+     ],
+     "dir": [
+      -0.9630868246861538,
+      0.12038585308576921,
+      0.24077170617153842
+     ],
+     "fov": 55,
+     "mode": "pose"
+    },
+    "player": {
+     "pos": [
+      -58,
+      50.64,
+      -577
+     ],
+     "heading": -1.42,
+     "state": "ground",
+     "speed": 0,
+     "surface": "rock",
+     "waterDepth": -50.64,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 17.162471395881077,
+    "frame": {
+     "n": 6,
+     "avg": 58.266666666666424,
+     "p50": 50,
+     "p95": 116.79999999999563,
+     "p99": 116.79999999999563,
+     "max": 116.79999999999563
+    },
+    "cpu": {
+     "n": 6,
+     "avg": 7.633333332836628,
+     "p50": 6.5,
+     "p95": 11.799999997019768,
+     "p99": 11.799999997019768,
+     "max": 11.799999997019768
+    },
+    "gpu": {
+     "n": 8,
+     "avg": 790.740992,
+     "p50": 805.2408319999998,
+     "p95": 837.0913279999999,
+     "p99": 837.0913279999999,
+     "max": 837.0913279999999
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "high",
+    "renderScale": 1,
+    "drawCalls": 217,
+    "triangles": 3028763,
+    "pipelines": {
+     "compiled": 100,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "lighthouse",
+   "condition": "rain",
+   "file": "artifacts/critique/round-05/captures/lighthouse_rain.jpg",
+   "staged": {
+    "time": {
+     "hour": 14.5,
+     "frozen": true,
+     "sunElevationDeg": 42.32106431770195,
+     "exposure": 1.967768673203052
+    },
+    "weather": {
+     "kind": "rain",
+     "auto": false,
+     "progress": 0,
+     "rain": 0.626,
+     "cover": 0.978,
+     "wet": 1,
+     "wind": 0.83
+    },
+    "camera": {
+     "pos": [
+      -297.6300233055079,
+      232.7487030029297,
+      -298.1606494440797
+     ],
+     "dir": [
+      0.7742690582422908,
+      -0.18878177296166326,
+      0.6040437630222228
+     ],
+     "fov": 52,
+     "mode": "pose"
+    },
+    "player": {
+     "pos": [
+      -301.81,
+      231,
+      -301.86
+     ],
+     "heading": 2.38,
+     "state": "ground",
+     "speed": 0,
+     "surface": "stone",
+     "waterDepth": -231,
+     "weights": {
+      "idle": 1
+     }
+    }
+   },
+   "stats": {
+    "fps": 20,
+    "frame": {
+     "n": 7,
+     "avg": 50,
+     "p50": 49.900000000001455,
+     "p95": 100,
+     "p99": 100,
+     "max": 100
+    },
+    "cpu": {
+     "n": 7,
+     "avg": 8.100000002554484,
+     "p50": 6.9000000059604645,
+     "p95": 13.5,
+     "p99": 13.5,
+     "max": 13.5
+    },
+    "gpu": {
+     "n": 4,
+     "avg": 754.909184,
+     "p50": 756.5475839999999,
+     "p95": 776.0773119999998,
+     "p99": 776.0773119999998,
+     "max": 776.0773119999998
+    },
+    "targetFps": 60,
+    "refreshHz": 60,
+    "preset": "high",
+    "renderScale": 1,
+    "drawCalls": 253,
+    "triangles": 5269786,
+    "pipelines": {
+     "compiled": 100,
+     "pending": 0,
+     "skippedDraws": 0
+    },
+    "backend": "WebGPU",
+    "adapter": {
+     "name": "ANGLE",
+     "backend": "WebGPU"
+    }
+   }
+  },
+  {
+   "spot": "beach",
+   "condition": "note-interaction",
+   "noteTitle": "TIDE NOTE · EAST BEACH",
+   "opened": true,
+   "closedWithEscape": true,
+   "file": "artifacts/critique/round-05/captures/beach_note_open.jpg"
+  },
+  {
+   "spot": "beach",
+   "condition": "first-keeper",
+   "file": "artifacts/critique/round-05/captures/beach_first_keeper.jpg",
+   "reveal": {
+    "state": {
+     "phase": "watching",
+     "activeTime": 25,
+     "pressure": 0.15,
+     "presenceCount": 1,
+     "seenTime": 0.58,
+     "noteCount": 6,
+     "nearestNote": "TIDE NOTE · EAST BEACH"
+    },
+    "visible": true,
+    "figureNdc": {
+     "x": 0.753,
+     "y": -0.037,
+     "z": 0.009
+    },
+    "playerNdc": {
+     "x": -0.118,
+     "y": -0.174,
+     "z": 0.026
+    },
+    "lateralNdc": 0.871,
+    "figurePosition": [
+     603,
+     0.91,
+     42
+    ]
+   }
+  }
+ ],
+ "console": [
+  "[log] vegetation grass0:26664 grass1:26979 total 53643",
+  "[log] [island] canopy shell: 79491 vertices, 155926 triangles",
+  "[info] [island] pool rocks: basalt_d:2 pebbles_b:25 basalt_c:15 basalt_b:18 basalt_a:9 pebbles_a:63",
+  "[log] [island] rocks 1428 1410 188 195",
+  "[log] [island] cliff rocks 30 39",
+  "[info] [island] rock kit: cleared the falls (cliff_c along 12.4 m, cliff_a along -2.4 m, cliff_a along -1.6 m)",
+  "[log] vegetation (glb) coconut_a:264 coconut_young_c:114 coconut_d:377 coconut_young_a:113 coconut_e:386 coconut_b:306 coconut_young_b:121 coconut_f:377 scrub_d:1217 scrub_a:1212 scrub_b:1271 pandanus_b:89 pandanus_a:98 scrub_c:349 midstorey_b:2861 midstorey_a:2775 rainforest_d:2739 rainforest_a:901 rainforest_b:2013 rainforest_c:910 licuala_a:7969 sapling_b:8529 treefern_a:8906 rattan_a:6092 banana_a:7864 sapling_a:8413 alocasia_a:8870 fern_b:33650 anthurium_a:33854 fern_a:33688 calathea_b:33389 litter_a:31315 litter_b:30857 litter_c:31303 log_a:326 log_b:322 roots_a:351 total 304191",
+  "[info] [island] Catching the light: 109 materials, batches 1198ms/+34 204ms/+7 159ms/+6 149ms/+0 129ms/+0 66ms/+10 54ms/+2 134ms/+8 152ms/+0 98ms/+2 55ms/+3 108ms/+11 93ms/+7 30ms/+1",
+  "[log] [island] ledge plants vinecurtain_b:94 moss_b:44 moss_a:42 hangfern_a:50 hangfern_b:60 wallclump_a:44 vinecurtain_a:38",
+  "[info] [island] Dressing the palms: 134 materials, batches 9ms/+0 340ms/+8",
+  "[info] [island] 100 pipelines compiled in parallel, 0.4 s after the last prime",
+  "[log] vegetation grass0:26664 grass1:26979 total 53643",
+  "[log] [island] canopy shell: 79491 vertices, 155926 triangles",
+  "[info] [island] pool rocks: basalt_d:2 pebbles_b:25 basalt_c:15 basalt_b:18 basalt_a:9 pebbles_a:63",
+  "[log] [island] rocks 1428 1410 188 195",
+  "[log] [island] cliff rocks 30 39",
+  "[info] [island] rock kit: cleared the falls (cliff_c along 12.4 m, cliff_a along -2.4 m, cliff_a along -1.6 m)",
+  "[log] vegetation (glb) coconut_a:264 coconut_young_c:114 coconut_d:377 coconut_young_a:113 coconut_e:386 coconut_b:306 coconut_young_b:121 coconut_f:377 scrub_d:1217 scrub_a:1212 scrub_b:1271 pandanus_b:89 pandanus_a:98 scrub_c:349 midstorey_b:2861 midstorey_a:2775 rainforest_d:2739 rainforest_a:901 rainforest_b:2013 rainforest_c:910 licuala_a:7969 sapling_b:8529 treefern_a:8906 rattan_a:6092 banana_a:7864 sapling_a:8413 alocasia_a:8870 fern_b:33650 anthurium_a:33854 fern_a:33688 calathea_b:33389 litter_a:31315 litter_b:30857 litter_c:31303 log_a:326 log_b:322 roots_a:351 total 304191",
+  "[info] [island] Catching the light: 109 materials, batches 1103ms/+34 200ms/+7 154ms/+6 144ms/+0 121ms/+0 63ms/+10 45ms/+2 155ms/+8 179ms/+0 111ms/+4 43ms/+3 100ms/+11 81ms/+7 21ms/+1",
+  "[log] [island] ledge plants vinecurtain_b:94 moss_b:44 moss_a:42 hangfern_a:50 hangfern_b:60 wallclump_a:44 vinecurtain_a:38",
+  "[info] [island] Dressing the palms: 134 materials, batches 11ms/+0 359ms/+6",
+  "[info] [island] 100 pipelines compiled in parallel, 0.1 s after the last prime"
+ ],
+ "at": "2026-11-19T04:58:54.654Z"
+}

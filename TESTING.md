@@ -118,6 +118,10 @@ reports what the current Chrome/M2 session achieves and does not imply that the 
 GPU timing may show `n/a` if Chrome does not expose timestamp queries, while frame and CPU timings remain available.
 
 ## Harness commands
+Motion clips default to `artifacts/clips/<round>/`. For example, `pnpm clip --round round-05 --preset waves_beach`
+records four seconds of animated shore; pass `--out <directory>` to choose another local output directory. The
+encoder uses ffmpeg when installed and macOS AVFoundation otherwise; source frames are removed after a successful
+encode unless `--keep-frames` is passed.
 
 All of them use the installed Chrome (`C:\Program Files\Google\Chrome\Application\chrome.exe`) on the RTX 4060
 (`--force_high_performance_gpu`), with a temporary profile (the development captures keep a persistent one, below),

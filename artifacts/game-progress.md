@@ -87,12 +87,38 @@ beach, jungle, falls, village, cliffs, and lighthouse.
   and night (scale 0.45). Waterfall night remains just under target; GPU timestamp queries were unavailable. Only the
   built-in laptop panel was connected, and the harness emulated the 1920x1080 viewport.
 
-## Awaiting Round 4 critic
+## Round 4 critic review
 
-- The independent critic still needs to compare the new full-quality captures against real tropical photography and
-  AAA open-world references, with the full six-location by five-condition matrix and concrete differences.
-- Remaining viewer-facing gaps include shore and pool water depth, the wide empty beach/village foreground, the
-  physical tide-note post, Keeper silhouette, close-range foliage scale, and rain/water/boat motion. Still images do not
-  verify motion; use a headed gameplay clip for the next review.
-- After the review loops finish, make the OG image from the strongest actual game capture and set it as the GitHub
-  repository social preview. The final response also needs the five best recording spots.
+- The separate critic reviewed all 30 high-preset frames and six contact sheets against tropical photos and official
+  Ghost of Tsushima / Far Cry 6 imagery. Its full comparison, 30-state findings, and 10-category scorecard are in
+  `artifacts/critique/round-04.md`; mean score 1.3/3.
+- The main gaps were shore and pool water depth, broad parallel surf fronts, the night lighthouse shaft reading as a
+  slab, repeated far-canopy crowns, noon sand clipping, inactive village props, a faint Keeper, and no motion playback.
+  High-preset capture counters came from an emulated 1920x1080 viewport, not a sustained device run.
+
+## Round 5 builder pass
+
+- Increased multi-scale alongshore wave timing offsets and softened the foam lace threshold so each breaker front
+  bends and the white filaments taper more gradually. Warped and widened the far-canopy crown cells to reduce their
+  regular rounded grid.
+- Reduced dry-sand albedo by up to 30% at a high sun, raised the scanned cliff's blue-grey night fill by 23%, and
+  dimmed the lighthouse shaft in clear air and when the gallery camera sits inside its volume.
+- Added a portable `--out` option to `pnpm clip`, a native macOS AVFoundation H.264 fallback when ffmpeg is absent,
+  and cleanup of raw frame sequences after encoding. Corrected and inspected frame orientation in both review clips.
+- The updated production build passes. `pnpm shots --round round-05 --note-test --encounter` produced all 30 high
+  location/condition frames plus the note and Keeper frames; the note still opens/closes and the Keeper remains visible.
+  Six full-size contact strips are in `artifacts/critique/round-05/`.
+- Two 1920x1080 H.264 clips are encoded in `artifacts/clips/round-05/`: a four-second sunrise shore at 30 fps and a
+  five-second lighthouse night sweep at 24 fps. Extracted frames confirmed the video is upright and the beacon moves
+  out of view during playback.
+- On the M2 MacBook Air, selected production-default low-preset, capped eight-second samples measured 60 fps at
+  waterfall/rain (scale .425), 60 at lighthouse/rain (.45), 59.6 at waterfall/night (.4), and 60 at lighthouse/night
+  (.45). Frame p95 was 17.3–17.5 ms and p99 17.7 ms; GPU timestamp queries remain unavailable. Captures used the
+  built-in screen with an emulated 1920x1080 viewport; no second display was connected.
+
+## Awaiting Round 5 critic
+
+- The next independent review should compare all six locations across sunrise, noon, sunset, night, and rain, inspect
+  the two motion clips, and record specific remaining differences beside real tropical photography and AAA references.
+- After the review loop finishes, make the OG image from the strongest actual game capture and set the GitHub
+  repository social preview. The final response also needs five recording camera spots.

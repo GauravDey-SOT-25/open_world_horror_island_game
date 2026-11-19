@@ -15,3 +15,9 @@ __pycache__/
 
 # Exported chat logs (keep out of the public repo)
 cursor-chats/
+
+# Keep encoded game-review clips, but not their large raw frame directories
+artifacts/clips/**
+!artifacts/clips/
+!artifacts/clips/**/
+!artifacts/clips/**/*.mp4

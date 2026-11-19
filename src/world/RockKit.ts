@@ -548,7 +548,7 @@ function kitMaterial(src: THREE.MeshStandardMaterial) {
   // keeps their scanned relief readable at dusk and night without flattening the daytime contrast.
   const skyUp = normalWorldGeometry.y.mul(0.5).add(0.5).clamp(0, 1).mul(0.65).add(0.35);
   const nightBounce = vec3(0.0013, 0.0024, 0.0058)
-    .mul(atmo.night.mul(float(1).sub(atmo.overcast.mul(0.45))).mul(7.5))
+    .mul(atmo.night.mul(float(1).sub(atmo.overcast.mul(0.45))).mul(9.2))
     .mul(skyUp);
   m.emissiveNode = alb.mul(nightBounce);
   const wetRough = mix(min(orm.g, float(0.48)), min(orm.g, float(0.17)), soaked.div(wet.max(0.001)));

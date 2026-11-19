@@ -219,6 +219,9 @@ export function createTerrainMaterial(hf: Heightfield) {
   rough = rough.div(total);
   dn = dn.div(total);
   const ao = aoAcc.div(total);
+  // Dry tropical sand keeps its warm hue without clipping toward white beneath a high midday sun.
+  const noonSand = smoothstep(0.16, 0.72, atmo.sunDir.y).mul(ws[0].div(total).clamp(0, 1));
+  albedo = albedo.mul(mix(float(1), float(0.7), noonSand));
   // macro variation breaks the tiling
   albedo = albedo.mul(macro.mul(0.16).add(1)).mul(vec3(1.0, mix(1.0, 1.05, macro.mul(0.5).add(0.5)), 1.0));
   // from afar the ground between the crowns is the shade of the understory, not bare litter, and open grass a deeper,

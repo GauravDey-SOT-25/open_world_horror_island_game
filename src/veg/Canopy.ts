@@ -41,9 +41,16 @@ function bakeCrowns(hf: Heightfield, renderer: THREE.WebGPURenderer) {
     const f = texture(hf.mask0Tex, uv()).level(0).w;
     const big = mx_fractal_noise_float(vec3(xz.mul(1 / 160), 0.7), 2, 2, 0.5).mul(0.5).add(0.5);
     const mid = mx_noise_float(vec3(xz.mul(1 / 24), 2.1)).mul(0.5).add(0.5);
-    const w = mx_worley_noise_float(xz.mul(1 / 9.5)).clamp(0, 1);
+    // Broad, low-frequency drift pulls the crown cells away from a tidy round grid. A long and a short axis give
+    // the skyline prevailing-wind streaks, while the large terrain field still determines the canopy's mass.
+    const drift = vec2(
+      mx_noise_float(vec3(xz.mul(1 / 68), 8.1)),
+      mx_noise_float(vec3(xz.mul(1 / 57).add(12.7), 9.3)),
+    ).mul(vec2(5.8, 4.2));
+    const crownXZ = xz.add(drift);
+    const w = mx_worley_noise_float(crownXZ.mul(vec2(1 / 15.5, 1 / 12.5))).clamp(0, 1);
     const h = float(13).add(big.mul(12)).add(mid.mul(4)).add(float(1).sub(w).mul(3.5)).mul(smoothstep(0.08, 0.5, f));
-    const relief = float(1).sub(w).pow(0.7).mul(4.5).add(mx_noise_float(vec3(xz.mul(0.45), 4.4)).mul(0.6));
+    const relief = float(1).sub(w).pow(0.7).mul(4.5).add(mx_noise_float(vec3(crownXZ.mul(0.45), 4.4)).mul(0.6));
     const tint = mx_fractal_noise_float(vec3(xz.mul(1 / 70), 3.3), 3, 2, 0.5).mul(0.5).add(0.5);
     return vec4(h.div(H_MAX), relief.sub(RELIEF_LO).div(RELIEF_SPAN), smoothstep(0.55, 0.95, w), tint);
   })();
