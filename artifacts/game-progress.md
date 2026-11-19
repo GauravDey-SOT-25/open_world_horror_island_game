@@ -142,11 +142,18 @@ beach, jungle, falls, village, cliffs, and lighthouse.
   0.40–0.45. Frame p95 was 17.5–17.6 ms; one waterfall/rain p99 reached 33.3 ms. GPU timestamp queries were
   unavailable. The run used ANGLE/WebGPU on Apple Metal 3 in a 1920×1080 emulated viewport because only the laptop
   display was connected; this is not a second-screen capture.
-- Remaining visible water gaps include the waterfall's bright impact patch and graphic pool streaks. The Round 6
-  critic should decide which gaps still matter most before the next builder pass.
+- The independent Round 6 critic scored the game **1.45/3** and wrote the full state-by-state report and reference
+  boards in `artifacts/critique/round-06.md`. It confirms the pool color improved, while shore bands, flat pool water,
+  the bright waterfall impact, weak landmark separation from the lighthouse, and faint Keeper silhouette remain visible.
+- Per the user's request to wrap up quickly, this pass closes after Round 6; those meaningful gaps remain documented
+  for a future iteration rather than being presented as fixed.
 
 ## Remaining release tasks
 
-- Continue the sequential Builder/Critic loop until no meaningful viewer-facing gap remains or Round 8 is complete.
-- Then make the OG image from the strongest actual game capture, set the GitHub repository social preview, and give
-  the five best camera spots for recording.
+- The Builder/Critic loop closes after Round 6 per the user's request to finish quickly. The critic still lists water,
+  waterfall, landmark readability, and Keeper visibility as meaningful follow-up work.
+- Created `docs/social-preview.jpg` as a 1200×630 Open Graph card from the actual beach sunrise frame, with a restrained
+  horror grade and the SALTWAKE title. `index.html` and the README already reference that file.
+- The five strongest recording setups are: sunrise from the beach spawn at water level; the waterfall pool while
+  swimming at noon; the fishing-village jetty at sunset with boats in frame; the west sea stacks from a low cliff edge
+  at sunset; and the lighthouse gallery at blue hour for the beacon sweep and island panorama.

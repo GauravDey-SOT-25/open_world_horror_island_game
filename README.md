@@ -6,7 +6,7 @@ swimmable pool, a fishing village, basalt cliffs, and a lighthouse on the highes
 their own. Read the tide-worn pages left around the island, then keep walking. Something watches from the edge of the
 trees and leaves when you look back. There is no combat and no required route; the island remains yours to explore.
 
-![The fishing village at sunset, seen from the end of the jetty, under the game's title](docs/social-preview.jpg)
+![SALTWAKE — The Keeper: a dark tropical beach at sunrise](docs/social-preview.jpg)
 
 **Play it: https://gauravdey-sot-25.github.io/open_world_horror_island_game/**
 
